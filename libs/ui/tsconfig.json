@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "es6",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "shared": [
+        "../shared/src"
+      ],
+      "shelter": [
+        "../shelter/src"
+      ],
+      "backend-types": [
+        "../backend-types/src"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+  ],
+}

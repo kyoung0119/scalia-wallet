@@ -1,0 +1,36 @@
+{
+  "name": "Oko Wallet",
+  "description": "Multichain wallet. In-app yield farming, swaps, and staking. Manage your tokens and NFTs in one place.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Oko Wallet"
+  },
+  "background": {
+    "service_worker": "scripts/background-script.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content-script.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "unlimitedStorage",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "mics/logo16.png",
+    "48": "mics/logo48.png",
+    "128": "mics/logo128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

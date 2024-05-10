@@ -1,0 +1,95 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./apps/backend/tsconfig.json",
+      "./apps/extension/tsconfig.json",
+      "./apps/extension-e2e/tsconfig.json",
+      "./apps/mobile/tsconfig.json",
+      "./libs/ui/tsconfig.json",
+      "./libs/backend-types/tsconfig.json",
+      "./libs/shelter/tsconfig.json",
+      "./libs/shared/tsconfig.json"
+    ]
+  },
+  "extends": [
+    "@react-native-community",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "import",
+    "jest"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "jest": {
+      "version": 26
+    }
+  },
+  "rules": {
+    "newline-before-return": [
+      "error"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-void": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-unresolved": "off",
+    "import/default": "off",
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react|react-native",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "groups": [
+          [
+            "external",
+            "builtin"
+          ],
+          "internal",
+          "parent",
+          [
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unnecessary-type-constraint": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "jest/no-done-callback": "off",
+    "react/jsx-key": "error",
+    "arrow-body-style": "error",
+    "object-shorthand": "error",
+    "no-else-return": "error",
+    "react/jsx-boolean-value": "error"
+  },
+  "globals": {
+    "localStorage": true
+  }
+}

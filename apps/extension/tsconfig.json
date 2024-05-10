@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-native",
+    "paths": {
+      "ui": [
+        "../../libs/ui"
+      ],
+      "ui/background-script": [
+        "../../libs/ui/src/background-script"
+      ],
+      "ui/inpage": [
+        "../../libs/ui/src/inpage"
+      ],
+      "shelter/background-script": [
+        "../../libs/shelter/src/background-script"
+      ],
+      "shared/background-script": [
+        "../../libs/shared/src/background-script"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "webpack.config.js"
+  ]
+}
