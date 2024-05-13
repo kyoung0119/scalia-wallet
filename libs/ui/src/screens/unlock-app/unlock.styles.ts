@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
     })
   },
   logoContainer: {
-    backgroundColor: colors.bgGrey1,
+    backgroundColor: colors.bgGrey2,
+    backgroundImage: `radial-gradient(ellipse at 30% 10%, #81563c 1%, transparent 35%), radial-gradient(ellipse at 70% 10%, #315270 1%, #16161C 35%)`,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,6 +1,12 @@
 import React, { FC, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { KeyboardAvoidingView, NativeSyntheticEvent, Pressable, TextInputKeyPressEventData, View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  NativeSyntheticEvent,
+  Pressable,
+  TextInputKeyPressEventData,
+  View
+} from 'react-native';
 import { isMobile, isIOS, isWeb } from 'shared';
 
 import { Button } from '../../components/button/button';
@@ -61,7 +67,7 @@ export const UnlockApp: FC = () => {
   return (
     <KeyboardAvoidingView behavior={behavior} style={styles.root}>
       <View style={styles.logoContainer}>
-        <Icon name={IconNameEnum.WalletLogoPlaceholder} size={getCustomSize(11)} />
+        <Icon name={IconNameEnum.Logo} size={getCustomSize(11)} />
       </View>
       <View style={styles.bottomBlock}>
         <Row style={styles.password}>
