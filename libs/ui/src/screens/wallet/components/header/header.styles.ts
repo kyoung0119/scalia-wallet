@@ -13,8 +13,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30,
-    backgroundColor: colors.bgDarkLight
+    marginTop: 30
   },
   icon: {
     marginRight: getCustomSize(2)

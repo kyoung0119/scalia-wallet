@@ -88,7 +88,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600'
   },
   commonText: {
-    ...typography.AltoneVariable14,
+    ...typography.AltoneVariable16,
     color: '#9D9D9D'
   },
   linkText: {

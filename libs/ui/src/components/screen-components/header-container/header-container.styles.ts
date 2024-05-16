@@ -18,6 +18,6 @@ export const styles = StyleSheet.create({
   },
   children: {
     justifyContent: 'center',
-    // alignItems: 'flex-end'
+    alignItems: 'flex-end'
   }
 });
