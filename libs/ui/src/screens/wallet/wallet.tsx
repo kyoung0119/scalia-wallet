@@ -25,6 +25,8 @@ export const Wallet: FC = () => {
     <ScreenContainer theme={ScreenContainerThemesEnum.Secondary}>
       <Header changeQrCodeVisibility={changeQrCodeVisibility} />
 
+      <NavigationBar />
+
       <ScrollView
         ref={scrollViewRef}
         onTouchEnd={onTouchEnd}
@@ -34,7 +36,7 @@ export const Wallet: FC = () => {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <QrCode contentOffsetY={contentOffsetY} />
+        {/* <QrCode contentOffsetY={contentOffsetY} /> */}
 
         <View style={styles.content}>
           <AssetsWidget testID={WalletTestIDs.AssetsWidget} />
@@ -42,7 +44,7 @@ export const Wallet: FC = () => {
         </View>
       </ScrollView>
 
-      <NavigationBar />
+
     </ScreenContainer>
   );
 };

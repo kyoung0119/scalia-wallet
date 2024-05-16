@@ -9,12 +9,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     height: getCustomSize(2.75),
     paddingHorizontal: getCustomSize(),
-    backgroundColor: colors.brown,
     borderRadius: getCustomSize(0.5),
     overflow: 'hidden'
   },
   text: {
-    ...typography.numbersIBMPlexSansMediumUppercase13,
-    textAlign: 'center'
+    ...typography.AltoneVariable14,
+    color: colors.theme,
+    textAlign: 'center',
+    fontWeight: '600'
   }
 });

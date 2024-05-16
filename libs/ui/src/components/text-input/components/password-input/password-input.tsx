@@ -74,11 +74,11 @@ export const PasswordInput = <
         testID={testID}
       />
 
-      <TouchableIcon
+      {/* <TouchableIcon
         name={isSecureTextEntry ? IconNameEnum.EyeOpen : IconNameEnum.EyeClosed}
         onPress={handleSecureTextEntry}
         iconStyle={styles.eyeIcon}
-      />
+      /> */}
     </Row>
   );
 };

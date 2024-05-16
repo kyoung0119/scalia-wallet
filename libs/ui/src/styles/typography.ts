@@ -85,13 +85,6 @@ export const typography: Typography = {
     lineHeight: getCustomSize(2.25),
     letterSpacing: getCustomSize(-0.01)
   },
-  captionInterSemiBoldUnderline13: {
-    fontFamily: FontsEnum.interSemiBold,
-    fontSize: getCustomSize(1.625),
-    textDecorationLine: 'underline',
-    lineHeight: getCustomSize(2.25),
-    letterSpacing: getCustomSize(-0.01)
-  },
   captionInterSemiBold11: {
     fontFamily: FontsEnum.interSemiBold,
     fontSize: getCustomSize(1.375),
@@ -190,5 +183,24 @@ export const typography: Typography = {
     fontSize: getCustomSize(),
     lineHeight: getCustomSize(1.625),
     letterSpacing: getCustomSize(0.0875)
-  }
+  },
+  // Customized
+  AltoneVariable32: {
+    fontFamily: FontsEnum.interRegular,
+    fontSize: 32,
+    fontStyle: 'normal',
+    // lineHeight: 40 /* 111.111% */
+  },
+  AltoneVariable16: {
+    fontFamily: FontsEnum.interRegular,
+    fontSize: 16,
+    fontStyle: 'normal',
+    fontWeight: '500'
+    // lineHeight: 20 /* 111.111% */
+  },
+  AltoneVariable14: {
+    fontFamily: FontsEnum.interRegular,
+    fontSize: 14,
+    // lineHeight: 20 /* 111.111% */
+  },
 };

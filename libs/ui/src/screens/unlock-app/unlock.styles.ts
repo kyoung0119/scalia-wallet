@@ -27,11 +27,28 @@ export const styles = StyleSheet.create({
       borderRadius: maximiseViewStyles.borderRadius
     })
   },
+  logoSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 8
+  },
+  logoIcon: {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)', // Semi-transparent background
+    borderRadius: 40,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    borderWidth: 1,
+    padding: 8,
+    marginBottom: 16
+  },
   bottomBlock: {
-    backgroundColor: colors.navGrey1,
-    paddingHorizontal: getCustomSize(2),
-    borderTopLeftRadius: getCustomSize(2),
-    borderTopRightRadius: getCustomSize(2),
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.bgDarkLight,
+    paddingVertical: getCustomSize(3),
+    paddingHorizontal: getCustomSize(4),
     ...(isFullpage && {
       borderRadius: maximiseViewStyles.borderRadius
     })
@@ -59,22 +76,29 @@ export const styles = StyleSheet.create({
     margin: getCustomSize()
   },
   button: {
+    minWidth: '100%',
     marginBottom: getCustomSize(2)
   },
   textContainer: {
     justifyContent: 'center'
   },
+  bannerText: {
+    ...typography.AltoneVariable32,
+    color: colors.white,
+    fontWeight: '600'
+  },
   commonText: {
-    ...typography.captionInterSemiBold11,
-    color: colors.textGrey2
+    ...typography.AltoneVariable14,
+    color: '#9D9D9D'
   },
   linkText: {
-    ...typography.captionInterSemiBold11,
-    color: colors.orange,
-    textDecorationLine: 'underline',
-    marginLeft: getCustomSize(0.5)
+    ...typography.AltoneVariableSemiBold14,
+    color: colors.theme,
+    fontWeight: '500'
+    // textDecorationLine: 'underline'
   },
   madLogo: {
+    minHeight: getCustomSize(8),
     marginBottom: getCustomSize(4.25),
     marginTop: getCustomSize(5)
   }

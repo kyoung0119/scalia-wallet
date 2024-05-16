@@ -2,6 +2,9 @@ import { emptyFn, OnEventFn } from '@rnw-community/shared';
 import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
 
+import { Row } from '../../../../components/row/row';
+import { Text } from '../../../../components/text/text';
+
 import { ScreensEnum } from '../../../../enums/sreens.enum';
 import { useNavigation } from '../../../../hooks/use-navigation.hook';
 import { TestIDProps } from '../../../../interfaces/test-id.props';
@@ -10,6 +13,7 @@ import { Icon } from '../../../icon/icon';
 import { IconProps } from '../../../icon/icon.interface';
 
 import { styles } from './tab-bar-button.styles';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 type TabBarScreens =
   | ScreensEnum.Wallet
@@ -46,7 +50,11 @@ export const TabBarButton: FC<Props> = ({
 
   return (
     <TouchableOpacity onPress={navigateToScreen} style={styles.root} testID={testID}>
-      <Icon name={name} color={color} />
+      <Row>
+        <Icon name={name} color={color} iconStyle={styles.icon} />
+        <Text style={styles.text as ViewStyleProps}>{name}</Text>
+      </Row>
     </TouchableOpacity>
+
   );
 };

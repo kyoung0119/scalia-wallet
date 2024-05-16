@@ -27,18 +27,12 @@ export const NavigationBar = () => {
 
   return (
     <Row style={styles.root}>
-      <TabBarButton
-        routeName={ScreensEnum.Wallet}
-        name={IconNameEnum.Home}
-        focused={isStackFocused(walletStackScreens)}
-        testID={NavigationBarTestIDs.HomeButton}
-      />
 
       <TabBarButton
-        routeName={ScreensEnum.Receive}
-        name={IconNameEnum.Receive}
-        focused={isStackFocused(receiveStackScreens)}
-        testID={NavigationBarTestIDs.ReceiveButton}
+        routeName={ScreensEnum.SendToken}
+        name={IconNameEnum.Send}
+        focused={isStackFocused(sendStackScreens)}
+        testID={NavigationBarTestIDs.SendButton}
       />
 
       <TabBarButton
@@ -51,17 +45,10 @@ export const NavigationBar = () => {
       />
 
       <TabBarButton
-        routeName={ScreensEnum.SendToken}
-        name={IconNameEnum.Send}
-        focused={isStackFocused(sendStackScreens)}
-        testID={NavigationBarTestIDs.SendButton}
-      />
-
-      <TabBarButton
-        routeName={ScreensEnum.Settings}
-        name={IconNameEnum.Settings}
-        focused={isStackFocused(settingsStackScreens)}
-        testID={NavigationBarTestIDs.SettingsButton}
+        routeName={ScreensEnum.Receive}
+        name={IconNameEnum.Receive}
+        focused={isStackFocused(receiveStackScreens)}
+        testID={NavigationBarTestIDs.ReceiveButton}
       />
     </Row>
   );

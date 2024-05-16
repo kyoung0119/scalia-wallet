@@ -7,9 +7,9 @@ import { typography } from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   inputContainer: {
-    backgroundColor: colors.bgGrey4,
+    backgroundColor: colors.bgGrey7,
     borderWidth: getCustomSize(0.125),
-    borderColor: colors.bgGrey4,
+    borderColor: colors.bgGrey8,
     borderRadius: getCustomSize(),
     paddingLeft: getCustomSize(1.5),
     paddingRight: getCustomSize()
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   input: {
     width: '94%',
     height: getCustomSize(5.75),
-    color: colors.textGrey1,
+    color: colors.textGrey7,
     ...typography.bodyInterRegular15,
     ...(isWeb && { outlineStyle: 'none' }),
     ...(isWeb && { caretColor: colors.orange }),

@@ -16,6 +16,7 @@ import { IconNameEnum } from '../../components/icon/icon-name.enum';
 import { Row } from '../../components/row/row';
 import { Text } from '../../components/text/text';
 import { PasswordInput } from '../../components/text-input/components/password-input/password-input';
+import { NetworkSelectorDropdown } from '../../components/network-selector-dropdown/network-selector-dropdown';
 import { ScreensEnum } from '../../enums/sreens.enum';
 import { useNavigation } from '../../hooks/use-navigation.hook';
 import { useUnlock } from '../../hooks/use-unlock.hook';
@@ -67,9 +68,17 @@ export const UnlockApp: FC = () => {
   return (
     <KeyboardAvoidingView behavior={behavior} style={styles.root}>
       <View style={styles.logoContainer}>
-        <Icon name={IconNameEnum.Logo} size={getCustomSize(11)} />
+        <div style={styles.logoSection}>
+          <Icon iconStyle={styles.logoIcon} name={IconNameEnum.Logo} size={getCustomSize(6)} />
+          <Text style={styles.bannerText}>Welcome!</Text>
+          <Text style={styles.commonText} onPress={onResetWallet}>
+            Scalia Decentralized Wallet
+          </Text>
+        </div>
       </View>
       <View style={styles.bottomBlock}>
+        <NetworkSelectorDropdown activeItemId={0} />
+
         <Row style={styles.password}>
           <Controller
             control={control}
@@ -77,8 +86,8 @@ export const UnlockApp: FC = () => {
             render={({ field }) => (
               <PasswordInput
                 field={field}
-                label="Password"
-                prompt="Enter your password to unlock wallet"
+                label=''
+                prompt=''
                 error={error}
                 onKeyPress={onEnterPress}
                 onSubmitEditing={onUnlock}
@@ -94,19 +103,19 @@ export const UnlockApp: FC = () => {
           )}
         </Row>
         <Button
-          title="UNLOCK WALLET"
+          title="Sign In"
           theme={ButtonThemesEnum.Secondary}
           style={styles.button}
           onPress={handleSubmit(onUnlock)}
           disabled={isDisabled}
         />
         <Row style={styles.textContainer}>
-          <Text style={styles.commonText}>Having troubles?</Text>
           <Text style={styles.linkText} onPress={onResetWallet}>
-            Reset a wallet
+            Forgot password?
           </Text>
         </Row>
-        <MadFishLogo style={styles.madLogo} color={colors.bgGrey3} />
+        {/* <MadFishLogo style={styles.madLogo} color={colors.bgGrey3} /> */}
+        <View style={styles.madLogo} />
       </View>
     </KeyboardAvoidingView>
   );

@@ -1,13 +1,27 @@
 import { StyleSheet } from 'react-native';
 import { isWeb } from 'shared';
 
+import { colors } from '../../../../styles/colors';
 import { getCustomSize } from '../../../../styles/format-size';
+import { typography } from '../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
-    width: getCustomSize(isWeb ? 6.6 : 6.975),
-    height: getCustomSize(5),
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#222229',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+
+  },
+  icon: {
+    marginRight: 6,
+  },
+  text: {
+    color: colors.theme,
+    fontWeight: 600,
+    ...typography.AltoneVariable14,
   }
 });

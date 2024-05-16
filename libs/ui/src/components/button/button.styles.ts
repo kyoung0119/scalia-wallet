@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: getCustomSize(1.75),
+    borderRadius: getCustomSize(3),
     borderWidth: getCustomSize(0.25),
     flexGrow: 1
   },
@@ -32,11 +32,12 @@ export const styles = StyleSheet.create({
   // secondary
   buttonSecondary: {
     borderColor: 'transparent',
-    backgroundColor: colors.orange
+    backgroundColor: colors.theme
   },
   textSecondary: {
-    color: colors.textGrey1,
-    ...typography.taglineInterSemiBoldUppercase15
+    color: colors.black,
+    fontWeight: '600',
+    ...typography.AltoneVariableBold14,
   },
   buttonTernary: {
     borderWidth: 0,

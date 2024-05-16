@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     color: colors.textGrey2
   },
   text: {
-    ...typography.numbersIBMPlexSansMedium20
+    ...typography.AltoneVariable32,
+    fontWeight: '700'
   }
 });

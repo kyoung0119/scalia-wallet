@@ -5,13 +5,19 @@ const backgroundColors = {
   bgGrey4: '#1D2129',
   bgGrey5: '#2F3031',
   bgGrey6: '#23241D',
-  bgGrey7: '#000000',
+  // new
+  bgGrey7: '#121218',
+  bgGrey8: '#2A2A33',
+  //
   bgBrown: '#ED3D2514',
   bgNavyGreen: '#142621',
   bgNavyRed: '#231A1D',
   bgTransparentYellow: 'rgba(214, 167, 0, 0.08)',
   bgTransparentGreen: 'rgba(20, 186, 48, 0.08)',
-  bgTransparentRed: 'rgba(204, 37, 0, 0.08)'
+  bgTransparentRed: 'rgba(204, 37, 0, 0.08)',
+  // new
+  bgDarkLight: '#1C1C23',
+  bgDarkDeep: '#16161C'
 };
 
 const navigationColors = {
@@ -24,7 +30,9 @@ const textColors = {
   textGrey3: '#B4B6BC',
   textGrey4: '#E1E3E9',
   textGrey5: '#686B73',
-  textGrey6: '#727B93'
+  textGrey6: '#727B93',
+  // new
+  textGrey7: '#8D8D8D'
 };
 
 const accentColors = {
@@ -35,7 +43,8 @@ const accentColors = {
   brown: '#ed3d2514',
   black: '#080E15',
   white: '#FFFFFF',
-  grey: '#252934'
+  grey: '#252934',
+  theme: '#C3FF19'
 };
 
 const basicColors = {
