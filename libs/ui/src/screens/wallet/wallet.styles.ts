@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     // ...(isWeb && { paddingTop: getCustomSize(7) })
   },
   contentContainer: {
-    minHeight: contentHeight,
+    // minHeight: contentHeight,
     flexShrink: 0,
     ...(isMobile && { paddingTop: getCustomSize(7) })
   },

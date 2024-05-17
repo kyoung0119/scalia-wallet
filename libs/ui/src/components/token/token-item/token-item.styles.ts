@@ -17,9 +17,9 @@ export const styles = StyleSheet.create({
   },
   rootSecondary: {
     backgroundColor: 'transparent',
-    borderTopWidth: getCustomSize(0.0625),
+    // borderTopWidth: getCustomSize(0.0625),
     borderColor: colors.border2,
-    paddingVertical: getCustomSize(2)
+    paddingBottom: 18
   },
   token: {
     flex: 1
@@ -46,20 +46,21 @@ export const styles = StyleSheet.create({
     ...typography.numbersIBMPlexSansMediumUppercase13
   },
   textSecondary: {
-    ...typography.numbersIBMPlexSansMedium15
+    fontWeight: 600,
+    ...typography.AltoneVariable16
   },
   tokenName: {
-    color: colors.textGrey1,
-    ...typography.captionInterRegular11
+    color: colors.textGrey8,
+    fontWeight: 500,
+    ...typography.AltoneVariable14
   },
   rightSideContainer: {
-    alignItems: 'flex-end',
-    flex: 1
+    // alignItems: 'flex-end',
+    // flex: 1
   },
   fiatBalance: {
-    color: colors.textGrey1,
-    marginTop: getCustomSize(0.25),
-    ...typography.numbersIBMPlexSansMedium11
+    fontWeight: 600,
+    ...typography.AltoneVariable20
   },
   usdSymbol: {
     color: colors.textGrey3

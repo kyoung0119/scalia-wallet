@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../styles/colors';
 
 export const styles = StyleSheet.create({
   dropdownButtonStyle: {
     width: 200,
     padding: 8,
-    backgroundColor: '#16161C',
+    backgroundColor: colors.bgDarkDeep,
     borderRadius: 24,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -26,7 +27,7 @@ export const styles = StyleSheet.create({
     marginRight: 8
   },
   dropdownMenuStyle: {
-    backgroundColor: '#16161C',
+    backgroundColor: colors.bgDarkDeep,
     borderRadius: 8
   },
   dropdownItemStyle: {

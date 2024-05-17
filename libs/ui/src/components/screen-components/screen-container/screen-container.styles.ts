@@ -22,6 +22,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.navGrey1
   },
   secondary: {
-    backgroundColor: colors.black
+    backgroundColor: colors.bgDarkDeep
   }
 });

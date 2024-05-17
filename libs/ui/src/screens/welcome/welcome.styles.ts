@@ -50,7 +50,8 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: getCustomSize(2),
     ...(isFullpage && {
       borderRadius: maximiseViewStyles.borderRadius
-    })
+    }),
+    paddingBottom: 20
   },
   button: {
     marginTop: getCustomSize(2)

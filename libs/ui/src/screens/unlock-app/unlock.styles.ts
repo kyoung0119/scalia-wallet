@@ -89,7 +89,7 @@ export const styles = StyleSheet.create({
   },
   commonText: {
     ...typography.AltoneVariable16,
-    color: '#9D9D9D'
+    color: colors.textGrey8
   },
   linkText: {
     ...typography.AltoneVariableSemiBold14,

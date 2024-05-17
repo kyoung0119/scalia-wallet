@@ -6,14 +6,11 @@ import { ScreenContainerThemesEnum } from '../../components/screen-components/sc
 import { ScreenContainer } from '../../components/screen-components/screen-container/screen-container';
 import { useUnlock } from '../../hooks/use-unlock.hook';
 
-import { AssetsWidget } from './components/assets-widget/assets-widget';
-import { CollectiblesWidget } from './components/collectibles/collectibles';
 import { Header } from './components/header/header';
-import { QrCode } from './components/qr-code/qr-code';
 import { useAllUserNft } from './hooks/use-all-user-nft.hook';
 import { useHeaderAnimation } from './hooks/use-header-animation.hook';
 import { styles } from './wallet.styles';
-import { WalletTestIDs } from './wallet.test-ids';
+import { Tokens } from '../tokens/tokens';
 
 export const Wallet: FC = () => {
   const { isLocked } = useUnlock();
@@ -39,9 +36,11 @@ export const Wallet: FC = () => {
         {/* <QrCode contentOffsetY={contentOffsetY} /> */}
 
         <View style={styles.content}>
-          <AssetsWidget testID={WalletTestIDs.AssetsWidget} />
-          <CollectiblesWidget testID={WalletTestIDs.CollectiblesWidget} />
+          {/* <AssetsWidget testID={WalletTestIDs.AssetsWidget} /> */}
+          {/* <CollectiblesWidget testID={WalletTestIDs.CollectiblesWidget} /> */}
+          <Tokens />
         </View>
+
       </ScrollView>
 
 

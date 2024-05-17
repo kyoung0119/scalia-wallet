@@ -16,7 +16,7 @@ export const HeaderAccountBalance: FC<Props> = ({ style }) => {
 
   return (
     <Row style={style}>
-      <Text style={[styles.currency, styles.text]}>$ </Text>
+      <Text style={[styles.currency, styles.text]}>$</Text>
       <Text style={[styles.balance, styles.text]}>{totalBalanceOfSelectedNetwork}</Text>
     </Row>
   );

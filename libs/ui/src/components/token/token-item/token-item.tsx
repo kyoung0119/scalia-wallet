@@ -12,6 +12,7 @@ import { TokenAmount } from '../../token-amount/token-amount';
 import { themeClasses } from './constants';
 import { TokenItemThemesEnum } from './enums';
 import { styles } from './token-item.styles';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 type Props = PropsWithChildren<{
   symbol: string;
@@ -34,31 +35,31 @@ export const TokenItem: FC<Props> = ({
   theme = TokenItemThemesEnum.Primary
 }) => (
   <Row style={[styles.root, themeClasses[theme].root]}>
-    <Row style={styles.token}>
-      <Image style={[styles.image, themeClasses[theme].image]} source={imageSource} />
-      <View style={styles.token}>
-        <Row style={styles.token}>
-          <Text style={[styles.text, themeClasses[theme].text]} numberOfLines={1}>
-            {symbol}
-          </Text>
-          {isGasToken && <Icon name={IconNameEnum.Gas} size={getCustomSize(2)} />}
-        </Row>
-        {theme === TokenItemThemesEnum.Secondary && (
-          <Text style={styles.tokenName} numberOfLines={1}>
-            {name}
-          </Text>
-        )}
-      </View>
-    </Row>
+    {/* <Row style={styles.token}> */}
+    <Image style={[styles.image, themeClasses[theme].image]} source={imageSource} />
+    <View style={styles.token}>
+      <Row style={styles.token}>
+        <TokenAmount value={balance} style={themeClasses[theme].text as ViewStyleProps} />` `
+        <Text style={[styles.text, themeClasses[theme].text as ViewStyleProps]} numberOfLines={1}>
+          {symbol}
+        </Text>
+        {/* {isGasToken && <Icon name={IconNameEnum.Gas} size={getCustomSize(2)} />} */}
+      </Row>
+      {theme === TokenItemThemesEnum.Secondary && (
+        <Text style={styles.tokenName as ViewStyleProps} numberOfLines={1}>
+          {name}
+        </Text>
+      )}
+    </View>
+    {/* </Row> */}
 
     <View style={styles.rightSideContainer}>
       {isDefined(children) ? (
         children
       ) : (
         <View style={styles.text}>
-          <TokenAmount value={balance} style={themeClasses[theme].text} />
-          <Text style={styles.fiatBalance}>
-            {fiatBalance} <Text style={styles.usdSymbol}>$</Text>
+          <Text style={styles.fiatBalance as ViewStyleProps}>
+            <Text style={styles.usdSymbol}>$</Text>{fiatBalance}
           </Text>
         </View>
       )}

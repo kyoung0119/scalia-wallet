@@ -151,6 +151,7 @@ export const useGasTokenSelector = (): Token => {
 
 export const useAccountTokensSelector = (): Token[] => {
   const assets = useAccountAssetsSelector();
+  console.log("assets", assets)
   const allTokensMarketInfo = useTokensMarketInfoSelector();
   const { chainId } = useSelectedNetworkSelector();
 

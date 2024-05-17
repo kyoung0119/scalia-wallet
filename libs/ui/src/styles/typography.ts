@@ -188,14 +188,16 @@ export const typography: Typography = {
   AltoneVariable32: {
     fontFamily: FontsEnum.interRegular,
     fontSize: 32,
-    fontStyle: 'normal',
     // lineHeight: 40 /* 111.111% */
+  },
+  AltoneVariable20: {
+    fontFamily: FontsEnum.interRegular,
+    fontSize: 20,
+    // lineHeight: 20 /* 111.111% */
   },
   AltoneVariable16: {
     fontFamily: FontsEnum.interRegular,
     fontSize: 16,
-    fontStyle: 'normal',
-    fontWeight: '500'
     // lineHeight: 20 /* 111.111% */
   },
   AltoneVariable14: {

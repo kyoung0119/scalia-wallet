@@ -66,7 +66,7 @@ export const AboutUs: FC = () => {
               <Icon name={IconNameEnum.WalletLogoPlaceholder} size={getCustomSize(8)} />
               <Divider size={getCustomSize(0.125)} style={styles.verticalSeparator} />
               <Text style={styles.walletText}>
-                <Text style={styles.redText}>Oko Wallet </Text>is an easy-to-use multiplatform & multichain wallet for
+                <Text style={styles.redText}>Scalia Wallet </Text>is an easy-to-use multiplatform & multichain wallet for
                 interacting with crypto, WEB3 & NFT.
               </Text>
             </Row>

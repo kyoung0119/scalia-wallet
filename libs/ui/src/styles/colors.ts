@@ -32,7 +32,8 @@ const textColors = {
   textGrey5: '#686B73',
   textGrey6: '#727B93',
   // new
-  textGrey7: '#8D8D8D'
+  textGrey7: '#8D8D8D',
+  textGrey8: '#9D9D9D'
 };
 
 const accentColors = {

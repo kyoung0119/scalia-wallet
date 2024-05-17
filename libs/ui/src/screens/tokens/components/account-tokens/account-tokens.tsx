@@ -3,11 +3,6 @@ import { isAddress } from 'ethers/lib/utils';
 import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, ListRenderItemInfo } from 'react-native';
 
-import { Icon } from '../../../../components/icon/icon';
-import { IconNameEnum } from '../../../../components/icon/icon-name.enum';
-import { Pressable } from '../../../../components/pressable/pressable';
-import { Row } from '../../../../components/row/row';
-import { Text } from '../../../../components/text/text';
 import { AccountToken } from '../../../../components/token/account-token/account-token';
 import { TokenItemThemesEnum } from '../../../../components/token/token-item/enums';
 import { ScreensEnum } from '../../../../enums/sreens.enum';
@@ -102,14 +97,14 @@ export const AccountTokens: FC<Props> = ({ searchValue, newToken, setIsEmptyToke
 
   return (
     <>
-      {!isDefined(newToken) && (
+      {/* {!isDefined(newToken) && (
         <Pressable onPress={onPressHideZeroBalances} style={styles.checkboxContainer}>
           <Row>
             <Icon name={isHideZeroBalance ? IconNameEnum.SelectedSquareCheckbox : IconNameEnum.EmptySquareCheckbox} />
             <Text style={styles.checkboxText}>Hide 0 balances</Text>
           </Row>
         </Pressable>
-      )}
+      )} */}
       <FlatList
         data={sortedTokens}
         showsVerticalScrollIndicator={false}

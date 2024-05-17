@@ -31,10 +31,10 @@ export const Welcome: FC = () => {
   return (
     <View style={styles.root}>
       <View style={styles.logoContainer}>
-        <Icon name={IconNameEnum.IllustrationWelcomeScreen} width={logoWidth} height={logoHeight} />
+        <Icon name={IconNameEnum.Logo} width={logoWidth} height={logoHeight} />
 
         <Row style={styles.titleContainer}>
-          <Text style={styles.oko}>Oko</Text>
+          <Text style={styles.oko}>Scalia</Text>
           <Text style={styles.wallet}>Wallet</Text>
         </Row>
         <Text style={styles.description}>Open your eyes on the finance</Text>
@@ -53,7 +53,7 @@ export const Welcome: FC = () => {
           onPress={navigateToImportAccount}
           testID={WelcomeTestIds.ImportExistingWalletButton}
         />
-        <MadFishLogo style={styles.madLogo} color={colors.bgGrey3} />
+        {/* <MadFishLogo style={styles.madLogo} color={colors.bgGrey3} /> */}
       </View>
     </View>
   );
