@@ -2,9 +2,18 @@ import { styles } from './button-with-icon.styles';
 import { ButtonWithIconSizeEnum, ButtonWithIconThemesEnum } from './enums';
 
 export const themeClasses = {
-  [ButtonWithIconThemesEnum.Primary]: styles.primary,
-  [ButtonWithIconThemesEnum.Secondary]: styles.secondary,
-  [ButtonWithIconThemesEnum.Tertiary]: styles.tertiary
+  [ButtonWithIconThemesEnum.Primary]: {
+    button: styles.buttonPrimary,
+    text: styles.textPrimary
+  },
+  [ButtonWithIconThemesEnum.Secondary]: {
+    button: styles.buttonSecondary,
+    text: styles.textSecondary
+  },
+  [ButtonWithIconThemesEnum.Tertiary]: {
+    button: styles.buttonTertiary,
+    text: styles.textTertiary
+  }
 };
 
 export const sizeClasses = {

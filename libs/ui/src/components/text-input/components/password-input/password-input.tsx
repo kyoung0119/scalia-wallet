@@ -30,7 +30,7 @@ export const PasswordInput = <
 >({
   field,
   label,
-  prompt,
+  // prompt,
   error,
   onChange,
   onKeyPress,
@@ -58,7 +58,7 @@ export const PasswordInput = <
       <TextInput
         field={field}
         label={label}
-        prompt={prompt}
+        // prompt={prompt}
         placeholder="Password"
         secureTextEntry={isSecureTextEntry}
         error={error}
@@ -74,11 +74,11 @@ export const PasswordInput = <
         testID={testID}
       />
 
-      {/* <TouchableIcon
+      <TouchableIcon
         name={isSecureTextEntry ? IconNameEnum.EyeOpen : IconNameEnum.EyeClosed}
         onPress={handleSecureTextEntry}
         iconStyle={styles.eyeIcon}
-      /> */}
+      />
     </Row>
   );
 };

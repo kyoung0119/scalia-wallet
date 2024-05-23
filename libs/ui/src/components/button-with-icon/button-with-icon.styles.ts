@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexBasis: 'auto',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius: getCustomSize(3),
   },
   wrapper: {
     flexDirection: 'row',
@@ -17,20 +18,31 @@ export const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   // primary
-  primary: {
-    color: colors.orange
+  buttonPrimary: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: colors.theme
+  },
+  textPrimary: {
+    color: colors.theme,
+    fontWeight: '600',
+    ...typography.AltoneVariableBold14
   },
   // secondary
-  secondary: {
+  buttonSecondary: {
+    backgroundColor: 'red',
+    borderWidth: 1,
+    borderColor: colors.theme
+  },
+  textSecondary: {
     color: colors.textGrey1
   },
   // tertiary
-  containerTertiary: {
+  buttonTertiary: {
     paddingVertical: getCustomSize(1.5),
-    borderRadius: getCustomSize(0.5),
     backgroundColor: colors.navGrey1
   },
-  tertiary: {
+  textTertiary: {
     color: colors.textGrey1,
     ...typography.taglineInterSemiBoldUppercase13
   },

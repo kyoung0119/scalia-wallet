@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: getCustomSize(3),
-    borderWidth: getCustomSize(0.25),
+    borderWidth: 1,
     flexGrow: 1
   },
   wrapper: {
@@ -23,16 +23,17 @@ export const styles = StyleSheet.create({
   // primary
   buttonPrimary: {
     backgroundColor: 'transparent',
-    borderColor: colors.bgGrey2
+    borderColor: colors.theme
   },
   textPrimary: {
-    color: colors.orange,
-    ...typography.taglineInterSemiBoldUppercase15
+    color: colors.theme,
+    fontWeight: '600',
+    ...typography.AltoneVariableBold14
   },
   // secondary
   buttonSecondary: {
     borderColor: 'transparent',
-    backgroundColor: colors.theme
+    backgroundColor: colors.theme,
   },
   textSecondary: {
     color: colors.black,

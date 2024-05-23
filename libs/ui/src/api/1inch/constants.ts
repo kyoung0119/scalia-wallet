@@ -1,6 +1,7 @@
 import { EvmChainId } from '../../constants/chain-ids';
 
 export const SUPPORTED_SWAP_CHAIN_IDS: string[] = [
+  EvmChainId.Scalia,
   EvmChainId.Klaytn,
   EvmChainId.Ethereum,
   EvmChainId.BinanceSmartChain,

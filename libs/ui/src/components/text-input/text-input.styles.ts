@@ -11,8 +11,7 @@ export const styles = StyleSheet.create({
     borderWidth: getCustomSize(0.125),
     borderColor: colors.bgGrey8,
     borderRadius: getCustomSize(),
-    paddingLeft: getCustomSize(1.5),
-    paddingRight: getCustomSize()
+    padding: 9,
   },
   errorContainer: {
     borderColor: colors.red
@@ -26,12 +25,16 @@ export const styles = StyleSheet.create({
   },
   input: {
     width: '94%',
-    height: getCustomSize(5.75),
+    height: 24,
+    // height: getCustomSize(5.75),
     color: colors.textGrey7,
     ...typography.bodyInterRegular15,
     ...(isWeb && { outlineStyle: 'none' }),
-    ...(isWeb && { caretColor: colors.orange }),
+    ...(isWeb && { caretColor: colors.theme }),
     lineHeight: undefined,
     overflow: 'hidden'
+  },
+  labelText: {
+    color: '#DDD'
   }
 });

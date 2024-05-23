@@ -35,6 +35,7 @@ export enum IconNameEnum {
   SwapSmall = 'SwapSmall',
   Topup = 'Topup',
   X = 'X',
+  Scalia = 'Scalia',
   Klaytn = 'Klaytn',
   Ethereum = 'Ethereum',
   BinanceSmartChain = 'BinanceSmartChain',
@@ -112,5 +113,6 @@ export enum IconNameEnum {
   LedgerAccount = 'LedgerAccount',
   RevealSeedPhrase = 'RevealSeedPhrase',
   IllustrationWelcomeScreen = 'IllustrationWelcomeScreen',
-  Success1 = 'Success-1'
+  Success1 = 'Success-1',
+  Key = 'Key'
 }

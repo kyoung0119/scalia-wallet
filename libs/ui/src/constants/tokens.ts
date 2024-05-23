@@ -7,7 +7,21 @@ import { NETWORKS_DEFAULT_LIST } from './networks';
 type NetworkChainId = string;
 
 export const TOKENS_DEFAULT_LIST: Record<NetworkChainId, TokenExtendedMetadata[]> = {
-  [EvmChainId.Klaytn]: [
+  [EvmChainId.Scalia]: [
+    {
+      tokenAddress: '0xcee8faf64bb97a73bb51e115aa89c17ffa8dd16',
+      name: 'Scalia Storage Payment Token',
+      symbol: 'SCAS',
+      decimals: 6,
+      thumbnailUri: 'https://tokens.1inch.io/0xcee8faf64bb97a73bb51e115aa89c17ffa8dd167.png'
+    },
+    {
+      tokenAddress: '0xcee8faf64bb97a73bb51e115aa89c17ffa8dd17',
+      name: 'Scalia Computing Power Token',
+      symbol: 'SCAC',
+      decimals: 6,
+      thumbnailUri: 'https://tokens.1inch.io/0xcee8faf64bb97a73bb51e115aa89c17ffa8dd167.png'
+    },
     {
       tokenAddress: '0xcee8faf64bb97a73bb51e115aa89c17ffa8dd167',
       name: 'Orbit Bridge Klaytn USD Tether',

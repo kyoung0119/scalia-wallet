@@ -38,23 +38,23 @@ export const ButtonWithIcon: FC<Props> = ({
   <Pressable
     {...restProps}
     disabled={disabled}
-    style={[styles.root, theme === ButtonWithIconThemesEnum.Tertiary && styles.containerTertiary, style]}
+    style={[styles.root, themeClasses[theme].button, style]}
   >
     <View style={styles.wrapper}>
       {leftIcon && (
         <Icon
           name={leftIcon}
           size={iconSize}
-          color={disabled ? colors.bgGrey5 : iconColor ?? colors.orange}
+          color={disabled ? colors.bgGrey5 : iconColor ?? colors.theme}
           iconStyle={styles.leftIcon}
         />
       )}
-      <Text style={[themeClasses[theme], sizeClasses[size], disabled && styles.textDisabled]}>{title}</Text>
+      <Text style={[themeClasses[theme].text, disabled && styles.textDisabled]}>{title}</Text>
       {rightIcon && (
         <Icon
           name={rightIcon}
           size={iconSize}
-          color={disabled ? colors.bgGrey5 : colors.orange}
+          color={disabled ? colors.bgGrey5 : colors.theme}
           iconStyle={styles.rightIcon}
         />
       )}

@@ -1,4 +1,5 @@
 export enum EvmChainId {
+  Scalia = '8217',
   Klaytn = '8217',
   Ethereum = '1',
   BinanceSmartChain = '56',

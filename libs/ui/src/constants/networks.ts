@@ -8,18 +8,18 @@ import { MainnetRpcEnum } from './rpc';
 
 export const NETWORKS_DEFAULT_LIST: NetworkInterface[] = [
   {
-    chainId: EvmChainId.Klaytn,
+    chainId: EvmChainId.Scalia,
     rpcUrl: MainnetRpcEnum.Klaytn,
-    name: 'Klaytn',
+    name: 'Scalia',
     gasTokenMetadata: {
-      name: 'Klaytn Token',
-      symbol: 'KLAY',
+      name: 'Scalia Token',
+      symbol: 'SCAL',
       decimals: 18,
       thumbnailUri: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4256.png'
     },
     explorerUrl: 'https://scope.klaytn.com',
     networkType: NetworkTypeEnum.EVM,
-    iconName: IconNameEnum.Klaytn
+    iconName: IconNameEnum.Scalia
   },
   {
     chainId: EvmChainId.BinanceSmartChain,

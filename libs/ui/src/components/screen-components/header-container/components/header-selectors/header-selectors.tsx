@@ -1,21 +1,23 @@
 import React, { FC } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
+import { Icon } from '../../../../icon/icon';
+import { IconNameEnum } from '../../../../icon/icon-name.enum';
+import { RobotIcon } from '../../../../robot-icon/robot-icon';
+import { Row } from '../../../../row/row';
+import { Text } from '../../../../text/text';
+
+import { AccountModal } from '../../../../../components/modal/account-modal/account-modal';
 import { ScreensEnum } from '../../../../../enums/sreens.enum';
 import { useNavigation } from '../../../../../hooks/use-navigation.hook';
 import {
   useSelectedAccountPublicKeyHashSelector,
   useSelectedAccountSelector
 } from '../../../../../store/wallet/wallet.selectors';
-import { Icon } from '../../../../icon/icon';
-import { IconNameEnum } from '../../../../icon/icon-name.enum';
-import { IconWithBorder } from '../../../../icon-with-border/icon-with-border';
-import { RobotIcon } from '../../../../robot-icon/robot-icon';
-import { Row } from '../../../../row/row';
-import { Text } from '../../../../text/text';
+
+import { HeaderSelectorsTestIDs } from './header-selectors.test-ids';
 
 import { styles } from './header-selectors.styles';
-import { HeaderSelectorsTestIDs } from './header-selectors.test-ids';
 
 export const HeaderSelectors: FC = () => {
   const publicKeyHash = useSelectedAccountPublicKeyHashSelector();
@@ -27,6 +29,8 @@ export const HeaderSelectors: FC = () => {
 
   return (
     <Row style={styles.root}>
+      <AccountModal />
+
       <TouchableOpacity
         onPress={selectAccount}
         style={styles.accountContainer}

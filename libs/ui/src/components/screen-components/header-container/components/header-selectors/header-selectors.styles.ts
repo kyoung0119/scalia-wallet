@@ -24,11 +24,5 @@ export const styles = StyleSheet.create({
     marginLeft: getCustomSize(0.5),
     flexGrow: 1,
     flexShrink: 1
-  },
-  addressWrapper: {
-    marginRight: getCustomSize()
-  },
-  icon: {
-    marginRight: getCustomSize(0.5)
   }
 });

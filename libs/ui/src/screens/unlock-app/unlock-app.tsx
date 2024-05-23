@@ -86,7 +86,7 @@ export const UnlockApp: FC = () => {
             render={({ field }) => (
               <PasswordInput
                 field={field}
-                label=''
+                label='Enter your password to unlock wallet'
                 prompt=''
                 error={error}
                 onKeyPress={onEnterPress}

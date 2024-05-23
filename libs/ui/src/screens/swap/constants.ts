@@ -5,7 +5,8 @@ export const GAS_CONSUMPTION_FOR_SWAP: Record<string, number> = {
   [EvmChainId.BinanceSmartChain]: 0.007,
   [EvmChainId.Polygon]: 0.1,
   [EvmChainId.Optimism]: 0.004,
-  [EvmChainId.Klaytn]: 0.03
+  [EvmChainId.Klaytn]: 0.03,
+  // [EvmChainId.Scalia]: 0.04
 };
 
 export const GREATER_THAN_ZERO_SWAP_ERROR = 'Nothing-to-nothing exchanges are forbidden';

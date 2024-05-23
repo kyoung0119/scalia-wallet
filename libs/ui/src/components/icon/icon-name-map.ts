@@ -112,8 +112,10 @@ import Ethereum from './networks/ethereum.svg';
 import NetworkFallback from './networks/fallback.svg';
 import Fantom from './networks/fantom.svg';
 import Klaytn from './networks/klaytn.svg';
+import Scalia from './networks/scalia.svg'
 import Optimism from './networks/optimism.svg';
 import Polygon from './networks/polygon.svg';
+import Key from './assets/key.svg';
 
 export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.Paste]: Paste,
@@ -151,6 +153,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.SwapSmall]: SwapSmallIcon,
   [IconNameEnum.Topup]: TopupIcon,
   [IconNameEnum.X]: XIcon,
+  [IconNameEnum.Scalia]: Scalia,
   [IconNameEnum.Klaytn]: Klaytn,
   [IconNameEnum.Ethereum]: Ethereum,
   [IconNameEnum.BinanceSmartChain]: BinanceSmartChain,
@@ -227,5 +230,6 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.LedgerAccount]: LedgerAccount,
   [IconNameEnum.RevealSeedPhrase]: RevealSeedPhrase,
   [IconNameEnum.IllustrationWelcomeScreen]: IllustrationWelcomeScreen,
-  [IconNameEnum.Success1]: Success1
+  [IconNameEnum.Success1]: Success1,
+  [IconNameEnum.Key]: Key
 };

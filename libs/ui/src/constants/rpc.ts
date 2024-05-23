@@ -1,5 +1,6 @@
 // default rpc mainnet
 export enum MainnetRpcEnum {
+  Scalia = 'https://public-node-api.klaytnapi.com/v1/cypress',
   Klaytn = 'https://public-node-api.klaytnapi.com/v1/cypress',
   Ethereum = 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
   BinanceSmartChain = 'https://bsc-dataseed.binance.org',
