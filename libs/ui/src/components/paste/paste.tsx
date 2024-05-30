@@ -28,7 +28,7 @@ export const Paste: FC<Props> = ({ handlePaste }) => {
 
   return (
     <TouchableOpacity onPress={handlePaste} style={styles.root}>
-      <Icon name={IconNameEnum.Paste} iconStyle={styles.buttonIcon} />
+      <Icon name={IconNameEnum.Copy} iconStyle={styles.buttonIcon} size={18} />
       <Text style={styles.buttonText}>Paste</Text>
     </TouchableOpacity>
   );

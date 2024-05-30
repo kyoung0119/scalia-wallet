@@ -114,7 +114,7 @@ export const Settings: FC = () => {
             </ItemContainer>
 
             <Divider size={dividerSize} />
-
+            {/* 
             <ItemContainer>
               <Item title="About us" icon={IconNameEnum.InfoRed} onPress={navigateToSettingsAboutUs} />
               <Separator />
@@ -132,7 +132,7 @@ export const Settings: FC = () => {
                   </Row>
                 </Pressable>
               </Row>
-            </ItemContainer>
+            </ItemContainer> */}
 
             <View style={styles.resetContainer}>
               <Pressable onPress={navigateToSettingsResetWalletConfirm}>
@@ -144,7 +144,7 @@ export const Settings: FC = () => {
             </View>
           </View>
 
-          <MadFishLogo style={styles.logo} />
+          {/* <MadFishLogo style={styles.logo} /> */}
         </View>
       </ScreenScrollView>
 

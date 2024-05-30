@@ -48,7 +48,7 @@ export const AccountImportModal: FC<Props> = ({ isModalVisible, setModalVisible 
         title="Import via Seedphrase"
         theme={ButtonThemesEnum.Primary}
         style={[styles.buttonModal]}
-      // onPress={}
+        onPress={() => setAccountModalStep("importseed")}
       />
       <ButtonWithIcon
         title="Import via Private key"

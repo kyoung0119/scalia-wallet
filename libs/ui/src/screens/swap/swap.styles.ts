@@ -72,5 +72,9 @@ export const styles = StyleSheet.create({
     marginTop: getCustomSize(2),
     marginBottom: isMobile ? getCustomSize(4) : getCustomSize(2),
     height: getCustomSize(5)
+  },
+  screenTitle: {
+    textAlign: 'center',
+    alignSelf: 'center'
   }
 });

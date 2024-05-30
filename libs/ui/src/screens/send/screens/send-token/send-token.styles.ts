@@ -4,6 +4,8 @@ import { getCustomSize } from '../../../../styles/format-size';
 
 export const styles = StyleSheet.create({
   screenTitle: {
-    maxWidth: getCustomSize(20)
+    maxWidth: getCustomSize(20),
+    textAlign: 'center',
+    alignSelf: 'center'
   }
 });

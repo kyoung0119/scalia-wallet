@@ -69,7 +69,7 @@ export const UnlockApp: FC = () => {
     <KeyboardAvoidingView behavior={behavior} style={styles.root}>
       <View style={styles.logoContainer}>
         <div style={styles.logoSection}>
-          <Icon iconStyle={styles.logoIcon} name={IconNameEnum.Logo} size={getCustomSize(6)} />
+          <Icon iconStyle={styles.logoIcon} name={IconNameEnum.Scalia} size={getCustomSize(6)} />
           <Text style={styles.bannerText}>Welcome!</Text>
           <Text style={styles.commonText} onPress={onResetWallet}>
             Scalia Decentralized Wallet

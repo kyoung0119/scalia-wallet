@@ -72,6 +72,7 @@ export const NetworksList = () => {
     return (
       <ModalRenderItem
         name={item.name}
+        // icon={<Icon name={item.iconName ?? IconNameEnum.NetworkFallback} />}
         icon={<Icon name={item.iconName ?? IconNameEnum.NetworkFallback} />}
         isActive={isNetworkSelected}
         balanceTitle="Gas balance"

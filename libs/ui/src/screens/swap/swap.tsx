@@ -200,13 +200,13 @@ export const Swap: FC = () => {
 
   return (
     <ScreenContainer>
-      <HeaderContainer isSelectors>
-        <ScreenTitle title="Swap" onBackButtonPress={goBack} />
-        <View style={styles.header}>
-          {isPossibleToGetAmountAndRoutes && <Timer getAmountAndRoutes={getAmountAndRoutes} routes={routes} />}
-          <TouchableIcon name={IconNameEnum.Slider} onPress={navigateToSlippageTolerance} />
-        </View>
-      </HeaderContainer>
+      {/* <HeaderContainer isSelectors={false}> */}
+      <ScreenTitle title="Swap" onBackButtonPress={goBack} titleStyle={styles.screenTitle} />
+      <View style={styles.header}>
+        {isPossibleToGetAmountAndRoutes && <Timer getAmountAndRoutes={getAmountAndRoutes} routes={routes} />}
+        <TouchableIcon name={IconNameEnum.Slider} onPress={navigateToSlippageTolerance} />
+      </View>
+      {/* </HeaderContainer> */}
 
       <ScreenScrollView>
         <Controller

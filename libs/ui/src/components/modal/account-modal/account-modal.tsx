@@ -10,6 +10,7 @@ import { HeaderSelectorsTestIDs } from '../../screen-components/header-container
 import { AccountSelectModal } from './account-select-modal/account-select-modal';
 import { AccountImportModal } from './account-import-modal/account-import-modal';
 import { AccountImportPKModal } from './account-import-pk-modal/account-import-pk-modal';
+import { AccountImportSeedModal } from './account-import-seed-modal/account-import-seed-modal';
 
 import { useAccountModalStep } from '../../../hooks/use-account-modal-step.store';
 
@@ -80,6 +81,13 @@ export const AccountModal: FC<Props> = ({ activeItemId }) => {
           {
             accountModalStep === 'importpk' &&
             <AccountImportPKModal
+              isModalVisible={isModalVisible}
+              setModalVisible={setModalVisible}
+            />
+          }
+          {
+            accountModalStep === 'importseed' &&
+            <AccountImportSeedModal
               isModalVisible={isModalVisible}
               setModalVisible={setModalVisible}
             />

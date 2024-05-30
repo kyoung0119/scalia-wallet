@@ -47,16 +47,16 @@ export const styles = StyleSheet.create({
   },
   clearIcon: {
     position: 'absolute',
-    top: isMobile ? getCustomSize(1.5) : getCustomSize(),
-    right: 0
+    top: isMobile ? getCustomSize(0) : getCustomSize(0),
+    right: 38
   },
   pasteButtonContainer: {
     position: 'absolute',
-    bottom: getCustomSize(1.5),
-    right: getCustomSize(1.5)
+    bottom: 14,
+    right: 12
   },
   pasteButtonText: {
-    color: colors.orange,
+    color: colors.theme,
     ...typography.taglineInterSemiBoldUppercase11
   }
 });

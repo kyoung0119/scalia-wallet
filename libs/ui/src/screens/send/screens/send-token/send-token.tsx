@@ -3,6 +3,7 @@ import { isDefined, isNotEmptyString } from '@rnw-community/shared';
 import isEmpty from 'lodash/isEmpty';
 import React, { FC, useEffect } from 'react';
 import { useForm, FormProvider, Controller } from 'react-hook-form';
+import { View, ScrollView, TextInput } from 'react-native';
 
 import { ScreenTitle } from '../../../../components/screen-components/header-container/components/screen-title/screen-title';
 import { HeaderContainer } from '../../../../components/screen-components/header-container/header-container';
@@ -75,47 +76,50 @@ export const SendToken: FC = () => {
 
   return (
     <ScreenContainer>
-      <HeaderContainer isSelectors>
+      <View>
+        {/* <HeaderContainer isSelectors> */}
         <ScreenTitle
-          title={`Send ${isTokenSelected ? token?.symbol : ''}`}
+          title={`Send`}
+          // title={`Send ${isTokenSelected ? token?.symbol : ''}`}
           onBackButtonPress={goBack}
           numberOfLines={1}
           titleStyle={styles.screenTitle}
         />
 
-        {isTokenSelected && (
+        {/* {isTokenSelected && (
           <HeaderSideBalance
             symbol={getString(token?.symbol)}
             balance={availableFormattedBalance}
             usdBalance={availableUsdBalance}
           />
-        )}
-      </HeaderContainer>
+        )} */}
+        {/* </HeaderContainer> */}
 
-      <ScreenScrollView>
-        <GasTokenWarning />
-        <Controller
-          control={control}
-          name="amount"
-          rules={amountRules}
-          render={({ field }) => (
-            <TokenInput
-              field={field}
-              label="Asset"
-              token={token}
-              amountInDollar={amountInDollar}
-              navigationKey="token"
-              error={errors?.amount?.message}
-            />
-          )}
-        />
+        <ScreenScrollView>
+          <GasTokenWarning />
+          <Controller
+            control={control}
+            name="amount"
+            rules={amountRules}
+            render={({ field }) => (
+              <TokenInput
+                field={field}
+                label="Asset"
+                token={token}
+                amountInDollar={amountInDollar}
+                navigationKey="token"
+                error={errors?.amount?.message}
+              />
+            )}
+          />
 
-        <FormProvider {...methods}>
-          <TransferBetweenMyAccounts />
-        </FormProvider>
-      </ScreenScrollView>
+          <FormProvider {...methods}>
+            <TransferBetweenMyAccounts />
+          </FormProvider>
+        </ScreenScrollView>
 
-      <SendButton onPress={handleSubmit(onSubmit)} isDisabled={isSendButtonDisabled} />
-    </ScreenContainer>
+        <SendButton onPress={handleSubmit(onSubmit)} isDisabled={isSendButtonDisabled} />
+      </View>
+    </ScreenContainer >
   );
 };
