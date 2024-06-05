@@ -4,6 +4,7 @@ import { ScrollView, View } from 'react-native';
 import { NavigationBar } from '../../components/navigation-bar/navigation-bar';
 import { ScreenContainerThemesEnum } from '../../components/screen-components/screen-container/enums';
 import { ScreenContainer } from '../../components/screen-components/screen-container/screen-container';
+import { PKBackupModal } from '../../components/modal/pk-backup-modal/pk-backup-modal';
 import { useUnlock } from '../../hooks/use-unlock.hook';
 
 import { Header } from './components/header/header';
@@ -23,6 +24,8 @@ export const Wallet: FC = () => {
       <Header changeQrCodeVisibility={changeQrCodeVisibility} />
 
       <NavigationBar />
+
+      <PKBackupModal />
 
       <ScrollView
         ref={scrollViewRef}

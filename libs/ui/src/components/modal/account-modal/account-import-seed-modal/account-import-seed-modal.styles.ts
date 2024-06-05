@@ -40,29 +40,6 @@ export const styles = StyleSheet.create({
   container: {
     position: 'relative'
   },
-  inputInnerContainer: {
-    // height: getCustomSize(14.75)
-  },
-  textarea: {
-    // height: '100%',
-    // paddingRight: getCustomSize(4.25),
-    // paddingTop: getCustomSize(1.75),
-    // paddingBottom: getCustomSize(1.75)
-  },
-  clearIcon: {
-    position: 'absolute',
-    top: isMobile ? getCustomSize(0) : getCustomSize(0),
-    right: 38
-  },
-  pasteButtonContainer: {
-    position: 'absolute',
-    bottom: 14,
-    right: 12
-  },
-  pasteButtonText: {
-    color: colors.theme,
-    ...typography.taglineInterSemiBoldUppercase11
-  },
   ///
   wordsAmount: {
     justifyContent: 'space-between',

@@ -5,6 +5,7 @@ import ActivitySmallIcon from './assets/activity-small.svg';
 import ActivityIcon from './assets/activity.svg';
 import AddChain from './assets/add-chain.svg';
 import AddSmallIcon from './assets/add-small.svg';
+import AddSquareIcon from './assets/add-square.svg';
 import AddIcon from './assets/add.svg';
 import ArrowLeftIcon from './assets/arrow-left.svg';
 import ArrowRightSmall from './assets/arrow-right-small.svg';
@@ -21,6 +22,7 @@ import Circle from './assets/circle.svg';
 import Clear from './assets/clear.svg';
 import Close from './assets/close.svg';
 import CopyIcon from './assets/copy.svg';
+import CopyDarkIcon from './assets/copy-dark.svg';
 import DappConnect from './assets/dapp-connect.svg';
 import Delete from './assets/delete.svg';
 import Deposit from './assets/deposit.svg';
@@ -123,6 +125,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.ActivitySmall]: ActivitySmallIcon,
   [IconNameEnum.Add]: AddIcon,
   [IconNameEnum.AddSmall]: AddSmallIcon,
+  [IconNameEnum.AddSquare]: AddSquareIcon,
   [IconNameEnum.ArrowLeft]: ArrowLeftIcon,
   [IconNameEnum.ArrowRight]: ArrowRightIcon,
   [IconNameEnum.ArrowRightSmall]: ArrowRightSmall,
@@ -130,6 +133,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.CheckDone]: CheckDoneIcon,
   [IconNameEnum.CheckEmpty]: CheckEmptyIcon,
   [IconNameEnum.Copy]: CopyIcon,
+  [IconNameEnum.CopyDark]: CopyDarkIcon,
   [IconNameEnum.Dropdown]: DropdownIcon,
   [IconNameEnum.Dropup]: DropupIcon,
   [IconNameEnum.Edit]: EditIcon,

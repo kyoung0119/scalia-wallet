@@ -8,12 +8,12 @@ import { RobotIcon } from '../../robot-icon/robot-icon';
 import { HeaderSelectorsTestIDs } from '../../screen-components/header-container/components/header-selectors/header-selectors.test-ids';
 
 import { AccountSelectModal } from './account-select-modal/account-select-modal';
+import { AccountCreateModal } from './account-create-modal/account-create-modal';
 import { AccountImportModal } from './account-import-modal/account-import-modal';
 import { AccountImportPKModal } from './account-import-pk-modal/account-import-pk-modal';
 import { AccountImportSeedModal } from './account-import-seed-modal/account-import-seed-modal';
 
-import { useAccountModalStep } from '../../../hooks/use-account-modal-step.store';
-
+import { useModalStep } from '../../../hooks/use-modal-step.store';
 import {
   useSelectedAccountSelector,
   useSelectedAccountPublicKeyHashSelector
@@ -27,20 +27,16 @@ interface Props {
 
 export const AccountModal: FC<Props> = ({ activeItemId }) => {
   const [isModalVisible, setModalVisible] = useState(false);
-
   const { name } = useSelectedAccountSelector();
   const publicKeyHash = useSelectedAccountPublicKeyHashSelector();
-
-  const [accountModalStep] = useAccountModalStep("accountModalStep");
+  const [accountModalStep] = useModalStep("accountModalStep");
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
 
   return (
-    <View
-      style={styles.container}
-    >
+    <>
       <TouchableOpacity
         onPress={toggleModal}
         style={styles.accountContainer}
@@ -61,7 +57,7 @@ export const AccountModal: FC<Props> = ({ activeItemId }) => {
         isVisible={isModalVisible}
         animationIn={'fadeInDown'}
         animationOut={'fadeOutUp'}
-        style={{ justifyContent: 'flex-start' }}
+        style={{ justifyContent: 'flex-start', margin: 16 }}
       >
         <View style={styles.modalView}>
           {
@@ -74,6 +70,13 @@ export const AccountModal: FC<Props> = ({ activeItemId }) => {
           {
             accountModalStep === 'import' &&
             <AccountImportModal
+              isModalVisible={isModalVisible}
+              setModalVisible={setModalVisible}
+            />
+          }
+          {
+            accountModalStep === 'create' &&
+            <AccountCreateModal
               isModalVisible={isModalVisible}
               setModalVisible={setModalVisible}
             />
@@ -94,7 +97,6 @@ export const AccountModal: FC<Props> = ({ activeItemId }) => {
           }
         </View>
       </Modal>
-
-    </View >
+    </>
   );
 };

@@ -30,12 +30,14 @@ export const styles = StyleSheet.create({
   },
   // secondary
   buttonSecondary: {
-    backgroundColor: 'red',
+    backgroundColor: colors.theme,
     borderWidth: 1,
     borderColor: colors.theme
   },
   textSecondary: {
-    color: colors.textGrey1
+    color: colors.black,
+    fontWeight: '600',
+    ...typography.AltoneVariableBold14,
   },
   // tertiary
   buttonTertiary: {
@@ -46,6 +48,10 @@ export const styles = StyleSheet.create({
     color: colors.textGrey1,
     ...typography.taglineInterSemiBoldUppercase13
   },
+  // pressed
+  buttonPressed: {
+    opacity: 0.8, // Reduce opacity when pressed
+  },
   // disabled
   buttonDisabled: {
     borderWidth: 0,
@@ -54,6 +60,7 @@ export const styles = StyleSheet.create({
   textDisabled: {
     color: colors.bgGrey5
   },
+
   // size
   large: {
     ...typography.taglineInterSemiBoldUppercase15

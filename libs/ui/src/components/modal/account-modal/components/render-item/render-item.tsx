@@ -2,11 +2,12 @@ import { isDefined, OnEventFn } from '@rnw-community/shared';
 import React, { FC, ReactElement } from 'react';
 import { GestureResponderEvent, Pressable } from 'react-native';
 
-import { ViewStyleProps } from '../../../../../interfaces/style.interface';
-import { TestIDProps } from '../../../../../interfaces/test-id.props';
+import { Row } from '../../../../../components/row/row';
 import { Icon } from '../../../../../components/icon/icon';
 import { IconNameEnum } from '../../../../../components/icon/icon-name.enum';
-import { Row } from '../../../../../components/row/row';
+
+import { ViewStyleProps } from '../../../../../interfaces/style.interface';
+import { TestIDProps } from '../../../../../interfaces/test-id.props';
 
 import { styles } from './render-item.styles';
 
@@ -42,9 +43,9 @@ export const RenderItem: FC<Props> = ({
       )}
     </Row>
 
-    <Row style={styles.wrapper}>
+    {/* <Row style={styles.wrapper}>
       {leftBottomComponent}
       {rightBottomComponent}
-    </Row>
+    </Row> */}
   </Pressable>
 );

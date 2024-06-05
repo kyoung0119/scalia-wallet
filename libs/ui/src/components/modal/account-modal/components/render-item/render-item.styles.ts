@@ -2,25 +2,21 @@ import { StyleSheet } from 'react-native';
 
 import { colors } from '../../../../../styles/colors';
 import { getCustomSize } from '../../../../../styles/format-size';
-import { userDetailsHeight, userDetailsMarginBottom } from '../../../../../components/selector/constants/dimensions';
 
 export const styles = StyleSheet.create({
   root: {
-    height: userDetailsHeight,
-    marginBottom: userDetailsMarginBottom,
-    paddingTop: getCustomSize(1),
-    paddingLeft: getCustomSize(1),
-    paddingRight: getCustomSize(1.5),
+    marginBottom: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
     borderRadius: getCustomSize(2),
-    backgroundColor: colors.bgGrey2
   },
   active: {
-    borderWidth: getCustomSize(0.125),
-    borderColor: colors.orange
+    backgroundColor: colors.bgGrey2,
+    borderWidth: 1,
+    borderColor: colors.theme
   },
   wrapper: {
     justifyContent: 'space-between',
-    marginBottom: getCustomSize(),
     flex: 1
   }
 });

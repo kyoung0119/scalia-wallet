@@ -48,6 +48,10 @@ export const styles = StyleSheet.create({
     color: colors.orange,
     ...typography.taglineInterSemiBoldUppercase11
   },
+  // pressed
+  buttonPressed: {
+    opacity: 0.8, // Reduce opacity when pressed
+  },
   // disabled
   disabledButton: {
     borderColor: 'transparent',

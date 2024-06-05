@@ -10,7 +10,7 @@ import { ButtonWithIconThemesEnum } from '../../../button-with-icon/enums';
 import { TouchableIcon } from '../../../touchable-icon/touchable-icon';
 import { IconNameEnum } from '../../../icon/icon-name.enum';
 
-import { setAccountModalStep } from '../../../../hooks/use-account-modal-step.store';
+import { setAccountModalStep } from '../../../../hooks/use-modal-step.store';
 
 import { styles } from './account-import-modal.styles';
 
@@ -20,7 +20,6 @@ interface Props {
 }
 
 export const AccountImportModal: FC<Props> = ({ isModalVisible, setModalVisible }) => {
-
   const toggleModal = () => {
     setAccountModalStep("select")
     setModalVisible(!isModalVisible);

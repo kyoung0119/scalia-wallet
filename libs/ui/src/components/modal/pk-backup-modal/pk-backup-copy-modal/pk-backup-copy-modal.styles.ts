@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 import { colors } from '../../../../styles/colors';
-import { getCustomSize } from '../../../../styles/format-size';
 import { typography } from '../../../../styles/typography';
 
 export const styles = StyleSheet.create({
@@ -22,28 +21,28 @@ export const styles = StyleSheet.create({
     color: colors.textGrey8,
     fontWeight: '600',
     textAlign: 'center',
-    marginTop: 8,
-    marginBottom: 24
-  },
-  scrollContainer: {
-    width: '100%',
-    maxHeight: 300,
-    flex: 1,
-    paddingBottom: 16,
+    marginVertical: 24
   },
   buttonModal: {
     minWidth: '100%',
     padding: 12,
     flexGrow: 0,
   },
-  buttonImport: {
-    marginBottom: getCustomSize(2),
+  buttonCopy: {
+    marginBottom: 16,
   },
-  publicKeyHashContainer: {
-    // alignSelf: 'flex-end'
+  pkSection: {
+    justifyContent: "space-between",
+    backgroundColor: 'rgba(195, 255, 25, 0.10);',
+    marginBottom: 24,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: colors.theme,
+    borderRadius: 8,
   },
-  publicKeyHashText: {
-    ...typography.Monospace14,
-    fontWeight: '600',
-  }
+  pkText: {
+    width: '100%',
+    ...typography.AltoneVariable14,
+    fontWeight: 600,
+  },
 });

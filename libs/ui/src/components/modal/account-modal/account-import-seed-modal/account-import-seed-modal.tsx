@@ -1,10 +1,9 @@
 import React, { FC, useEffect, useMemo } from 'react';
+import { View, ScrollView, TextInput } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { View, ScrollView, TextInput } from 'react-native';
 import { isNotEmptyString } from '@rnw-community/shared';
 import { derivationPathByNetworkType, generateHdAccount } from 'shelter';
-import { NetworkTypeEnum } from 'shared';
 
 import { Row } from '../../../row/row';
 import { Column } from '../../../column/column';
@@ -12,19 +11,15 @@ import { Text } from '../../../text/text';
 import { TextInput as CustomTextInput } from '../../../text-input/text-input';
 import { Button } from '../../../button/button';
 import { ButtonThemesEnum } from '../../../button/enums';
-import { Icon } from '../../../icon/icon';
 import { TouchableIcon } from '../../../touchable-icon/touchable-icon';
 import { Pressable } from '../../../pressable/pressable';
 import { IconNameEnum } from '../../../icon/icon-name.enum';
 import { Paste } from '../../../paste/paste';
-import { Announcement } from '../../../announcement/announcement';
 
-import { setAccountModalStep } from '../../../../hooks/use-account-modal-step.store';
+import { setAccountModalStep } from '../../../../hooks/use-modal-step.store';
 import { useImportSeedPhrase } from '../../../../hooks/use-import-seed-phrase.hook';
 import { useCreateImportedAccount } from '../../../../shelter/hooks/use-create-imported-account.hook';
 import { useAllAccountsSelector, useSelectedNetworkTypeSelector } from '../../../../store/wallet/wallet.selectors';
-import { handleSetValueToClipboard } from '../../../../utils/copy-to-clipboard.util';
-import { generateHdAccountFromPrivateKey } from '../../../../utils/generate-hd-account-from-private-key.util';
 import { useAccountFieldRules } from '../../../../modals/hooks/use-validate-account-field.hook';
 
 import { ScreensEnum, ScreensParamList } from '../../../../enums/sreens.enum';
@@ -35,11 +30,6 @@ import { AddBySeedPhraseTestIDs } from './seed-phrase.test-ids';
 interface Props {
   isModalVisible: boolean;
   setModalVisible: (value: boolean) => void;
-}
-
-interface FormTypes {
-  name: string;
-  privateKey: string;
 }
 
 export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisible }) => {
@@ -246,6 +236,7 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
         theme={ButtonThemesEnum.Secondary}
         style={[styles.buttonModal]}
         onPress={handleSubmit(onSubmit)}
+        disabled={Boolean(Object.keys(errors).length) || (isSubmitSuccessful && isEmptyFieldsExist) || !!error}
       />
     </View>
   );

@@ -18,9 +18,6 @@ export const styles = StyleSheet.create({
     // flexShrink: 1
   },
   // modal
-  container: {
-    // 
-  },
   modalView: {
     width: '100%',
     backgroundColor: colors.bgDarkDeep,
@@ -36,10 +33,5 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     elevation: 2,
-  },
-  buttonClose: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
   }
 });

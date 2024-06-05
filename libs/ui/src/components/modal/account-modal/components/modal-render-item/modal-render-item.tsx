@@ -2,10 +2,9 @@ import { OnEventFn } from '@rnw-community/shared';
 import React, { FC, ReactElement } from 'react';
 import { GestureResponderEvent } from 'react-native';
 
-import { Column } from '../../../../../components/column/column';
-import { IconWithBorder } from '../../../../../components/icon-with-border/icon-with-border';
 import { Row } from '../../../../../components/row/row';
-import { RenderItem } from '../../../../../components/selector/components/render-item/render-item';
+import { Column } from '../../../../../components/column/column';
+import { RenderItem } from '../render-item/render-item';
 import { Text } from '../../../../../components/text/text';
 import { ViewStyleProps } from '../../../../../interfaces/style.interface';
 import { TestIDProps } from '../../../../../interfaces/test-id.props';
@@ -18,7 +17,7 @@ import { styles } from './modal-render-item.styles';
 interface Props extends ModalHeaderInterface, TestIDProps {
   isActive: boolean;
   onSelectItem: OnEventFn<GestureResponderEvent>;
-  rightBottomComponent: ReactElement;
+  rightBottomComponent?: ReactElement;
   rightTopComponent?: ReactElement;
   style?: ViewStyleProps;
 }
@@ -41,8 +40,8 @@ export const ModalRenderItem: FC<Props> = ({
     isActive={isActive}
     leftTopComponent={
       <Row style={styles.nameContainer}>
-        <IconWithBorder>{icon}</IconWithBorder>
-        <Text style={styles.name} numberOfLines={1} testID={AccountTabsTestIDs.AccountsNames}>
+        {icon}
+        <Text style={styles.name as ViewStyleProps} numberOfLines={1} testID={AccountTabsTestIDs.AccountsNames}>
           {name}
         </Text>
       </Row>

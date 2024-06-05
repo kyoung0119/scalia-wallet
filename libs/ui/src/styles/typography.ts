@@ -205,4 +205,13 @@ export const typography: Typography = {
     fontSize: 14,
     // lineHeight: 20 /* 111.111% */
   },
+  AltoneVariable12: {
+    fontFamily: FontsEnum.interRegular,
+    fontSize: 12,
+    // lineHeight: 20 /* 111.111% */
+  },
+  Monospace14: {
+    fontFamily: "monospace",
+    fontSize: 14,
+  },
 };

@@ -1,8 +1,8 @@
 import React, { FC, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
-import Clipboard from '@react-native-clipboard/clipboard';
 import { isNotEmptyString } from '@rnw-community/shared';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 import { Row } from '../../../row/row';
 import { Text } from '../../../text/text';
@@ -13,7 +13,7 @@ import { TouchableIcon } from '../../../touchable-icon/touchable-icon';
 import { Pressable } from '../../../pressable/pressable';
 import { IconNameEnum } from '../../../icon/icon-name.enum';
 
-import { setAccountModalStep } from '../../../../hooks/use-account-modal-step.store';
+import { setAccountModalStep } from '../../../../hooks/use-modal-step.store';
 import { useCreateImportedAccount } from '../../../../shelter/hooks/use-create-imported-account.hook';
 import { useAllAccountsSelector, useSelectedNetworkTypeSelector } from '../../../../store/wallet/wallet.selectors';
 import { handleSetValueToClipboard } from '../../../../utils/copy-to-clipboard.util';
@@ -21,7 +21,6 @@ import { generateHdAccountFromPrivateKey } from '../../../../utils/generate-hd-a
 import { useAccountFieldRules } from '../../../../modals/hooks/use-validate-account-field.hook';
 
 import { styles } from './account-import-pk-modal.styles';
-
 
 interface Props {
   isModalVisible: boolean;
@@ -150,6 +149,7 @@ export const AccountImportPKModal: FC<Props> = ({ isModalVisible, setModalVisibl
           />
         )}
       />
+
       <View style={styles.container}>
         <Controller
           control={control}

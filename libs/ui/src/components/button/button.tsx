@@ -36,7 +36,7 @@ export const Button: FC<Props> = ({
   <Pressable
     {...restProps}
     disabled={disabled}
-    style={[styles.root, themeClasses[theme].button, sizeClasses[size], disabled && styles.disabledButton, style]}
+    style={({ pressed }) => [styles.root, themeClasses[theme].button, sizeClasses[size], disabled && styles.disabledButton, style, pressed && styles.buttonPressed]}
     testID={testID}
   >
     <View style={styles.wrapper}>

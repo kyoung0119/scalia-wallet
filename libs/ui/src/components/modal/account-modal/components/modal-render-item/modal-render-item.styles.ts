@@ -7,8 +7,9 @@ import { typography } from '../../../../../styles/typography';
 export const styles = StyleSheet.create({
   name: {
     marginLeft: getCustomSize(0.5),
-    ...typography.bodyInterSemiBold15,
-    color: colors.textGrey1
+    ...typography.AltoneVariable14,
+    color: colors.white,
+    fontWeight: 700,
   },
   nameContainer: {
     maxWidth: getCustomSize(30)

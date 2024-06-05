@@ -38,7 +38,7 @@ export const ButtonWithIcon: FC<Props> = ({
   <Pressable
     {...restProps}
     disabled={disabled}
-    style={[styles.root, themeClasses[theme].button, style]}
+    style={({ pressed }) => [styles.root, themeClasses[theme].button, style, pressed && styles.buttonPressed]}
   >
     <View style={styles.wrapper}>
       {leftIcon && (
