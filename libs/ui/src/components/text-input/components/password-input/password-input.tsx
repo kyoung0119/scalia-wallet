@@ -16,8 +16,8 @@ import { styles } from './password-input.styles';
 
 interface Props<TFieldValues extends FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>
   extends Pick<TextInputProps, 'onChange' | 'onKeyPress' | 'onFocus' | 'onSubmitEditing' | 'testID'> {
-  label: string;
-  prompt: string;
+  label?: string;
+  prompt?: string;
   field: ControllerRenderProps<TFieldValues, TName>;
   error?: string;
   inputContainerStyle?: ViewStyleProps;
@@ -30,7 +30,7 @@ export const PasswordInput = <
 >({
   field,
   label,
-  // prompt,
+  prompt,
   error,
   onChange,
   onKeyPress,
@@ -58,7 +58,7 @@ export const PasswordInput = <
       <TextInput
         field={field}
         label={label}
-        // prompt={prompt}
+        prompt={prompt}
         placeholder="Password"
         secureTextEntry={isSecureTextEntry}
         error={error}

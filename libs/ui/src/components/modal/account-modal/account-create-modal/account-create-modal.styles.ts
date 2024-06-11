@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
-    marginVertical: 24
+    marginTop: 24,
+    marginBottom: 8
   },
 });

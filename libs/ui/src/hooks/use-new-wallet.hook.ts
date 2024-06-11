@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Singleton state
-let isNewWalletGlobal = true;
+let isNewWalletGlobal = false;
 let listeners: Array<(value: boolean) => void> = [];
 
 const setIsNewWalletGlobal = (value: boolean) => {

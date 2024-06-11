@@ -6,8 +6,14 @@ import { typography } from '../../../../../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
+    width: '100%',
+    backgroundColor: colors.bgGrey7,
+    borderWidth: 1,
+    borderColor: colors.bgGrey8,
+    borderRadius: 8,
+    padding: 12,
     justifyContent: 'space-between',
-    marginBottom: getCustomSize(2)
+    // marginBottom: getCustomSize(2)
   },
   readOnlyBlock: {
     marginBottom: getCustomSize()

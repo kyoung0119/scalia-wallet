@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     })
   },
   primary: {
-    backgroundColor: colors.navGrey1
+    backgroundColor: colors.bgDarkDeep
   },
   secondary: {
     backgroundColor: colors.bgDarkDeep

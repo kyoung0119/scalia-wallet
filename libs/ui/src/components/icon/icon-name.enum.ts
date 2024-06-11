@@ -36,18 +36,8 @@ export enum IconNameEnum {
   Swap = 'Swap',
   SwapSmall = 'SwapSmall',
   Topup = 'Topup',
+  Toggle = 'Toggle',
   X = 'X',
-  // Network
-  Scalia = 'Scalia',
-  Klaytn = 'Klaytn',
-  Ethereum = 'Ethereum',
-  BinanceSmartChain = 'BinanceSmartChain',
-  Fantom = 'Fantom',
-  Avalanche = 'Avalanche',
-  Optimism = 'Optimism',
-  Arbitrum = 'Arbitrum',
-  Polygon = 'Polygon',
-
   NetworkFallback = 'NetworkFallback',
   Qrcode = 'Qrcode',
   Slider = 'Slider',
@@ -70,6 +60,7 @@ export enum IconNameEnum {
   LockClosed = 'LockClosed',
   WarningWhite = 'WarningWhite',
   WarningYellow = 'WarningYellow',
+  Wallet = 'Wallet',
   Error = 'Error',
   QrScanner = 'QrScanner',
   Chevron = 'Chevron',
@@ -89,21 +80,10 @@ export enum IconNameEnum {
   Security = 'Security',
   DappConnect = 'DappConnect',
   InfoRed = 'InfoRed',
-  // Socials
-  Telegram = 'Telegram',
-  Twitter = 'Twitter',
-  Discord = 'Discord',
-  Reddit = 'Reddit',
-  Youtube = 'Youtube',
-
   OutLink = 'OutLink',
   MadWithLove = 'MadWithLove',
   NewTab = 'NewTab',
   See = 'See',
-  // Logo
-  WalletLogoPlaceholder = 'WalletLogoPlaceholder',
-  Logo = 'Logo',
-
   IconWarning = 'IconWarning',
   FaceId = 'FaceId',
   Home = 'Home',
@@ -120,5 +100,24 @@ export enum IconNameEnum {
   RevealSeedPhrase = 'RevealSeedPhrase',
   IllustrationWelcomeScreen = 'IllustrationWelcomeScreen',
   Success1 = 'Success-1',
-  Key = 'Key'
+  Key = 'Key',
+  // Network
+  Scalia = 'Scalia',
+  Klaytn = 'Klaytn',
+  Ethereum = 'Ethereum',
+  BinanceSmartChain = 'BinanceSmartChain',
+  Fantom = 'Fantom',
+  Avalanche = 'Avalanche',
+  Optimism = 'Optimism',
+  Arbitrum = 'Arbitrum',
+  Polygon = 'Polygon',
+  // Socials
+  Telegram = 'Telegram',
+  Twitter = 'Twitter',
+  Discord = 'Discord',
+  Reddit = 'Reddit',
+  Youtube = 'Youtube',
+  // Logo
+  WalletLogoPlaceholder = 'WalletLogoPlaceholder',
+  Logo = 'Logo',
 }

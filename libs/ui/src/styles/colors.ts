@@ -33,7 +33,8 @@ const textColors = {
   textGrey6: '#727B93',
   // new
   textGrey7: '#8D8D8D',
-  textGrey8: '#9D9D9D'
+  textGrey8: '#9D9D9D',
+  textGrey9: '#DDD'
 };
 
 const accentColors = {

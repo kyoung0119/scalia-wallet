@@ -98,12 +98,14 @@ import SwapItems from './assets/swapItems.svg';
 import Telegram from './assets/telegram.svg';
 import Tooltip from './assets/tooltip.svg';
 import TopupIcon from './assets/topup.svg';
+import ToggleIcon from './assets/toggle.svg';
 import TransparencyLayout from './assets/transparency-layout.svg';
 import Twitter from './assets/twitter.svg';
 import User from './assets/user.svg';
 import WalletLogoPlaceholder from './assets/wallet-logo-placeholder.svg';
 import WarningWhite from './assets/warning-white.svg';
 import WarningYellow from './assets/warning-yellow.svg';
+import Wallet from './assets/wallet.svg';
 import XIcon from './assets/x.svg';
 import Youtube from './assets/youtube.svg';
 import { IconNameEnum } from './icon-name.enum';
@@ -156,6 +158,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.Swap]: SwapIcon,
   [IconNameEnum.SwapSmall]: SwapSmallIcon,
   [IconNameEnum.Topup]: TopupIcon,
+  [IconNameEnum.Toggle]: ToggleIcon,
   [IconNameEnum.X]: XIcon,
   [IconNameEnum.Scalia]: Scalia,
   [IconNameEnum.Klaytn]: Klaytn,
@@ -185,6 +188,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.LockClosed]: LockClosed,
   [IconNameEnum.WarningWhite]: WarningWhite,
   [IconNameEnum.WarningYellow]: WarningYellow,
+  [IconNameEnum.Wallet]: Wallet,
   [IconNameEnum.QrScanner]: QrScanner,
   [IconNameEnum.Chevron]: Chevron,
   [IconNameEnum.ChevronUp]: ChevronUp,

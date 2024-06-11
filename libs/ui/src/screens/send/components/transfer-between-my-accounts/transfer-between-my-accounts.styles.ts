@@ -7,39 +7,45 @@ import { typography } from '../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
-    marginTop: getCustomSize(4.625)
+    marginBottom: 24
   },
   transferBetweenAccountsContainer: {
+    justifyContent: 'space-between',
     marginBottom: getCustomSize()
   },
-  transferBetweenAccountsText: {
-    ...typography.captionInterSemiBold13,
-    marginLeft: getCustomSize(0.5)
+  modalText: {
+    ...typography.AltoneVariable14,
+    color: colors.textGrey9,
+    fontWeight: 500
   },
-  greyText: {
-    color: colors.textGrey2
+  themeText: {
+    ...typography.AltoneVariable14,
+    color: colors.theme,
+    fontWeight: 600
   },
   publicKeyHashContainer: {
-    marginBottom: getCustomSize(2)
+    // marginBottom: getCustomSize(2)
   },
   publicKeyHashInputContainer: {
-    paddingTop: getCustomSize(1.75),
+    // paddingTop: getCustomSize(1.75),
     justifyContent: 'space-between',
-    paddingBottom: isMobile ? getCustomSize(1) : getCustomSize(1.75),
-    height: isMobile ? getCustomSize(14.75) : getCustomSize(9)
+    // paddingBottom: isMobile ? getCustomSize(1) : getCustomSize(1.75),
+    // height: isMobile ? getCustomSize(14.75) : getCustomSize(9)
   },
   publicKeyHashInput: {
-    ...typography.numbersIBMPlexSansMedium15,
-    height: isMobile ? getCustomSize(7.75) : getCustomSize(4.875),
-    textAlignVertical: 'top'
+    ...typography.AltoneVariable14,
+    color: colors.textGrey9,
+    fontWeight: 500,
+    // textAlignVertical: 'top'
+    // height: isMobile ? getCustomSize(7.75) : getCustomSize(4.875),
   },
   publicKeyHashClearIcon: {
     alignSelf: 'flex-start',
     ...(isAndroid && { marginTop: getCustomSize(0.75) }),
-    ...(isWeb && { marginTop: -getCustomSize(0.5) })
+    // ...(isWeb && { marginTop: -getCustomSize(0.5) })
   },
   publicKeyHashFooter: {
     justifyContent: 'space-between',
     paddingRight: getCustomSize(0.25)
-  }
+  },
 });

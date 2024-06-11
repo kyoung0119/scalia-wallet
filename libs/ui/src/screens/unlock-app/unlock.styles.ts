@@ -62,8 +62,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     borderTopLeftRadius: getCustomSize(2),
     borderTopRightRadius: getCustomSize(2),
-    paddingTop: getCustomSize(2.125),
-    marginBottom: getCustomSize(3.625)
+    marginVertical: 24
   },
   iconContainer: {
     backgroundColor: colors.bgGrey4,
@@ -77,7 +76,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     minWidth: '100%',
-    marginBottom: getCustomSize(2)
+    marginBottom: 24
   },
   textContainer: {
     justifyContent: 'center'

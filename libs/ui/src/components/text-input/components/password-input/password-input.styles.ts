@@ -16,14 +16,14 @@ export const styles = StyleSheet.create({
   },
   clearIcon: {
     position: 'relative',
-    right: getCustomSize(4)
+    right: 28
   },
   label: {
     marginBottom: getCustomSize(1.25)
   },
   eyeIcon: {
     position: 'absolute',
-    top: getCustomSize(0.1),
+    top: -12,
     right: getCustomSize()
   }
 });

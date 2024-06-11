@@ -7,7 +7,7 @@ import { typography } from '../../../../styles/typography';
 export const styles = StyleSheet.create({
   root: {
     justifyContent: 'space-between',
-    marginBottom: getCustomSize(0.75)
+    marginBottom: 8
   },
   label: {
     color: colors.textGrey3,

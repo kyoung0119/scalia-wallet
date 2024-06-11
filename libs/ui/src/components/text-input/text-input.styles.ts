@@ -35,6 +35,8 @@ export const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   labelText: {
-    color: '#DDD'
+    ...typography.AltoneVariable14,
+    color: colors.textGrey9,
+    fontWeight: 500,
   }
 });

@@ -6,14 +6,15 @@ import { typography } from '../../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
-    paddingTop: getCustomSize(1.625)
+    padding: 16
   },
   icon: {
     marginBottom: getCustomSize()
   },
   title: {
     maxWidth: getCustomSize(33),
-    color: colors.textGrey1,
-    ...typography.headlineInterRegular22
+    ...typography.AltoneVariable20,
+    fontWeight: 700,
+    color: colors.white
   }
 });

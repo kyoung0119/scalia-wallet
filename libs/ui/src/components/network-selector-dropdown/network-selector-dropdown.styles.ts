@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontSize: 14,
     fontWeight: '600',
-    color: '#DDD',
+    color: colors.textGrey9,
     lineHeight: 24
   },
   dropdownButtonArrowStyle: {
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontSize: 14,
     fontWeight: '500',
-    color: '#DDD'
+    color: colors.textGrey9
   },
   dropdownItemIconStyle: {
     fontSize: 28,

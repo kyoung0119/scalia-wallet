@@ -39,7 +39,7 @@ export const TokenItem: FC<Props> = ({
     <Image style={[styles.image, themeClasses[theme].image]} source={imageSource} />
     <View style={styles.token}>
       <Row style={styles.token}>
-        <TokenAmount value={balance} style={themeClasses[theme].text as ViewStyleProps} />` `
+        <TokenAmount value={balance} style={themeClasses[theme].text as ViewStyleProps} /><Text> </Text>
         <Text style={[styles.text, themeClasses[theme].text as ViewStyleProps]} numberOfLines={1}>
           {symbol}
         </Text>

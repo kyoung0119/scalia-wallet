@@ -1,17 +1,19 @@
-import { isDefined, OnEventFn } from '@rnw-community/shared';
 import React from 'react';
+import { View } from 'react-native';
 import { ControllerRenderProps } from 'react-hook-form';
 import { FieldPath } from 'react-hook-form/dist/types';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
-import { View } from 'react-native';
+import { isDefined, OnEventFn } from '@rnw-community/shared';
 
-import { Button } from '../../../../../../components/button/button';
-import { ButtonThemesEnum } from '../../../../../../components/button/enums';
+import { Text } from '../../../../../../components/text/text';
 import { TextInput } from '../../../../../../components/text-input/text-input';
-import { Token as TokenType } from '../../../../../../interfaces/token.interface';
+import { TouchableIcon } from '../../../../../../components/touchable-icon/touchable-icon';
+import { IconNameEnum } from '../../../../../../components/icon/icon-name.enum';
 
+import { Token as TokenType } from '../../../../../../interfaces/token.interface';
 import { DollarAmount } from './components/dollar-amount/dollar-amount';
-import { SelectToken } from './components/select-token/select-token';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
+
 import { styles } from './token-input.styles';
 
 interface Props<TFieldValues extends FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>> {
@@ -21,10 +23,11 @@ interface Props<TFieldValues extends FieldValues, TName extends FieldPath<TField
   token?: TokenType;
   amountInDollar: string;
   navigationKey?: string;
-  availableFormattedBalance?: string;
-  availableBalance?: string;
+  amountInToken: string;
   maxButtonTitle?: string;
   onFocus?: OnEventFn;
+  isTokenInput: boolean;
+  setIsTokenInput: (value: boolean) => void;
 }
 
 export const TokenInput = <
@@ -35,16 +38,17 @@ export const TokenInput = <
   error,
   token,
   amountInDollar,
-  label,
-  availableFormattedBalance,
+  amountInToken,
   navigationKey,
-  availableBalance,
-  maxButtonTitle = 'Max',
-  onFocus
+  label,
+  onFocus,
+  isTokenInput,
+  setIsTokenInput
 }: Props<TFieldValues, TName>) => {
-  const showMaxButton = isDefined(token) && isDefined(availableBalance);
 
-  const onMaxButtonPress = () => field.onChange(availableBalance);
+  const toggleInputMode = () => {
+    setIsTokenInput(!isTokenInput);
+  }
 
   return (
     <View>
@@ -62,19 +66,15 @@ export const TokenInput = <
         onFocus={onFocus}
       >
         <View>
-          <SelectToken token={token} navigationKey={navigationKey} availableBalance={availableFormattedBalance} />
-          <DollarAmount amount={field.value} amountInDollar={amountInDollar} />
+          <DollarAmount amount={field.value} amountInDollar={amountInDollar} isUSDAmount={isTokenInput} token={token} />
         </View>
       </TextInput>
 
-      {showMaxButton && (
-        <Button
-          title={maxButtonTitle}
-          onPress={onMaxButtonPress}
-          theme={ButtonThemesEnum.Ternary}
-          style={styles.maxButton}
-        />
-      )}
+      <Text style={styles.inputCurrency as ViewStyleProps}>
+        {isTokenInput ? token?.symbol : `USD`}
+      </Text>
+
+      < TouchableIcon name={IconNameEnum.Toggle} onPress={toggleInputMode} style={styles.toggleIcon} />
     </View>
   );
 };
