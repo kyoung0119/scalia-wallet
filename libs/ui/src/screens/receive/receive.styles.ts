@@ -7,34 +7,20 @@ import { typography } from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
-    alignItems: 'center'
-  },
-  promptWrapper: {
-    width: '100%'
-  },
-  prompt: {
-    justifyContent: 'space-between',
-    paddingHorizontal: getCustomSize(1.5),
-    paddingVertical: getCustomSize(1.25),
-    borderRadius: getCustomSize(1.65),
-    backgroundColor: colors.bgGrey2
-  },
-  propmtText: {
-    ...typography.captionInterRegular13,
-    color: colors.textGrey3
+    margin: 16,
+    padding: 0
   },
   container: {
     alignItems: 'center',
-    marginHorizontal: 'auto',
-    maxWidth: getCustomSize(26.25)
+    marginBottom: 32,
   },
   qrCodeWrapper: {
-    marginVertical: isWeb ? getCustomSize(3) : getCustomSize(8),
+    marginVertical: isWeb ? getCustomSize(4) : getCustomSize(8),
     borderRadius: getCustomSize(0.25),
     overflow: 'hidden'
   },
   text: {
-    marginBottom: getCustomSize(),
+    marginBottom: 16,
     ...typography.captionInterRegular11,
     color: colors.textGrey2,
     textAlign: 'center'
@@ -43,18 +29,20 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   address: {
-    padding: getCustomSize(),
-    backgroundColor: colors.brown,
-    borderRadius: getCustomSize(0.5),
     overflow: 'hidden',
+    justifyContent: "space-between",
+    backgroundColor: colors.bgTransparentTheme,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: colors.theme,
+    borderRadius: 8,
     ...typography.numbersIBMPlexSansMedium13,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: 600
   },
-  actions: {
-    justifyContent: 'center',
-    marginTop: getCustomSize(2)
-  },
-  shareIcon: {
-    marginRight: getCustomSize(3)
+  buttonCopy: {
+    minWidth: '100%',
+    padding: 12,
+    flexGrow: 0,
   }
 });

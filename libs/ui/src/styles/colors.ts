@@ -15,6 +15,7 @@ const backgroundColors = {
   bgTransparentYellow: 'rgba(214, 167, 0, 0.08)',
   bgTransparentGreen: 'rgba(20, 186, 48, 0.08)',
   bgTransparentRed: 'rgba(204, 37, 0, 0.08)',
+  bgTransparentTheme: 'rgba(195, 255, 25, 0.10)',
   // new
   bgDarkLight: '#1C1C23',
   bgDarkDeep: '#16161C'

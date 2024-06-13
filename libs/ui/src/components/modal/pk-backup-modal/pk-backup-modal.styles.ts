@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   // backup notify
   backupSection: {
     justifyContent: "space-between",
-    backgroundColor: 'rgba(195, 255, 25, 0.10);',
+    backgroundColor: colors.bgTransparentTheme,
     marginHorizontal: 12,
     padding: 12,
     // marginTop: 20,

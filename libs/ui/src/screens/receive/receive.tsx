@@ -26,6 +26,9 @@ import { handleSetValueToClipboard } from '../../utils/copy-to-clipboard.util';
 import { share } from '../../utils/share.util';
 
 import { styles } from './receive.styles';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
+import { ButtonWithIcon } from '../../components/button-with-icon/button-with-icon';
+import { ButtonWithIconThemesEnum } from '../../components/button-with-icon/enums';
 
 export const Receive: FC = () => {
   const { navigate } = useNavigation();
@@ -41,9 +44,7 @@ export const Receive: FC = () => {
 
   return (
     <ScreenContainer>
-      <HeaderContainer isSelectors>
-        <ScreenTitle title="Receive" onBackButtonPress={navigateToWallet} />
-      </HeaderContainer>
+      <ScreenTitle title="Receive" onBackButtonPress={navigateToWallet} />
 
       <ScreenScrollView style={styles.root}>
         <Column style={styles.container}>
@@ -58,19 +59,21 @@ export const Receive: FC = () => {
 
           <Text style={styles.text}>{`Wallet Address on the ${network.name} Network`}</Text>
           <TouchableOpacity onPress={copyAddress} style={styles.addressWrapper}>
-            <Text numberOfLines={2} style={styles.address}>
+            <Text numberOfLines={2} style={styles.address as ViewStyleProps}>
               {publicKeyHash}
             </Text>
           </TouchableOpacity>
         </Column>
 
-        <Row style={styles.actions}>
-          {isMobile && <TouchableIcon name={IconNameEnum.Share} onPress={shareAddress} style={styles.shareIcon} />}
-          <TouchableIcon name={IconNameEnum.Copy} onPress={copyAddress} />
-        </Row>
+        <ButtonWithIcon
+          title="Copy address"
+          theme={ButtonWithIconThemesEnum.Secondary}
+          rightIcon={IconNameEnum.CopyDark}
+          iconSize={16}
+          onPress={copyAddress}
+          style={[styles.buttonCopy]}
+        />
       </ScreenScrollView>
-
-      <NavigationBar />
     </ScreenContainer>
   );
 };

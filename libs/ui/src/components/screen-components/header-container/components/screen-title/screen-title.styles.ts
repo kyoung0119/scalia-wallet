@@ -6,6 +6,7 @@ import { typography } from '../../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
+    width: '100%',
     padding: 16
   },
   icon: {
@@ -15,6 +16,7 @@ export const styles = StyleSheet.create({
     maxWidth: getCustomSize(33),
     ...typography.AltoneVariable20,
     fontWeight: 700,
-    color: colors.white
+    color: colors.white,
+    alignSelf: 'center'
   }
 });
