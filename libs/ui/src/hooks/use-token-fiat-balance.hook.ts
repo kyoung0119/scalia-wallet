@@ -6,13 +6,12 @@ import { useTokensMarketInfoSelector } from '../store/tokens-market-info/token-m
 import { useSelectedNetworkSelector } from '../store/wallet/wallet.selectors';
 import { getAvailableTokenBalance } from '../utils/get-available-token-balance.util';
 import { getDollarValue } from '../utils/get-dollar-amount.util';
-import { getTokenValue } from '../utils/get-token-amount.util';
 import { getTokenMetadataSlug } from '../utils/token-metadata.util';
 import { getFormattedBalance } from '../utils/units.utils';
 
 const zeroAmount = '0.00';
 
-export const useTokenFiatBalance = (amount: string, token: Token | undefined, isSwapScreen = false, isTokenInput = true) => {
+export const useTokenFiatBalance = (amount: string, token: Token | undefined, isSwapScreen = false) => {
   const allTokensMarketInfoSelector = useTokensMarketInfoSelector();
   const { chainId } = useSelectedNetworkSelector();
 
@@ -21,8 +20,7 @@ export const useTokenFiatBalance = (amount: string, token: Token | undefined, is
       availableFormattedBalance: zeroAmount,
       availableBalance: zeroAmount,
       availableUsdBalance: zeroAmount,
-      amountInDollar: zeroAmount,
-      amountInToken: zeroAmount
+      amountInDollar: zeroAmount
     };
 
     if (isDefined(token)) {
@@ -36,27 +34,13 @@ export const useTokenFiatBalance = (amount: string, token: Token | undefined, is
         price,
         isNeedToFormat: false
       });
-      if (isTokenInput) {
-        balance.amountInDollar = getDollarValue({
-          amount,
-          decimals: token.decimals,
-          price,
-          errorValue: isDefined(price) ? zeroAmount : undefined,
-          isNeedToFormat: false
-        });
-        balance.amountInToken = amount
-      }
-      else {
-        balance.amountInDollar = amount;
-        balance.amountInToken = getTokenValue({
-          amount,
-          decimals: token.decimals,
-          price,
-          errorValue: isDefined(price) ? zeroAmount : undefined,
-          isNeedToFormat: false
-        });
-
-      }
+      balance.amountInDollar = getDollarValue({
+        amount,
+        decimals: token.decimals,
+        price,
+        errorValue: isDefined(price) ? zeroAmount : undefined,
+        isNeedToFormat: false
+      });
     }
 
     return balance;

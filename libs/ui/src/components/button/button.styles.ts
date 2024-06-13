@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   disabledText: {
     color: colors.textGrey2,
-    ...typography.taglineInterSemiBoldUppercase15
+    ...typography.AltoneVariable14
   },
   // size
   fluid: {

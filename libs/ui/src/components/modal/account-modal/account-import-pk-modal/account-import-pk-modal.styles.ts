@@ -34,7 +34,8 @@ export const styles = StyleSheet.create({
     position: 'relative'
   },
   inputContainer: {
-    width: '100%'
+    width: '100%',
+    marginBottom: 16
   },
   inputInnerContainer: {
     // height: getCustomSize(14.75)
@@ -52,7 +53,7 @@ export const styles = StyleSheet.create({
   },
   pasteButtonContainer: {
     position: 'absolute',
-    bottom: 14,
+    bottom: 30,
     right: 12
   },
   pasteButtonText: {

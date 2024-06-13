@@ -30,6 +30,7 @@ export enum IconNameEnum {
   ReceiveSmall = 'ReceiveSmall',
   Search = 'Search',
   Send = 'Send',
+  Sent = 'Sent',
   SendSmall = 'SendSmall',
   Settings = 'Settings',
   Stake = 'Stake',

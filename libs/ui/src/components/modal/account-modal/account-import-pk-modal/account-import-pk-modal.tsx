@@ -112,7 +112,7 @@ export const AccountImportPKModal: FC<Props> = ({ isModalVisible, setModalVisibl
   };
 
   const toggleModal = () => {
-    setAccountModalStep("select")
+    setAccountModalStep("select");
     setModalVisible(!isModalVisible);
   };
 

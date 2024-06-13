@@ -12,22 +12,6 @@ export const styles = StyleSheet.create({
   container: {
     margin: 16
   },
-  captionRowContainer: {
-    justifyContent: 'space-between',
-    marginBottom: getCustomSize(),
-  },
-  senderContainer: {
-    flex: 1,
-  },
-  receiverContainer: {
-    flex: 1,
-    textAlign: 'right'
-  },
-  iconContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10, // Adjust as needed for spacing
-  },
   operationContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -38,11 +22,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 32,
     marginBottom: 24
-  },
-  modalText: {
-    ...typography.AltoneVariable14,
-    color: colors.textGrey9,
-    fontWeight: 500,
   },
   icon: {
     width: 32,
@@ -74,11 +53,52 @@ export const styles = StyleSheet.create({
     ...typography.bodyInterSemiBold15,
     marginLeft: getCustomSize(0.5)
   },
+
+  sendBlock: {
+    marginBottom: getCustomSize(1.125),
+    justifyContent: 'space-between'
+  },
+  operationText: {
+    ...typography.captionInterSemiBold13,
+    color: colors.textGrey3
+  },
+
+  symbol: {
+    ...typography.numbersIBMPlexSansMedium15
+  },
+  symbolColor: {
+    color: colors.textGrey2,
+    marginLeft: getCustomSize(0.25)
+  },
+  receiverBlock: {
+    justifyContent: 'space-between'
+  },
   footerMargin: {
     marginBottom: getCustomSize(3.625)
   },
   storageFeeInputContainer: {
     marginTop: getCustomSize(3.25)
+  },
+  captionRowContainer: {
+    justifyContent: 'space-between',
+    marginBottom: getCustomSize(),
+  },
+  senderContainer: {
+    flex: 1,
+  },
+  receiverContainer: {
+    flex: 1,
+    textAlign: 'right'
+  },
+  modalText: {
+    ...typography.AltoneVariable14,
+    color: colors.textGrey9,
+    fontWeight: 500,
+  },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10, // Adjust as needed for spacing
   },
   root: {
     width: '100%',
@@ -93,5 +113,32 @@ export const styles = StyleSheet.create({
   },
   cancelButton: {
     marginBottom: 8
-  }
+  },
+  iconSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginBottom: 80
+  },
+  sentIcon: {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)', // Semi-transparent background
+    borderRadius: 120,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    borderWidth: 1,
+    padding: 32,
+    marginBottom: 16
+  },
+  bannerText: {
+    ...typography.AltoneVariable20,
+    color: colors.white,
+    fontWeight: '700'
+  },
+  iconClose: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'flex-end',
+    marginBottom: 48
+  },
 });

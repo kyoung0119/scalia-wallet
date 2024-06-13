@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   root: {
     height: getCustomSize(3),
     justifyContent: 'space-between',
-    marginBottom: getCustomSize(0.5)
+    marginBottom: 16
   },
   title: {
     ...typography.captionInterRegular11,
@@ -21,14 +21,21 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     ...(isWeb && { whiteSpace: 'nowrap' })
   },
-  number13Text: {
-    ...typography.numbersIBMPlexSansMedium13
+  altone14Text: {
+    ...typography.AltoneVariable14,
+    fontWeight: 500,
+  },
+  gasAmountDollarText: {
+    color: colors.theme,
+    marginLeft: 8
   },
   symbol: {
     color: colors.textGrey2,
     marginLeft: getCustomSize(0.25)
   },
   icon: {
-    marginLeft: getCustomSize()
+    width: 16,
+    height: 16,
+    marginRight: 8
   }
 });

@@ -43,6 +43,7 @@ import { SendCollectible } from '../../screens/send/screens/send-collectible/sen
 import { AccountsSelector as SendAccountsSelector } from '../../screens/send/screens/send-token/components/accounts-selector/accounts-selector';
 import { SendToken } from '../../screens/send/screens/send-token/send-token';
 import { SendConfirmation } from '../../screens/send-confirmation/send-confirmation';
+import { SendSummary } from '../../screens/send-confirmation/components/send-summary/send-summary';
 import { AboutUs as SettingsAboutUs } from '../../screens/settings/screens/about-us/about-us';
 import { AccountsSettings } from '../../screens/settings/screens/accounts-settings/acсounts-settings';
 import { AppearanceSelector as SettingsAppearanceSelector } from '../../screens/settings/screens/appearance-selector/appearance-selector';
@@ -62,6 +63,7 @@ import { UnlockApp } from '../../screens/unlock-app/unlock-app';
 import { Wallet } from '../../screens/wallet/wallet';
 import { WalletCreated } from '../../screens/wallet-created/wallet-created';
 import { Welcome } from '../../screens/welcome/welcome';
+
 import { useShowLoaderSelector } from '../../store/settings/settings.selectors';
 import { useIsAuthorisedSelector } from '../../store/wallet/wallet.selectors';
 import { substring } from '../../utils/substring.util';
@@ -128,6 +130,7 @@ export const Navigator: FC = () => {
               <Stack.Screen name={ScreensEnum.ChangePassword} component={ChangePassword} />
               <Stack.Screen name={ScreensEnum.AuthorizedDApps} component={AuthorizedDApps} />
               <Stack.Screen name={ScreensEnum.Unlock} component={UnlockApp} />
+              <Stack.Screen name={ScreensEnum.SendSummary} component={SendSummary} />
             </Stack.Group>
 
             <Stack.Group screenOptions={modalScreenOptions}>

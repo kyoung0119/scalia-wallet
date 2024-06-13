@@ -37,8 +37,8 @@ export const SelectToken: FC<Props> = ({ token, navigationKey, isReadOnly = fals
 
   return (
     <Row style={[styles.root, isReadOnly && styles.readOnlyBlock]}>
-      <Pressable onPress={navigateToTokensSelector} disabled={!isSelectable}>
-        <Row>
+      <Pressable onPress={navigateToTokensSelector} disabled={!isSelectable} style={styles.container}>
+        <Row style={styles.rowContainer}>
           <Token
             symbol={isToken ? token.symbol : 'Select Token'}
             uri={token?.thumbnailUri}

@@ -117,6 +117,7 @@ export const EvmConfirmationContainer: FC<Props> = ({
       confirmOperationParams={confirmOperationParams}
       receiverPublicKeyHash={receiverPublicKeyHash}
       amount={value}
+      token={token}
       symbol={token.symbol}
       children={children}
     />

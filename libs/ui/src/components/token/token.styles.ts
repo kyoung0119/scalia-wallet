@@ -6,7 +6,7 @@ import { typography } from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   icon: {
-    marginRight: getCustomSize(0.5)
+    marginRight: 8
   },
   row: {
     width: '100%'

@@ -86,6 +86,7 @@ import See from './assets/see.svg';
 import SelectedCheckbox from './assets/selected-checkbox.svg';
 import SendSmallIcon from './assets/send-small.svg';
 import SendIcon from './assets/send.svg';
+import SentIcon from './assets/sent.svg';
 import SettingsIcon from './assets/settings.svg';
 import Share from './assets/share.svg';
 import Slider from './assets/slider.svg';
@@ -152,6 +153,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.ReceiveSmall]: ReceiveSmallIcon,
   [IconNameEnum.Search]: SearchIcon,
   [IconNameEnum.Send]: SendIcon,
+  [IconNameEnum.Sent]: SentIcon,
   [IconNameEnum.SendSmall]: SendSmallIcon,
   [IconNameEnum.Settings]: SettingsIcon,
   [IconNameEnum.Stake]: StakeIcon,

@@ -20,6 +20,7 @@ export enum ScreensEnum {
   SendCollectiblesSelector = 'SendCollectiblesSelector',
   SendAccountsSelector = 'SendAccountsSelector',
   SendConfirmation = 'SendConfirmation',
+  SendSummary = 'SendSummary',
   Settings = 'Settings',
   AccountsSettings = 'AccountsSettings',
   RevealPrivateKey = 'RevealPrivateKey',
@@ -86,6 +87,17 @@ export type ScreensParamList = {
   [ScreensEnum.SendCollectiblesSelector]: { token?: Token };
   [ScreensEnum.SendAccountsSelector]: { account: AccountInterface };
   [ScreensEnum.SendConfirmation]: { transferParams: TransferParams };
+  [ScreensEnum.SendSummary]: {
+    sendTokenSymbol: string,
+    sendTokenIcon?: string,
+    sendTokenAmount: number,
+    sendTokenAmountInDollar: string,
+    gasTokenSymbol: string,
+    gasTokenIcon?: string,
+    gasTokenAmount: number,
+    gasTokenAmountInDollar: string,
+    totalAmountInDollar: string
+  };
   [ScreensEnum.Settings]: undefined;
   [ScreensEnum.AccountsSettings]: undefined;
   [ScreensEnum.RevealPrivateKey]: { publicKeyHash: string };

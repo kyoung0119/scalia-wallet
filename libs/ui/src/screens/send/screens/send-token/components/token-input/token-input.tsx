@@ -23,7 +23,7 @@ interface Props<TFieldValues extends FieldValues, TName extends FieldPath<TField
   token?: TokenType;
   amountInDollar: string;
   navigationKey?: string;
-  amountInToken: string;
+  amountInToken?: string;
   maxButtonTitle?: string;
   onFocus?: OnEventFn;
   isTokenInput: boolean;

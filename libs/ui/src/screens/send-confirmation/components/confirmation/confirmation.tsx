@@ -1,27 +1,43 @@
 import { OnEventFn } from '@rnw-community/shared';
 import isEmpty from 'lodash/isEmpty';
-import React, { FC, PropsWithChildren, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 import { NetworkTypeEnum } from 'shared';
+import BigNumber from 'bignumber.js';
 
-import { CopyText } from '../../../../components/copy-text/copy-text';
 import { Row } from '../../../../components/row/row';
+import { Column } from '../../../../components/column/column';
 import { Text } from '../../../../components/text/text';
 import { TextInput } from '../../../../components/text-input/text-input';
-import { ModalActionsContainer } from '../../../../modals/components/modal-actions-container/modal-actions-container';
+import { Button } from '../../../../components/button/button';
+import { ButtonThemesEnum } from '../../../../components/button/enums';
+import { Icon } from '../../../../components/icon/icon';
+import { IconNameEnum } from '../../../../components/icon/icon-name.enum';
+import { IconWithBorder } from '../../../../components/icon-with-border/icon-with-border';
+import { IconWithBorderEnum } from '../../../../components/icon-with-border/enums';
+import { Image } from '../../../../components/image/image';
+import { ScreenContainer } from '../../../../components/screen-components/screen-container/screen-container';
+import { ScreenTitle } from '../../../../components/screen-components/header-container/components/screen-title/screen-title';
+
+import { useNavigation } from '../../../../hooks/use-navigation.hook';
+import { useTokenFiatBalance } from '../../../../hooks/use-token-fiat-balance.hook';
 import {
   useGasTokenSelector,
-  useSelectedAccountSelector,
+  useSelectedAccountPublicKeyHashSelector,
   useSelectedNetworkTypeSelector
 } from '../../../../store/wallet/wallet.selectors';
 import { formatUnitsToString, parseUnits } from '../../../../utils/units.utils';
+import { shortizeStart } from '../../../../utils/shortize.util';
+import { ScreensEnum } from '../../../../enums/sreens.enum';
+
+import { ViewStyleProps } from '../../../../interfaces/style.interface';
+import { Token } from 'src/interfaces/token.interface';
+
 import { useTransactionSpeed } from '../../hooks/use-transaction-speed.hook';
 import { ConfirmOperationParams } from '../evm-confirmation/types';
 
 import { Field } from './components/field/field';
-import { FromAccount } from './components/from-account/from-account';
-import { SelectedNetwork } from './components/selected-network/selected-network';
 import { TransactionSpeed } from './components/transaction-speed/transaction-speed';
 import { styles } from './confirmation.styles';
 import { ownGasFeeRules, requiredFieldRule } from './constants';
@@ -30,6 +46,7 @@ type Props = PropsWithChildren<{
   receiverPublicKeyHash: string;
   amount: string;
   symbol: string;
+  token: Token;
 }> &
   ConfirmOperationParams;
 
@@ -42,6 +59,7 @@ export const Confirmation: FC<Props> = ({
   receiverPublicKeyHash,
   symbol,
   amount,
+  token,
   children,
   confirmOperationParams: {
     initialTransactionFee,
@@ -52,7 +70,6 @@ export const Confirmation: FC<Props> = ({
     storageFee = 0
   }
 }) => {
-  const account = useSelectedAccountSelector();
   const gasToken = useGasTokenSelector();
   const networkType = useSelectedNetworkTypeSelector();
 
@@ -80,14 +97,31 @@ export const Confirmation: FC<Props> = ({
     isKlaytnNetwork,
     initialTransactionFeeWithDecimals,
     handleSpeedChange,
-    speed,
-    scrollViewRef
+    speed
   } = useTransactionSpeed(ownGasFee, initialTransactionFee, clearErrors as OnEventFn<void>);
 
   const correctedStorageFee = isOwnSpeedSelected ? Number(ownsStorageFee) : storageFee;
 
   const isTezosNetwork = networkType === NetworkTypeEnum.Tezos;
   const isEvmNetwork = networkType === NetworkTypeEnum.EVM;
+
+  const { navigate, goBack } = useNavigation();
+
+  const senderPublickeyHash = useSelectedAccountPublicKeyHashSelector();
+
+  const { amountInDollar: transferAmountInDollar } = useTokenFiatBalance(amount, token);
+  const { amountInDollar: gasAmountInDollar } = useTokenFiatBalance(correctedTransactionFee.toString(), gasToken);
+
+  const amountInDollarNumber = new BigNumber(transferAmountInDollar);
+  const gasAmountInDollarNumber = new BigNumber(gasAmountInDollar);
+  const totalAmountInDollar = amountInDollarNumber.plus(gasAmountInDollarNumber).toString();
+
+  const [isLoadingError, setIsLoadingError] = useState(false);
+  const onError = () => setIsLoadingError(true);
+
+  useEffect(() => {
+    setIsLoadingError(false);
+  }, [token]);
 
   useEffect(() => {
     setValue('ownGasFee', formatUnitsToString(initialTransactionFee, gasToken.decimals));
@@ -104,54 +138,62 @@ export const Confirmation: FC<Props> = ({
       onSend({ storageFee: correctedStorageFee, gasFee: gasFeeToSend });
     } else {
       onSend(gasPriceCoefficient);
+
+      const sendTokenAmount = new BigNumber(amount).toNumber()
+
+      navigate(ScreensEnum.SendSummary, {
+        sendTokenSymbol: token.symbol,
+        sendTokenIcon: token.thumbnailUri,
+        sendTokenAmount,
+        sendTokenAmountInDollar: transferAmountInDollar,
+        gasTokenSymbol: gasToken.symbol,
+        gasTokenIcon: gasToken.thumbnailUri,
+        gasTokenAmount: correctedTransactionFee,
+        gasTokenAmountInDollar: gasAmountInDollar,
+        totalAmountInDollar: totalAmountInDollar
+      });
     }
   };
 
+
   return (
-    <ModalActionsContainer
-      screenTitle="Confirm Operation"
-      submitTitle="Confirm"
-      cancelTitle="Decline"
-      onCancelPress={onDecline}
-      onSubmitPress={handleSubmit(onConfirmPress)}
-      isSubmitDisabled={isConfirmButtonDisabled}
-      isCancelDisabled={isTransactionLoading}
-      isBackButton={false}
-      scrollViewRef={scrollViewRef}
-    >
-      <View>
+    <ScreenContainer>
+      <ScreenTitle
+        title={`Confirm Transaction`}
+        onBackButtonPress={goBack}
+        numberOfLines={1}
+        titleStyle={styles.screenTitle}
+      />
+
+      <View style={styles.container}>
         {children}
-        <FromAccount account={account} />
-        <SelectedNetwork />
-        <View style={styles.container}>
-          <Text style={styles.title}>Operation</Text>
-          <View style={styles.operationContainer}>
-            <Row style={styles.sendBlock}>
-              <Text style={styles.operationText}>Send</Text>
-              <Row>
-                {amount !== '0' && (
-                  <>
-                    <Text style={styles.amount}>{amount}</Text>
-                    <Text style={[styles.symbol, styles.symbolColor]}>{symbol}</Text>
-                  </>
-                )}
-              </Row>
-            </Row>
-            <Row style={styles.receiverBlock}>
-              <Text style={styles.operationText}>To</Text>
-              <CopyText text={receiverPublicKeyHash} />
-            </Row>
+        <Row style={styles.captionRowContainer}>
+          <View style={styles.senderContainer}>
+            <Text style={styles.modalText as ViewStyleProps}>{shortizeStart(senderPublickeyHash)}</Text>
           </View>
-        </View>
+          <Icon name={IconNameEnum.ArrowRight} iconStyle={styles.iconContainer} />
+          <View style={styles.receiverContainer}>
+            <Text style={styles.modalText as ViewStyleProps}>{shortizeStart(receiverPublicKeyHash)}</Text>
+          </View>
+        </Row>
+
+        <Column style={styles.operationContainer}>
+          <IconWithBorder type={IconWithBorderEnum.Quinary} style={styles.icon} >
+            <Image uri={token.thumbnailUri} isLoadingError={isLoadingError} onError={onError} />
+          </IconWithBorder>
+          <Text style={styles.amountText as ViewStyleProps}>{amount}</Text>
+          <Text style={styles.amountDollarText as ViewStyleProps}>~ ${transferAmountInDollar}</Text>
+        </Column>
 
         <View>
-          <Text style={styles.title}>Transactions Details</Text>
           {isEvmNetwork && (
             <Field
-              title="Max Gas fee"
+              title="Gas Cost:"
               loading={isFeeLoading}
               amount={correctedTransactionFee}
               symbol={gasToken.symbol}
+              uri={gasToken.thumbnailUri}
+              amountInDollar={gasAmountInDollar}
             />
           )}
           {!isKlaytnNetwork && (
@@ -160,6 +202,16 @@ export const Confirmation: FC<Props> = ({
               handleSpeedChange={handleSpeedChange}
               initialTransactionFeeWithDecimals={initialTransactionFeeWithDecimals}
               ownGasFee={ownGasFee}
+            />
+          )}
+          {isEvmNetwork && (
+            <Field
+              title="Total Cost:"
+              loading={isFeeLoading}
+              // amount={correctedTransactionFee}
+              // symbol={gasToken.symbol}
+              // uri={gasToken.thumbnailUri}
+              amountInDollar={totalAmountInDollar}
             />
           )}
           {isTezosNetwork && (
@@ -207,7 +259,26 @@ export const Confirmation: FC<Props> = ({
             </View>
           )}
         </View>
+
+        <View style={[styles.root]}>
+          <Button
+            disabled={isConfirmButtonDisabled}
+            theme={ButtonThemesEnum.Secondary}
+            title="Confirm Transaction"
+            onPress={handleSubmit(onConfirmPress)}
+            style={[styles.buttonModal, styles.confirmButton]}
+          // testID={testID}
+          />
+          <Button
+            disabled={isTransactionLoading}
+            theme={ButtonThemesEnum.Primary}
+            title="Reject Transaction"
+            onPress={goBack}
+            style={[styles.buttonModal, styles.cancelButton]}
+          />
+
+        </View>
       </View>
-    </ModalActionsContainer>
+    </ScreenContainer>
   );
 };

@@ -20,12 +20,11 @@ import {
   useAllAccountsWithoutSelectedSelector,
   useSelectedNetworkTypeSelector
 } from '../../../../store/wallet/wallet.selectors';
-import { getPublicKeyHash } from '../../../../store/wallet/wallet.utils';
 import { useValidateAddressField } from '../../hooks/use-validate-address-field.hook';
 import { FormTypes } from '../../types';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 import { styles } from './transfer-between-my-accounts.styles';
-import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 const MAXIMUM_ADDRESS_LENGTH = 64;
 
@@ -57,13 +56,9 @@ export const TransferBetweenMyAccounts: FC = () => {
     }
   };
 
-  const publicKeyHash = getPublicKeyHash(account as AccountInterface, networkType);
-
   const onChangeAccountPress = async () => {
-    setValue('receiverPublicKeyHash', publicKeyHash);
-    await trigger('receiverPublicKeyHash');
     const selectedAccount = account ?? allAccountsWithoutSelected[0];
-    navigate(ScreensEnum.SendAccountsSelector, { account: selectedAccount });
+    navigate(ScreensEnum.SendAccountsSelector, { account: selectedAccount as AccountInterface });
   };
 
   return (

@@ -15,6 +15,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     // marginBottom: getCustomSize(2)
   },
+  container: {
+    width: '100%'
+  },
+  rowContainer: {
+    width: '100%',
+    justifyContent: 'space-between'
+  },
   readOnlyBlock: {
     marginBottom: getCustomSize()
   },

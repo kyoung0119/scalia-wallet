@@ -20,7 +20,6 @@ import { ScreensEnum, ScreensParamList } from '../../../../enums/sreens.enum';
 import { useNavigation } from '../../../../hooks/use-navigation.hook';
 import { useTokenFiatBalance } from '../../../../hooks/use-token-fiat-balance.hook';
 import {
-  useAllAccountsWithoutSelectedSelector,
   useGasTokenSelector,
   useSelectedAccountPublicKeyHashSelector,
   useSelectedNetworkTypeSelector
@@ -37,7 +36,6 @@ import { FormTypes } from '../../types';
 
 import { TokenInput } from './components/token-input/token-input';
 import { SelectToken } from './components/token-input/components/select-token/select-token';
-
 import { ViewStyleProps } from 'src/interfaces/style.interface';
 import { AccountInterface } from '../../../../../../shared/src/interfaces/account.interface';
 
@@ -47,13 +45,12 @@ export const SendToken: FC = () => {
   const { params } = useRoute<RouteProp<ScreensParamList, ScreensEnum.SendToken>>();
   const { goBack } = useNavigation();
   const gasToken = useGasTokenSelector();
-  const allAccountsWithoutSelected = useAllAccountsWithoutSelectedSelector();
 
   const defaultValues: FormTypes = {
     token: gasToken,
     amount: '',
     receiverPublicKeyHash: '',
-    account: allAccountsWithoutSelected[0],
+    account: undefined,
     isTransferBetweenAccounts: false
   };
 
@@ -78,10 +75,9 @@ export const SendToken: FC = () => {
 
   const [isTokenInput, setIsTokenInput] = useState(true); // State to track input mode
 
-  const { availableBalance, availableUsdBalance, availableFormattedBalance, amountInDollar, amountInToken } = useTokenFiatBalance(
+  const { availableBalance, availableUsdBalance, availableFormattedBalance, amountInDollar } = useTokenFiatBalance(
     amount,
-    token,
-    isTokenInput
+    token
   );
   const isTokenSelected = isDefined(token);
   const isSendButtonDisabled = !isEmpty(errors);
@@ -90,13 +86,21 @@ export const SendToken: FC = () => {
 
   const senderPublickeyHash = useSelectedAccountPublicKeyHashSelector();
   const networkType = useSelectedNetworkTypeSelector()
-  const receiverPubkeyHash = params ? getPublicKeyHash(params.account as AccountInterface, networkType) : undefined;
+  const receiverPubkeyHash = params && params.account ? getPublicKeyHash(params?.account as AccountInterface, networkType) : undefined;
 
   useEffect(() => {
     if (isTokenSelected && isNotEmptyString(amount)) {
       setValue('amount', getValueWithMaxNumberOfDecimals(amount, token?.decimals ?? 0));
     }
   }, [token]);
+
+  useEffect(() => {
+    if (account) {
+      const publicKeyHash = getPublicKeyHash(account as AccountInterface, networkType);
+      setValue('receiverPublicKeyHash', publicKeyHash);
+      trigger('receiverPublicKeyHash');
+    }
+  }, [account]);
 
   const onSelectMaxPress = async () => {
     const maxValue = getValueWithMaxNumberOfDecimals(availableBalance, 5)
@@ -148,7 +152,7 @@ export const SendToken: FC = () => {
                 field={field}
                 token={token}
                 amountInDollar={amountInDollar}
-                amountInToken={amountInToken}
+                // amountInToken={amountInToken}
                 navigationKey="token"
                 error={errors?.amount?.message}
                 isTokenInput={isTokenInput}
