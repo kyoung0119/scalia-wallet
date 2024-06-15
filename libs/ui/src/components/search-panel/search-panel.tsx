@@ -16,7 +16,7 @@ import { TouchableIcon } from '../touchable-icon/touchable-icon';
 import { styles } from './search-panel.styles';
 import { SearchPanelTestIDs } from './search-panel.test-ids';
 
-const SEARCH_FIELD = 'search';
+const SEARCH_FIELD = 'Search';
 
 interface Props {
   isEmptyList: boolean;
@@ -71,7 +71,7 @@ export const SearchPanel: React.FC<Props> = ({
   const { control, resetField, watch, setFocus } = useForm({
     mode: 'onChange',
     defaultValues: {
-      search: EMPTY_STRING
+      Search: EMPTY_STRING
     }
   });
 

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { View } from 'react-native';
+import { RouteProp, useRoute } from '@react-navigation/native';
 
 import { styles } from './send-summary.styles';
 
 import { ScreenContainer } from '../../../../components/screen-components/screen-container/screen-container';
 import { ScreensEnum, ScreensParamList } from '../../../../enums/sreens.enum';
-import { RouteProp, useRoute } from '@react-navigation/native';
 import { Text } from '../../../..//components/text/text';
 import { Field } from '../confirmation/components/field/field';
 import { Button } from '../../../../components/button/button';
@@ -58,7 +58,7 @@ export const SendSummary: FC<SendSummaryProps> = () => {
           <Field
             title="Token:"
             amount={sendTokenAmount}
-            symbol={gasTokenSymbol}
+            symbol={sendTokenSymbol}
             uri={gasTokenIcon}
             amountInDollar={sendTokenAmountInDollar}
           />
@@ -66,7 +66,7 @@ export const SendSummary: FC<SendSummaryProps> = () => {
             title="Gas Cost:"
             amount={gasTokenAmount}
             symbol={gasTokenSymbol}
-            uri={gasTokenIcon}
+            uri={sendTokenIcon}
             amountInDollar={gasTokenAmountInDollar}
           />
           <Field

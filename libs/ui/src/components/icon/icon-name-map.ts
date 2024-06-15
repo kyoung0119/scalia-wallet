@@ -62,15 +62,18 @@ import LockOpen from './assets/lock-open.svg';
 import Logo from './assets/logo.svg';
 import MadWithLove from './assets/mad-with-love.svg';
 import Maximize from './assets/maximize.svg';
+import MoreIcon from './assets/more.svg';
 import NewTab from './assets/new-tab.svg';
 import NftCollectionLayout from './assets/nft-collection-layout.svg';
 import NftLayout from './assets/nft-layout.svg';
 import NftIcon from './assets/nft.svg';
+import Network from './assets/network.svg';
 import OutLink from './assets/out-link.svg';
 import OutIcon from './assets/out.svg';
 import PartnersIcon from './assets/partners.svg';
 import Paste from './assets/paste.svg';
 import PixelShit from './assets/pixel-shit.svg';
+import Privacy from './assets/privacy.svg';
 import QrScanner from './assets/qr-scanner.svg';
 import QrIcon from './assets/qr.svg';
 import QrscanIcon from './assets/qrscan.svg';
@@ -80,6 +83,7 @@ import ReceiveIcon from './assets/receive.svg';
 import Reddit from './assets/reddit.svg';
 import Refresh from './assets/refresh.svg';
 import RevealSeedPhrase from './assets/reveal-seed-phrase.svg';
+import RotateIcon from './assets/rotate.svg';
 import SearchIcon from './assets/search.svg';
 import Security from './assets/security.svg';
 import See from './assets/see.svg';
@@ -145,12 +149,14 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.EyeOpen]: EyeOpenIcon,
   [IconNameEnum.Gas]: GasIcon,
   [IconNameEnum.Loaders]: LoadersIcon,
+  [IconNameEnum.More]: MoreIcon,
   [IconNameEnum.Nft]: NftIcon,
   [IconNameEnum.Out]: OutIcon,
   [IconNameEnum.Partners]: PartnersIcon,
   [IconNameEnum.Qrscan]: QrscanIcon,
   [IconNameEnum.Receive]: ReceiveIcon,
   [IconNameEnum.ReceiveSmall]: ReceiveSmallIcon,
+  [IconNameEnum.Rotate]: RotateIcon,
   [IconNameEnum.Search]: SearchIcon,
   [IconNameEnum.Send]: SendIcon,
   [IconNameEnum.Sent]: SentIcon,
@@ -241,5 +247,7 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.RevealSeedPhrase]: RevealSeedPhrase,
   [IconNameEnum.IllustrationWelcomeScreen]: IllustrationWelcomeScreen,
   [IconNameEnum.Success1]: Success1,
-  [IconNameEnum.Key]: Key
+  [IconNameEnum.Key]: Key,
+  [IconNameEnum.Privacy]: Privacy,
+  [IconNameEnum.Network]: Network
 };

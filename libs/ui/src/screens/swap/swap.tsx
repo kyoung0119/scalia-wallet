@@ -45,7 +45,7 @@ import { checkIsGasToken } from '../../utils/check-is-gas-token.util';
 import { parseUnits } from '../../utils/units.utils';
 import { useValidateAmountField } from '../send/hooks/use-validate-amount-field.hook';
 import { ReadOnlyTokenInput } from '../send/screens/send-token/components/read-only-token-input/read-only-token-input';
-import { TokenInput } from '../send/screens/send-token/components/token-input/token-input';
+import { TokenInputSwap } from './components/token-input-swap/token-input-swap';
 
 import { Timer } from './components/timer/timer';
 import { GREATER_THAN_ZERO_SWAP_ERROR, UNDER_AVAILABLE_BALANCE_SWAP_ERROR } from './constants';
@@ -204,7 +204,7 @@ export const Swap: FC = () => {
       <ScreenTitle title="Swap" onBackButtonPress={goBack} titleStyle={styles.screenTitle} />
       <View style={styles.header}>
         {isPossibleToGetAmountAndRoutes && <Timer getAmountAndRoutes={getAmountAndRoutes} routes={routes} />}
-        <TouchableIcon name={IconNameEnum.Slider} onPress={navigateToSlippageTolerance} />
+        {/* <TouchableIcon name={IconNameEnum.Slider} onPress={navigateToSlippageTolerance} /> */}
       </View>
       {/* </HeaderContainer> */}
 
@@ -214,7 +214,7 @@ export const Swap: FC = () => {
           name="fromAmount"
           rules={fromTokenRules}
           render={({ field }) => (
-            <TokenInput
+            <TokenInputSwap
               field={field}
               label="From"
               token={fromToken}
@@ -274,7 +274,8 @@ export const Swap: FC = () => {
       </ScreenScrollView>
 
       {isNavigationBar ? (
-        <NavigationBar />
+        // <NavigationBar />
+        <></>
       ) : (
         <View style={styles.swapButton}>
           <Button
@@ -285,7 +286,8 @@ export const Swap: FC = () => {
             loading={isLoading}
           />
         </View>
-      )}
-    </ScreenContainer>
+      )
+      }
+    </ScreenContainer >
   );
 };

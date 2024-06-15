@@ -3,32 +3,30 @@ import { TouchableOpacity, View } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 import { isMobile } from 'shared';
 
+import { Text } from '../../components/text/text';
 import { Column } from '../../components/column/column';
+import { ButtonWithIcon } from '../../components/button-with-icon/button-with-icon';
 import { IconNameEnum } from '../../components/icon/icon-name.enum';
-import { NavigationBar } from '../../components/navigation-bar/navigation-bar';
-import { Row } from '../../components/row/row';
+import { ButtonWithIconThemesEnum } from '../../components/button-with-icon/enums';
 import { ScreenTitle } from '../../components/screen-components/header-container/components/screen-title/screen-title';
-import { HeaderContainer } from '../../components/screen-components/header-container/header-container';
 import { ScreenContainer } from '../../components/screen-components/screen-container/screen-container';
 import { ScreenScrollView } from '../../components/screen-components/screen-scroll-view/screen-scroll-view';
-import { Text } from '../../components/text/text';
-import { TouchableIcon } from '../../components/touchable-icon/touchable-icon';
-import { ScreensEnum } from '../../enums/sreens.enum';
+
 import { useDelayedEffect } from '../../hooks/use-delayed-effect.hook';
 import { useNavigation } from '../../hooks/use-navigation.hook';
+import { ScreensEnum } from '../../enums/sreens.enum';
 import {
   useSelectedAccountPublicKeyHashSelector,
   useSelectedNetworkSelector
 } from '../../store/wallet/wallet.selectors';
-import { colors } from '../../styles/colors';
-import { getCustomSize } from '../../styles/format-size';
 import { handleSetValueToClipboard } from '../../utils/copy-to-clipboard.util';
 import { share } from '../../utils/share.util';
 
-import { styles } from './receive.styles';
+import { colors } from '../../styles/colors';
+import { getCustomSize } from '../../styles/format-size';
 import { ViewStyleProps } from 'src/interfaces/style.interface';
-import { ButtonWithIcon } from '../../components/button-with-icon/button-with-icon';
-import { ButtonWithIconThemesEnum } from '../../components/button-with-icon/enums';
+
+import { styles } from './receive.styles';
 
 export const Receive: FC = () => {
   const { navigate } = useNavigation();
@@ -64,6 +62,17 @@ export const Receive: FC = () => {
             </Text>
           </TouchableOpacity>
         </Column>
+
+        {isMobile &&
+          <ButtonWithIcon
+            title="Copy address"
+            theme={ButtonWithIconThemesEnum.Secondary}
+            rightIcon={IconNameEnum.Share}
+            iconSize={16}
+            onPress={shareAddress}
+            style={[styles.buttonCopy]}
+          />
+        }
 
         <ButtonWithIcon
           title="Copy address"

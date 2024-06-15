@@ -25,10 +25,10 @@ export const Item: FC<Props> = ({ icon, iconComponent, title, onPress, children,
   <Pressable onPress={onPress} disabled={disabled} style={[styles.root, style]} testID={testID}>
     <Row style={styles.content}>
       <Row>
-        {isDefined(icon) && <Icon iconStyle={styles.icon} name={icon} />}
+        {isDefined(icon) && <Icon iconStyle={styles.icon} name={icon} size={18} />}
         {isDefined(iconComponent) && iconComponent}
 
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title as ViewStyleProps}>{title}</Text>
       </Row>
       {isDefined(children) ? children : <Icon name={IconNameEnum.ChevronRight} />}
     </Row>

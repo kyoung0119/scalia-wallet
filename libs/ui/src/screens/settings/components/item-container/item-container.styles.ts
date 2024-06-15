@@ -6,8 +6,8 @@ import { typography } from '../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.bgGrey2,
-    borderRadius: getCustomSize(1.75),
+    backgroundColor: colors.bgDarkLight,
+    borderRadius: 8,
     overflow: 'hidden'
   },
   title: {

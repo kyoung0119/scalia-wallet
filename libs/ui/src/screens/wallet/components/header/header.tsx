@@ -35,7 +35,7 @@ export const Header: FC<Props> = ({ changeQrCodeVisibility }) => {
   const copy = useCopyToClipboard({ text: publicKeyHash });
   const shareAddress = () => share({ message: publicKeyHash });
   const { navigate } = useNavigation();
-  const selectNetwork = () => navigate(ScreensEnum.NetworksSelector);
+  const selectNetwork = () => navigate(ScreensEnum.NetworksSelector, { isSelector: true });
 
   return (
     <HeaderContainer isSelectors>

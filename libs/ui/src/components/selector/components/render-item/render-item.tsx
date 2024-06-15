@@ -11,22 +11,18 @@ import { Row } from '../../../row/row';
 import { styles } from './render-item.styles';
 
 interface Props extends TestIDProps {
-  isActive: boolean;
+  isActive?: boolean;
   onSelectItem: OnEventFn<GestureResponderEvent>;
-  rightBottomComponent?: ReactElement;
-  rightTopComponent?: ReactElement;
-  leftBottomComponent: ReactElement;
   leftTopComponent: ReactElement;
+  rightTopComponent?: ReactElement;
   style?: ViewStyleProps;
 }
 
 export const RenderItem: FC<Props> = ({
   isActive,
   onSelectItem,
-  leftBottomComponent,
-  rightTopComponent,
   leftTopComponent,
-  rightBottomComponent = null,
+  rightTopComponent,
   style,
   testID
 }) => (
@@ -35,16 +31,12 @@ export const RenderItem: FC<Props> = ({
       {leftTopComponent}
       {isDefined(rightTopComponent) ? (
         rightTopComponent
-      ) : isActive ? (
-        <Icon name={IconNameEnum.SelectedCheckbox} />
-      ) : (
-        <Icon name={IconNameEnum.EmptyCheckbox} />
-      )}
-    </Row>
-
-    <Row style={styles.wrapper}>
-      {leftBottomComponent}
-      {rightBottomComponent}
+      ) :
+        isActive ? (
+          <Icon name={IconNameEnum.SelectedCheckbox} />
+        ) : (
+          <Icon name={IconNameEnum.EmptyCheckbox} />
+        )}
     </Row>
   </Pressable>
 );

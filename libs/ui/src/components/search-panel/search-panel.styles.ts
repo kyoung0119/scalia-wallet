@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     flex: 1
   },
   input: {
-    height: getCustomSize(5)
+    // height: getCustomSize(5)
   },
   iconsWrapper: {
     justifyContent: 'space-between',

@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
   },
   resetText: {
     ...typography.taglineInterSemiBoldUppercase13,
-    color: colors.orange
+    color: colors.theme
   },
   outIcon: {
     marginLeft: getCustomSize(0.5)

@@ -6,21 +6,19 @@ import { userDetailsHeight, userDetailsMarginBottom } from '../../constants/dime
 
 export const styles = StyleSheet.create({
   root: {
-    height: userDetailsHeight,
-    marginBottom: userDetailsMarginBottom,
-    paddingTop: getCustomSize(1),
-    paddingLeft: getCustomSize(1),
-    paddingRight: getCustomSize(1.5),
-    borderRadius: getCustomSize(2),
-    backgroundColor: colors.bgGrey2
+    // height: userDetailsHeight,
+    marginBottom: 12,
+    padding: 16,
+    borderWidth: 1,
+    borderRadius: 8,
+    backgroundColor: colors.bgDarkLight
   },
   active: {
     borderWidth: getCustomSize(0.125),
-    borderColor: colors.orange
+    borderColor: colors.theme
   },
   wrapper: {
     justifyContent: 'space-between',
-    marginBottom: getCustomSize(),
     flex: 1
   }
 });

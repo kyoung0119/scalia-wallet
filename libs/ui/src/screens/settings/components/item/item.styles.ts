@@ -2,20 +2,25 @@ import { StyleSheet } from 'react-native';
 
 import { getCustomSize } from '../../../../styles/format-size';
 import { typography } from '../../../../styles/typography';
+import { colors } from '../../../../styles/colors';
 
 export const styles = StyleSheet.create({
   root: {
     justifyContent: 'center',
-    height: getCustomSize(6),
-    padding: getCustomSize(1.5)
+    // height: getCustomSize(6),
+    padding: 16
   },
   content: {
     justifyContent: 'space-between'
   },
   title: {
-    ...typography.bodyInterSemiBold15
+    ...typography.AltoneVariable14,
+    fontWeight: 600
   },
   icon: {
-    marginRight: getCustomSize(0.5)
+    backgroundColor: colors.bgTransparentTheme, // Semi-transparent background
+    borderRadius: 40,
+    padding: 6,
+    marginRight: 16,
   }
 });

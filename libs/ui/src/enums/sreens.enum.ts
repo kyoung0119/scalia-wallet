@@ -113,7 +113,7 @@ export type ScreensParamList = {
   [ScreensEnum.ConnectToDapps]: undefined;
   [ScreensEnum.Unlock]: undefined;
   [ScreensEnum.AccountsSelector]: undefined;
-  [ScreensEnum.NetworksSelector]: undefined;
+  [ScreensEnum.NetworksSelector]: { isSelector: boolean };
   [ScreensEnum.EditAccount]: { publicKeyHash: string };
   [ScreensEnum.EditAccountName]: { account: AccountInterface };
   [ScreensEnum.AddAccount]?: { wordsAmount?: SeedWordsAmount; activeId?: number };

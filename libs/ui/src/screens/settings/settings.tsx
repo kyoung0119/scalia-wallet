@@ -27,7 +27,6 @@ import { openFullViewPage } from '../../utils/open-maximise-screen.util';
 import EasterEgg from './assets/easter-egg.svg';
 import { Item } from './components/item/item';
 import { ItemContainer } from './components/item-container/item-container';
-import { MadFishLogo } from './components/mad-fish-logo/mad-fish-logo';
 import { Separator } from './components/separator/separator';
 import { socialMediaLinks } from './constants';
 import { styles } from './settings.styles';
@@ -37,7 +36,7 @@ const dividerSize = getCustomSize(2);
 const socialIconSize = getCustomSize(4);
 
 export const Settings: FC = () => {
-  const { navigate } = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const publicKeyHash = useSelectedAccountPublicKeyHashSelector();
 
   const navigateToAccountsSettings = () => navigate(ScreensEnum.AccountsSettings);
@@ -54,18 +53,14 @@ export const Settings: FC = () => {
   const navigateToSettingsAboutUs = () => navigate(ScreensEnum.SettingsAboutUs);
   const navigateToSettingsResetWalletConfirm = () => navigate(ScreensEnum.SettingsResetWalletConfirm);
   const navigateToAuthorizedDapps = () => navigate(ScreensEnum.AuthorizedDApps);
+  const navigateToNetworkSelector = () => navigate(ScreensEnum.NetworksSelector, { isSelector: false });
 
   const goToTelegram = () => Linking.openURL(socialMediaLinks.telegram);
   const goToTwitter = () => Linking.openURL(socialMediaLinks.twitter);
 
   return (
     <ScreenContainer>
-      <HeaderContainer isSelectors>
-        <ScreenTitle title="Settings" />
-        {isWeb && (
-          <TouchableIcon name={isFullpage ? IconNameEnum.NewTab : IconNameEnum.Maximize} onPress={openFullViewPage} />
-        )}
-      </HeaderContainer>
+      <ScreenTitle title="Settings" onBackButtonPress={goBack} />
 
       <ScreenScrollView style={styles.root} contentContainerStyle={styles.rootContentContainer}>
         {isIOS && (
@@ -80,6 +75,30 @@ export const Settings: FC = () => {
         <View style={styles.content}>
           <View>
             <ItemContainer>
+              <Item title="Wallet settings" icon={IconNameEnum.Wallet} onPress={navigateToAuthorizedDapps} />
+            </ItemContainer>
+
+            <Divider size={dividerSize} />
+
+            <ItemContainer>
+              {/* <Item title="General" icon={IconNameEnum.Slider} onPress={navigateToSettingsGeneral} />
+              <Separator /> */}
+              <Item title="Security" icon={IconNameEnum.Security} onPress={navigateToSettingsSecurity} />
+            </ItemContainer>
+
+            <Divider size={dividerSize} />
+
+            <ItemContainer>
+              <Item title="Privacy" icon={IconNameEnum.Privacy} onPress={navigateToSettingsSecurity} />
+            </ItemContainer>
+
+            <Divider size={dividerSize} />
+
+            <ItemContainer>
+              <Item title="Network" icon={IconNameEnum.Network} onPress={navigateToNetworkSelector} />
+            </ItemContainer>
+
+            {/* <ItemContainer>
               <Item
                 iconComponent={
                   <IconWithBorder type={IconWithBorderEnum.Ternary} style={styles.robot}>
@@ -98,22 +117,16 @@ export const Settings: FC = () => {
                 testID={SettingsTestIDs.RevealSeedPhraseButton}
               />
             </ItemContainer>
+ */}
 
-            <Divider size={dividerSize} />
 
-            <ItemContainer>
-              <Item title="General" icon={IconNameEnum.Slider} onPress={navigateToSettingsGeneral} />
-              <Separator />
-              <Item title="Security" icon={IconNameEnum.Security} onPress={navigateToSettingsSecurity} />
-            </ItemContainer>
+            {/* <Divider size={dividerSize} /> */}
 
-            <Divider size={dividerSize} />
-
-            <ItemContainer>
+            {/* <ItemContainer>
               <Item title="Authorized DApps" icon={IconNameEnum.DappConnect} onPress={navigateToAuthorizedDapps} />
-            </ItemContainer>
+            </ItemContainer> */}
 
-            <Divider size={dividerSize} />
+            {/* <Divider size={dividerSize} /> */}
             {/* 
             <ItemContainer>
               <Item title="About us" icon={IconNameEnum.InfoRed} onPress={navigateToSettingsAboutUs} />
@@ -138,17 +151,15 @@ export const Settings: FC = () => {
               <Pressable onPress={navigateToSettingsResetWalletConfirm}>
                 <Row>
                   <Text style={styles.resetText}>Reset wallet</Text>
-                  <Icon name={IconNameEnum.Out} iconStyle={styles.outIcon} />
+                  {/* <Icon name={IconNameEnum.Out} iconStyle={styles.outIcon} /> */}
                 </Row>
               </Pressable>
             </View>
           </View>
 
-          {/* <MadFishLogo style={styles.logo} /> */}
         </View>
       </ScreenScrollView>
 
-      <NavigationBar />
     </ScreenContainer>
   );
 };
