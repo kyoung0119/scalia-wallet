@@ -86,6 +86,7 @@ export const UnlockApp: FC = () => {
             render={({ field }) => (
               <PasswordInput
                 field={field}
+                label='Password'
                 error={error}
                 onKeyPress={onEnterPress}
                 onSubmitEditing={onUnlock}

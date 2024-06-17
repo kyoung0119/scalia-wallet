@@ -153,7 +153,7 @@ export const ChangePassword: FC = () => {
               style={[
                 styles.passwordValidationText,
                 (isDefined(dirtyFields.password) || isDefined(errors.password?.message)) &&
-                  (valid ? styles.valid : !isDefined(optional) && styles.noValid)
+                (valid ? styles.valid : !isDefined(optional) && styles.noValid)
               ]}
             >{`${valid ? '✓' : '✗'} ${message}`}</Text>
           ))}

@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   },
   eyeIcon: {
     position: 'absolute',
-    top: -12,
+    top: 2,
     right: getCustomSize()
   }
 });
