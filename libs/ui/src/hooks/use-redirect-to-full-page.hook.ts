@@ -9,13 +9,13 @@ import { useCurrentRoute } from './use-current-route.hook';
 
 const IS_ONLY_FULL_PAGE_SCREENS = [
   ScreensEnum.Welcome,
-  ScreensEnum.AddNewCollectible,
-  ScreensEnum.AddNewToken,
-  ScreensEnum.AddNetwork,
-  ScreensEnum.CreateANewWallet,
-  ScreensEnum.ImportWallet,
-  ScreensEnum.VerifyMnemonic,
-  ScreensEnum.AlmostDone
+  // ScreensEnum.AddNewCollectible,
+  // ScreensEnum.AddNewToken,
+  // ScreensEnum.AddNetwork,
+  // ScreensEnum.CreateANewWallet,
+  // ScreensEnum.ImportWallet,
+  // ScreensEnum.VerifyMnemonic,
+  // ScreensEnum.AlmostDone
 ];
 
 export const useRedirectToFullPage = () => {

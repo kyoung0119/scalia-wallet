@@ -39,7 +39,7 @@ export const TokenInputSwap = <
   availableFormattedBalance,
   navigationKey,
   availableBalance,
-  maxButtonTitle = 'Max',
+  maxButtonTitle = 'Use Max',
   onFocus
 }: Props<TFieldValues, TName>) => {
   const showMaxButton = isDefined(token) && isDefined(availableBalance);

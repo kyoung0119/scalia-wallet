@@ -45,8 +45,8 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   textTernary: {
-    color: colors.orange,
-    ...typography.taglineInterSemiBoldUppercase11
+    color: colors.theme,
+    ...typography.AltoneVariable12
   },
   // pressed
   buttonPressed: {

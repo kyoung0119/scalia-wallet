@@ -1,10 +1,13 @@
-import { isDefined, isNotEmptyString } from '@rnw-community/shared';
-import { getDefaultProvider } from 'ethers';
-import debounce from 'lodash/debounce';
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { getDefaultProvider } from 'ethers';
+import { isDefined, isNotEmptyString } from '@rnw-community/shared';
 import { NetworkTypeEnum } from 'shared';
+import debounce from 'lodash/debounce';
+
+import { Button } from '../../../../components/button/button';
+import { ButtonThemesEnum } from '../../../../components/button/enums';
 
 import { CHAINS_JSON, DEBOUNCE_TIME } from '../../../../constants/defaults';
 import { httpsRegx } from '../../../../constants/regex-validation';
@@ -15,10 +18,14 @@ import { NetworkInterface } from '../../../../interfaces/network.interface';
 import { addNewNetworkAction } from '../../../../store/wallet/wallet.actions';
 import { useAllNetworksSelector } from '../../../../store/wallet/wallet.selectors';
 import { removeTrailingSlash } from '../../../../utils/remove-trailing-slash.util';
+
 import { useNetworkFieldsRules } from '../../../hooks/use-validate-network-fields.hook';
+
 import { NetworkContainer } from '../components/network-container/network-container';
 import { ChainInterface, NativeCurrencyType } from '../types/chains.interface';
 import { FormTypes } from '../types/form-types.interface';
+
+import { styles } from './add-network.styles';
 
 const defaultValues = {
   name: '',
@@ -29,7 +36,7 @@ const defaultValues = {
 };
 
 export const AddNetwork: FC = () => {
-  const { navigate } = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const dispatch = useDispatch();
   const { showSuccessToast } = useToast();
 
@@ -181,6 +188,20 @@ export const AddNetwork: FC = () => {
       rules={rules}
       errors={errors}
       setValue={setValue}
-    />
+    >
+      <Button
+        disabled={Boolean(Object.keys(errors).length)}
+        theme={ButtonThemesEnum.Secondary}
+        title='Confirm'
+        onPress={handleSubmit(onSubmit)}
+        style={styles.button}
+      />
+      <Button
+        theme={ButtonThemesEnum.Primary}
+        title='Cancel'
+        onPress={goBack}
+        style={styles.button}
+      />
+    </NetworkContainer>
   );
 };

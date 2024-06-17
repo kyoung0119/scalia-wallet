@@ -5,6 +5,9 @@ import { getCustomSize } from '../../../../../styles/format-size';
 import { typography } from '../../../../../styles/typography';
 
 export const styles = StyleSheet.create({
+  root: {
+    padding: 16
+  },
   prompt: {
     justifyContent: 'space-between',
     marginBottom: getCustomSize(2),
@@ -19,7 +22,7 @@ export const styles = StyleSheet.create({
     ...typography.captionInterRegular13
   },
   inputContainer: {
-    marginBottom: getCustomSize(3.5)
+    marginBottom: 12
   },
   lastInputContainer: {
     marginBottom: getCustomSize(2.25)
