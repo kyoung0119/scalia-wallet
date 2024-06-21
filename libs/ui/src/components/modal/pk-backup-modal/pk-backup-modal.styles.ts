@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.bgTransparentTheme,
     marginHorizontal: 12,
     padding: 12,
-    // marginTop: 20,
+    marginBottom: 16,
     borderWidth: 1,
     borderColor: colors.theme,
     borderRadius: 8,

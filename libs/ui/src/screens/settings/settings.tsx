@@ -75,7 +75,7 @@ export const Settings: FC = () => {
         <View style={styles.content}>
           <View>
             <ItemContainer>
-              <Item title="Wallet settings" icon={IconNameEnum.Wallet} onPress={navigateToAuthorizedDapps} />
+              <Item title="Wallet settings" icon={IconNameEnum.Wallet} />
             </ItemContainer>
 
             <Divider size={dividerSize} />
@@ -89,7 +89,7 @@ export const Settings: FC = () => {
             <Divider size={dividerSize} />
 
             <ItemContainer>
-              <Item title="Privacy" icon={IconNameEnum.Privacy} onPress={navigateToSettingsSecurity} />
+              <Item title="Privacy" icon={IconNameEnum.Privacy} />
             </ItemContainer>
 
             <Divider size={dividerSize} />

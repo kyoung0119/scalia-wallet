@@ -7,7 +7,8 @@ import { typography } from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   header: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    marginRight: 16
   },
   errorFromAmount: {
     bottom: -getCustomSize(isMobile ? 2 : 3.75)
