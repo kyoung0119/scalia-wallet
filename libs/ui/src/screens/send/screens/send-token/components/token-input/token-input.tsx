@@ -26,8 +26,8 @@ interface Props<TFieldValues extends FieldValues, TName extends FieldPath<TField
   amountInToken?: string;
   maxButtonTitle?: string;
   onFocus?: OnEventFn;
-  isTokenInput: boolean;
-  setIsTokenInput: (value: boolean) => void;
+  isTokenInput?: boolean;
+  setIsTokenInput?: (value: boolean) => void;
 }
 
 export const TokenInput = <
@@ -47,7 +47,7 @@ export const TokenInput = <
 }: Props<TFieldValues, TName>) => {
 
   const toggleInputMode = () => {
-    setIsTokenInput(!isTokenInput);
+    setIsTokenInput && setIsTokenInput(!isTokenInput);
   }
 
   return (

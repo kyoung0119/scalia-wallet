@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren, RefObject } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { ScreensEnum } from '../../enums/sreens.enum';
 import { useNavigation } from '../../hooks/use-navigation.hook';
@@ -8,7 +8,6 @@ import {
   FooterButtonsInterface
 } from '../footer-navigation-buttons/footer-navigation-buttons';
 import { ScreenTitle } from '../screen-components/header-container/components/screen-title/screen-title';
-import { HeaderContainer } from '../screen-components/header-container/header-container';
 import { ScreenContainer } from '../screen-components/screen-container/screen-container';
 import { Steps } from '../steps/steps';
 
@@ -44,10 +43,10 @@ export const WalletCreationContainer: FC<Props> = ({
 
   return (
     <ScreenContainer>
-      <HeaderContainer>
-        <ScreenTitle title={title} onBackButtonPress={navigateToCreateANewWallet} titleStyle={styles.title} />
+      <ScreenTitle title={title} onBackButtonPress={navigateToCreateANewWallet} titleStyle={styles.title} />
+      <View style={styles.stepContainer}>
         <Steps currentStep={currentStep} stepsAmount={stepsAmount} />
-      </HeaderContainer>
+      </View>
 
       <ScrollView ref={scrollViewRef} style={styles.content}>
         {children}

@@ -30,9 +30,9 @@ export const styles = StyleSheet.create({
     marginTop: getCustomSize(5.5),
     marginBottom: getCustomSize(1.5)
   },
-  oko: {
+  scalia: {
     ...typography.headlineInterBold34,
-    color: colors.orange,
+    color: colors.theme,
     marginRight: getCustomSize()
   },
   wallet: {

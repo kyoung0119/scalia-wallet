@@ -1,3 +1,4 @@
+import { typography } from './../../../../styles/typography';
 import { StyleSheet } from 'react-native';
 
 import { getCustomSize } from '../../../../styles/format-size';
@@ -35,5 +36,17 @@ export const styles = StyleSheet.create({
     // padding: getCustomSize(0.5),
     // backgroundColor: colors.navGrey1,
     // borderRadius: getCustomSize(1.75)
+  },
+  networkSelector: {
+    backgroundColor: colors.bgDarkDeep,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 40
+  },
+  networkText: {
+    marginLeft: 4,
+    ...typography.AltoneVariable14,
+    color: colors.textGrey9,
+    fontWeight: 600,
   }
 });

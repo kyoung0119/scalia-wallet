@@ -31,7 +31,7 @@ export const HeaderSelectors: FC = () => {
     <Row style={styles.root}>
       <AccountModal />
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={selectAccount}
         style={styles.accountContainer}
         testID={HeaderSelectorsTestIDs.AccountSelectorButton}
@@ -45,7 +45,7 @@ export const HeaderSelectors: FC = () => {
             {name}
           </Text>
         </Row>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <Row>
         <TouchableOpacity
           onPress={selectSettings}

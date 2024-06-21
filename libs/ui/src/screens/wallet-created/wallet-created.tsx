@@ -81,7 +81,7 @@ export const WalletCreated: FC = () => {
               <Icon name={isAcceptTerms ? IconNameEnum.SelectedSquareCheckbox : IconNameEnum.EmptySquareCheckbox} />
               <Text style={styles.text}>Accept terms</Text>
             </Row>
-            <TouchableIcon name={IconNameEnum.ChevronRight} onPress={goToTermsOfUse} />
+            {/* <TouchableIcon name={IconNameEnum.ChevronRight} onPress={goToTermsOfUse} /> */}
           </Animated.View>
         </Pressable>
 

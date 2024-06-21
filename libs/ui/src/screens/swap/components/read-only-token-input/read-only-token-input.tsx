@@ -2,10 +2,10 @@ import { isNotEmptyString } from '@rnw-community/shared';
 import React, { FC } from 'react';
 import { View } from 'react-native';
 
-import { Text } from '../../../../../../components/text/text';
-import { Token } from '../../../../../../interfaces/token.interface';
-import { DollarAmount } from '../token-input/components/dollar-amount/dollar-amount';
-import { SelectToken } from '../token-input/components/select-token/select-token';
+import { Text } from '../../../../components/text/text';
+import { Token } from '../../../../interfaces/token.interface';
+import { DollarAmount } from '../../../send/screens/send-token/components/token-input/components/dollar-amount/dollar-amount';
+import { SelectToken } from '../token-input-swap/components/select-token/select-token';
 
 import { styles } from './read-only-token-input.styles';
 

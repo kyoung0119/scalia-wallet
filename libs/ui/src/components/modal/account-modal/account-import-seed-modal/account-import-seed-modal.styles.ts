@@ -102,11 +102,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.bgGrey7,
     textAlign: 'center',
     ...(isWeb && { outlineStyle: 'none' }),
-    ...(isWeb && { caretColor: colors.orange }),
+    ...(isWeb && { caretColor: colors.theme }),
     overflow: 'hidden'
   },
   error: {
-    borderColor: colors.orange
+    borderColor: colors.theme
   },
   wordIndex: {
     position: 'absolute',

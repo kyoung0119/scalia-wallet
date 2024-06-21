@@ -18,7 +18,7 @@ import { ScreensEnum, ScreensParamList } from '../../../enums/sreens.enum';
 import { useNavigation } from '../../../hooks/use-navigation.hook';
 import { useScrollToOffset } from '../../../hooks/use-scroll-to-element.hook';
 import { useTokenFiatBalance } from '../../../hooks/use-token-fiat-balance.hook';
-import { ReadOnlyTokenInput } from '../../../screens/send/screens/send-token/components/read-only-token-input/read-only-token-input';
+import { ReadOnlyTokenInput } from '../../../screens/swap/components/read-only-token-input/read-only-token-input';
 import { TokenInput } from '../../../screens/send/screens/send-token/components/token-input/token-input';
 import { getEncodedApproveTokenData } from '../../../screens/send-confirmation/components/evm-confirmation/utils/get-approve-token-data.util';
 import { changeApproveAllowanceDataAction } from '../../../store/swap/swap.actions';
@@ -139,8 +139,8 @@ export const EditPermission: FC = () => {
               field={modifyCustomAllowanceField(field)}
               token={token}
               amountInDollar={getAllowanceInDollar(customAllowance, customAllowanceBalance.amountInDollar)}
-              availableBalance={MAX_UINT_256_STRING}
-              availableFormattedBalance={customAllowanceBalance.availableFormattedBalance}
+              // availableBalance={MAX_UINT_256_STRING}
+              // availableFormattedBalance={customAllowanceBalance.availableFormattedBalance}
               maxButtonTitle="Unlimited"
               onFocus={onFocus}
               error={errors?.customAllowance?.message}

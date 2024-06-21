@@ -7,8 +7,8 @@ import { openFullViewPage } from '../utils/open-maximise-screen.util';
 
 import { useCurrentRoute } from './use-current-route.hook';
 
-const IS_ONLY_FULL_PAGE_SCREENS = [
-  ScreensEnum.Welcome,
+const IS_ONLY_FULL_PAGE_SCREENS: ScreensEnum[] = [
+  // ScreensEnum.Welcome,
   // ScreensEnum.AddNewCollectible,
   // ScreensEnum.AddNewToken,
   // ScreensEnum.AddNetwork,

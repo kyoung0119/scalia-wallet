@@ -61,11 +61,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.navGrey1,
     textAlign: 'center',
     ...(isWeb && { outlineStyle: 'none' }),
-    ...(isWeb && { caretColor: colors.orange }),
+    ...(isWeb && { caretColor: colors.theme }),
     overflow: 'hidden'
   },
   error: {
-    borderColor: colors.orange
+    borderColor: colors.theme
   },
   wordIndex: {
     position: 'absolute',
@@ -88,7 +88,7 @@ export const styles = StyleSheet.create({
   },
   layoutText: {
     ...typography.taglineInterSemiBoldUppercase11,
-    color: colors.orange
+    color: colors.theme
   },
   buttons: {
     width: '100%',

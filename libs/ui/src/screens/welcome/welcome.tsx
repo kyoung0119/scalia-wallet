@@ -34,7 +34,7 @@ export const Welcome: FC = () => {
         <Icon name={IconNameEnum.Logo} width={logoWidth} height={logoHeight} />
 
         <Row style={styles.titleContainer}>
-          <Text style={styles.oko}>Scalia</Text>
+          <Text style={styles.scalia}>Scalia</Text>
           <Text style={styles.wallet}>Wallet</Text>
         </Row>
         <Text style={styles.description}>Open your eyes on the finance</Text>

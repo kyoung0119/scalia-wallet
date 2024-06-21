@@ -12,5 +12,9 @@ export const styles = StyleSheet.create({
     width: '100%',
     marginTop: getCustomSize(2),
     paddingHorizontal: getCustomSize(2)
+  },
+  stepContainer: {
+    alignSelf: 'flex-end',
+    marginRight: 16
   }
 });

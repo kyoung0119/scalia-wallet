@@ -3,14 +3,13 @@ import React, { FC } from 'react';
 import { GestureResponderEvent, View, TouchableOpacity } from 'react-native';
 import { isMobile } from 'shared';
 
+import { Text } from '../../../../components/text/text';
 import { Row } from '../../../../components/row/row';
 import { Icon } from '../../../../components/icon/icon';
-import { IconWithBorder } from '../../../../components/icon-with-border/icon-with-border'; 0
 import { TouchableIcon } from '../../../../components/touchable-icon/touchable-icon';
 import { IconNameEnum } from '../../../../components/icon/icon-name.enum';
 import { HeaderAccountBalance } from '../../../../components/screen-components/header-container/components/header-account-balance/header-account-balance';
 import { HeaderContainer } from '../../../../components/screen-components/header-container/header-container';
-import { NetworkSelectorDropdown } from '../../../../components/network-selector-dropdown/network-selector-dropdown';
 import { CopyText } from '../../../../components/copy-text/copy-text';
 
 import {
@@ -24,6 +23,7 @@ import { useNavigation } from '../../../../hooks/use-navigation.hook';
 import { useCopyToClipboard } from '../../../../hooks/use-copy-to-clipboard.hook';
 
 import { styles } from './header.styles';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 interface Props {
   changeQrCodeVisibility: OnEventFn<GestureResponderEvent>;
@@ -31,7 +31,9 @@ interface Props {
 
 export const Header: FC<Props> = ({ changeQrCodeVisibility }) => {
   const publicKeyHash = useSelectedAccountPublicKeyHashSelector();
-  const { iconName } = useSelectedNetworkSelector();
+  const selectedNetwork = useSelectedNetworkSelector();
+  const { iconName } = selectedNetwork;
+
   const copy = useCopyToClipboard({ text: publicKeyHash });
   const shareAddress = () => share({ message: publicKeyHash });
   const { navigate } = useNavigation();
@@ -52,19 +54,19 @@ export const Header: FC<Props> = ({ changeQrCodeVisibility }) => {
           <TouchableIcon name={IconNameEnum.Copy} onPress={copy} width={16} height={16} />
         </Row>
 
-        <Row style={styles.network}>
-          <NetworkSelectorDropdown activeItemId={0} />
-          <TouchableOpacity
-            onPress={selectNetwork}
-            style={styles.button}
-          >
-            <IconWithBorder>
-              <Icon name={iconName ?? IconNameEnum.NetworkFallback} />
-            </IconWithBorder>
-          </TouchableOpacity>
-        </Row>
+        <TouchableOpacity
+          onPress={selectNetwork}
+          style={styles.network}
+        >
+          <Row style={styles.networkSelector}>
+            <Icon name={iconName ?? IconNameEnum.NetworkFallback} />
+            <Text style={styles.networkText as ViewStyleProps}>
+              {selectedNetwork.name}
+            </Text>
+          </Row>
+        </TouchableOpacity>
 
-      </View>
-    </HeaderContainer>
+      </View >
+    </HeaderContainer >
   );
 };

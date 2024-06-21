@@ -77,7 +77,6 @@ export const UnlockApp: FC = () => {
         </div>
       </View>
       <View style={styles.bottomBlock}>
-        <NetworkSelectorDropdown activeItemId={0} />
 
         <Row style={styles.password}>
           <Controller
@@ -86,7 +85,7 @@ export const UnlockApp: FC = () => {
             render={({ field }) => (
               <PasswordInput
                 field={field}
-                label='Password'
+                label='Enter your password to unlock wallet'
                 error={error}
                 onKeyPress={onEnterPress}
                 onSubmitEditing={onUnlock}

@@ -111,9 +111,9 @@ export const AlmostDone: FC = () => {
         render={({ field }) => (
           <TextInput
             field={field}
-            label="Account Name"
+            label="Account Name (1-14 characters)"
             placeholder={defaultAccountName}
-            prompt="Name of main account (1-14 characters)"
+            // prompt="Name of main account (1-14 characters)"
             error={errors.name?.message}
             containerStyle={styles.controllerOffset}
           />
@@ -128,7 +128,7 @@ export const AlmostDone: FC = () => {
           <PasswordInput
             field={field}
             label="Password"
-            prompt="Password is used to protect the wallet"
+            // prompt="Password is used to protect the wallet"
             inputContainerStyle={
               ((isDefined(passwordIsNoValid) && passwordIsNoValid) || isDefined(errors.password?.message)) &&
               styles.errorInput
@@ -144,7 +144,7 @@ export const AlmostDone: FC = () => {
             style={[
               styles.passwordValidationText,
               (isDefined(dirtyFields.password) || isDefined(errors.password?.message)) &&
-                (valid ? styles.valid : !isDefined(optional) && styles.noValid)
+              (valid ? styles.valid : !isDefined(optional) && styles.noValid)
             ]}
           >{`${valid ? '✓' : '✗'} ${message}`}</Text>
         ))}
@@ -159,7 +159,7 @@ export const AlmostDone: FC = () => {
             <PasswordInput
               field={field}
               label="Password Confirm"
-              prompt="Password is used to protect the wallet"
+              // prompt="Password is used to protect the wallet"
               error={errors.confirmPassword?.message}
               testID={AlmostDoneTestIDs.PasswordConfirmInput}
             />
