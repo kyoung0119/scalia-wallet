@@ -126,7 +126,10 @@ export const NetworksList: FC<Props> = ({ isSelector }) => {
       isSelector ?
         <ModalRenderItem
           name={item.name}
-          icon={<Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />}
+          icon={item.name == 'Scalia' ?
+            <Image uri={ScaliaPNG} style={styles.scaliaIcon} /> :
+            <Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />
+          }
           isActive={isNetworkSelected}
           balanceTitle="Gas balance"
           balance={
@@ -138,7 +141,8 @@ export const NetworksList: FC<Props> = ({ isSelector }) => {
           name={item.name}
           icon={item.name == 'Scalia' ?
             <Image uri={ScaliaPNG} style={styles.scaliaIcon} /> :
-            <Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />}
+            <Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />
+          }
           balanceTitle="Gas balance"
           balance={
             <ModalGasToken balance={accountsGasTokens[accountGasTokenSlug]?.data} metadata={item.gasTokenMetadata} />
