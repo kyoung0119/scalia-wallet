@@ -1,10 +1,10 @@
 // default rpc mainnet
 export enum MainnetRpcEnum {
   Scalia = 'https://public-node-api.klaytnapi.com/v1/cypress',
-  Klaytn = 'https://public-node-api.klaytnapi.com/v1/cypress',
-  Ethereum = 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-  BinanceSmartChain = 'https://bsc-dataseed.binance.org',
-  Polygon = 'https://polygon-rpc.com',
+  Klaytn = 'https://1rpc.io/klay',
+  Ethereum = 'https://gateway.tenderly.co/public/mainnet',
+  BinanceSmartChain = 'https://bsc.drpc.org',
+  Polygon = 'https://polygon.drpc.org',
   Arbitrum = 'https://arb1.arbitrum.io/rpc',
   Avalanche = 'https://api.avax.network/ext/bc/C/rpc',
   Optimism = 'https://mainnet.optimism.io',

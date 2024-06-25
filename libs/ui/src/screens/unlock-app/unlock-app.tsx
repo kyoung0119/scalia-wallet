@@ -15,18 +15,18 @@ import { Icon } from '../../components/icon/icon';
 import { IconNameEnum } from '../../components/icon/icon-name.enum';
 import { Row } from '../../components/row/row';
 import { Text } from '../../components/text/text';
+import { Image } from '../../components/image/image';
 import { PasswordInput } from '../../components/text-input/components/password-input/password-input';
-import { NetworkSelectorDropdown } from '../../components/network-selector-dropdown/network-selector-dropdown';
 import { ScreensEnum } from '../../enums/sreens.enum';
 import { useNavigation } from '../../hooks/use-navigation.hook';
 import { useUnlock } from '../../hooks/use-unlock.hook';
 import { useBiometricEnabledSelector } from '../../store/settings/settings.selectors';
-import { colors } from '../../styles/colors';
 import { getCustomSize } from '../../styles/format-size';
-import { MadFishLogo } from '../settings/components/mad-fish-logo/mad-fish-logo';
 
 import { usePasswordLock } from './hooks/use-password-lock.hook';
 import { styles } from './unlock.styles';
+
+import ScaliaPNG from '../../components/icon/networks/scalia.png'
 
 interface Password {
   password: string;
@@ -69,7 +69,9 @@ export const UnlockApp: FC = () => {
     <KeyboardAvoidingView behavior={behavior} style={styles.root}>
       <View style={styles.logoContainer}>
         <div style={styles.logoSection}>
-          <Icon iconStyle={styles.logoIcon} name={IconNameEnum.Scalia} size={getCustomSize(6)} />
+          <View style={styles.logoIconContainer}>
+            <Image uri={ScaliaPNG} style={styles.logoIcon} />
+          </View>
           <Text style={styles.bannerText}>Welcome!</Text>
           <Text style={styles.commonText} onPress={onResetWallet}>
             Scalia Decentralized Wallet

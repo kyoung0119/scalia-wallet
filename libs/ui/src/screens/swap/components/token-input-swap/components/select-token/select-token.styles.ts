@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
   selectAsset: {
     maxWidth: getCustomSize(14)
   },
+  dropdownMargin: {
+    marginLeft: 8,
+  },
   availableBalanceBlock: {
     alignItems: 'flex-end',
     maxWidth: getCustomSize(15)

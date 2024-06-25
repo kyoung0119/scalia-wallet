@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   layoutText: {
     position: 'absolute',
     ...typography.taglineInterSemiBoldUppercase13,
-    color: colors.orange
+    color: colors.theme
   },
   layoutBlock: {
     width: '100%',

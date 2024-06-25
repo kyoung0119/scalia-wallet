@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Icon } from '../../../../components/icon/icon';
 import { IconNameEnum } from '../../../../components/icon/icon-name.enum';
 import { TouchableIcon } from '../../../../components/touchable-icon/touchable-icon';
+import { Image } from '../../../../components/image/image';
 import { Selector } from '../../../../components/selector/selector';
 
 import { EMPTY_STRING } from '../../../../constants/defaults';
@@ -31,6 +32,10 @@ import { ContextMenu } from './context-menu/context-menu';
 import { confirmRemoveAction } from '../../network/utils/confirmation.util';
 import { removeNetworkAction } from '../../../../store/wallet/wallet.actions';
 import { MainnetRpcEnum } from '../../../../constants/rpc';
+
+import ScaliaPNG from '../../../../components/icon/networks/scalia.png'
+
+import { styles } from './networks-list.styles';
 
 const keyExtractor = (item: NetworkInterface) => item.rpcUrl;
 
@@ -101,17 +106,16 @@ export const NetworksList: FC<Props> = ({ isSelector }) => {
   };
 
   const handleReset = () => {
-    // Implement reset logic
     navigateToEditNetwork(selectedNetworkForMenu as NetworkInterface, true)
     setContextMenuVisible(false);
   };
 
   const handleRemove = () => {
-    // Implement remove logic
     confirmRemoveAction(() => handleRemoveNetwork(selectedNetworkForMenu as NetworkInterface));
     setContextMenuVisible(false);
   };
 
+  const closeContextMenu = () => setContextMenuVisible(false);
 
   const renderItem = ({ item, index }: ListRenderItemInfo<NetworkInterface>) => {
     const isNetworkSelected = selectedIndex === index;
@@ -132,8 +136,9 @@ export const NetworksList: FC<Props> = ({ isSelector }) => {
         /> :
         <ModalRenderItem
           name={item.name}
-          icon={<Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />}
-          // isActive={isNetworkSelected}
+          icon={item.name == 'Scalia' ?
+            <Image uri={ScaliaPNG} style={styles.scaliaIcon} /> :
+            <Icon name={item.iconName ?? IconNameEnum.NetworkFallback} size={32} />}
           balanceTitle="Gas balance"
           balance={
             <ModalGasToken balance={accountsGasTokens[accountGasTokenSlug]?.data} metadata={item.gasTokenMetadata} />
@@ -160,7 +165,7 @@ export const NetworksList: FC<Props> = ({ isSelector }) => {
         visible={contextMenuVisible}
         deleteDisabled={deleteDisabled}
         position={contextMenuPosition}
-        onClose={() => setContextMenuVisible(false)}
+        onClose={closeContextMenu}
         onReset={handleReset}
         onRemove={handleRemove}
       />

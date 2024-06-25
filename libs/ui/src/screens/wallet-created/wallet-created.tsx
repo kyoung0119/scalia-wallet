@@ -68,12 +68,12 @@ export const WalletCreated: FC = () => {
       </View>
 
       <View style={styles.bottomBlock}>
-        <Pressable onPress={onAnalyticsPress} style={styles.analytics}>
+        {/* <Pressable onPress={onAnalyticsPress} style={styles.analytics}>
           <Row style={styles.row}>
             <Icon name={isAnalytics ? IconNameEnum.SelectedSquareCheckbox : IconNameEnum.EmptySquareCheckbox} />
             <Text style={styles.text}>Analytics</Text>
           </Row>
-        </Pressable>
+        </Pressable> */}
 
         <Pressable onPress={onAcceptTermsPress} testID={WalletCreatedTestIds.AcceptTerms}>
           <Animated.View style={[styles.row, styles.acceptTerms, { transform: [{ translateX: interpolated }] }]}>
@@ -81,7 +81,7 @@ export const WalletCreated: FC = () => {
               <Icon name={isAcceptTerms ? IconNameEnum.SelectedSquareCheckbox : IconNameEnum.EmptySquareCheckbox} />
               <Text style={styles.text}>Accept terms</Text>
             </Row>
-            {/* <TouchableIcon name={IconNameEnum.ChevronRight} onPress={goToTermsOfUse} /> */}
+            <TouchableIcon name={IconNameEnum.ChevronRight} onPress={goToTermsOfUse} />
           </Animated.View>
         </Pressable>
 

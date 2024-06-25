@@ -35,13 +35,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8
   },
-  logoIcon: {
+  logoIconContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.05)', // Semi-transparent background
-    borderRadius: 40,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
     borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 40,
     padding: 8,
-    marginBottom: 16
+    marginBottom: 16,
+  },
+  logoIcon: {
+    width: 48,
+    height: 48,
   },
   bottomBlock: {
     flex: 1,

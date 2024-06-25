@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     color: colors.textGrey5
   },
   valid: {
-    color: colors.green
+    color: colors.theme
   },
   noValid: {
     color: colors.red

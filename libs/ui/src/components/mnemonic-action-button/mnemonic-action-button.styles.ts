@@ -7,7 +7,7 @@ import { typography } from '../../styles/typography';
 export const styles = StyleSheet.create({
   buttonText: {
     ...typography.taglineInterSemiBoldUppercase13,
-    color: colors.orange
+    color: colors.theme
   },
   buttons: {
     width: '100%',

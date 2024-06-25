@@ -22,8 +22,8 @@ export const ContextMenu: FC<ContextMenuProps> = ({ visible, deleteDisabled, pos
 
     return (
         <Modal transparent={true} animationType="fade">
-            <TouchableOpacity style={styles.overlay} onPress={onClose}>
-                <View style={[styles.contextMenu, { top: position.y, left: position.x }]}>
+            <TouchableOpacity style={styles.overlay} onPress={onClose} activeOpacity={1}>
+                <TouchableOpacity style={[styles.contextMenu, { top: position.y, left: position.x }]} activeOpacity={1}>
                     <TouchableOpacity onPress={onReset}>
                         <Row style={styles.menuItem}>
                             <Icon name={IconNameEnum.Rotate} size={16} />
@@ -37,7 +37,7 @@ export const ContextMenu: FC<ContextMenuProps> = ({ visible, deleteDisabled, pos
                             <Text style={styles.removeText as ViewStyleProps}>Remove</Text>
                         </Row>
                     </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             </TouchableOpacity>
         </Modal>
     );

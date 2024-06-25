@@ -14,12 +14,12 @@ import { ScreenScrollView } from '../../components/screen-components/screen-scro
 
 import { useDelayedEffect } from '../../hooks/use-delayed-effect.hook';
 import { useNavigation } from '../../hooks/use-navigation.hook';
+import { useCopyToClipboard } from '../../hooks/use-copy-to-clipboard.hook';
 import { ScreensEnum } from '../../enums/sreens.enum';
 import {
   useSelectedAccountPublicKeyHashSelector,
   useSelectedNetworkSelector
 } from '../../store/wallet/wallet.selectors';
-import { handleSetValueToClipboard } from '../../utils/copy-to-clipboard.util';
 import { share } from '../../utils/share.util';
 
 import { colors } from '../../styles/colors';
@@ -35,7 +35,7 @@ export const Receive: FC = () => {
   const publicKeyHash = useSelectedAccountPublicKeyHashSelector();
 
   const navigateToWallet = () => navigate(ScreensEnum.Wallet);
-  const copyAddress = () => handleSetValueToClipboard(publicKeyHash);
+  const copyAddress = useCopyToClipboard({ text: publicKeyHash });
   const shareAddress = () => share({ message: publicKeyHash });
 
   useDelayedEffect(() => setIsCopied(false), [isCopied]);

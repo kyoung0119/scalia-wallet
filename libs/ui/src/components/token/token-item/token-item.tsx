@@ -2,7 +2,6 @@ import { isDefined } from '@rnw-community/shared';
 import React, { FC, PropsWithChildren } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 
-import { getCustomSize } from '../../../styles/format-size';
 import { Icon } from '../../icon/icon';
 import { IconNameEnum } from '../../icon/icon-name.enum';
 import { Row } from '../../row/row';
@@ -13,6 +12,8 @@ import { themeClasses } from './constants';
 import { TokenItemThemesEnum } from './enums';
 import { styles } from './token-item.styles';
 import { ViewStyleProps } from 'src/interfaces/style.interface';
+
+import ScaliaPNG from '../../../components/icon/networks/scalia.png'
 
 type Props = PropsWithChildren<{
   symbol: string;
@@ -35,8 +36,11 @@ export const TokenItem: FC<Props> = ({
   theme = TokenItemThemesEnum.Primary
 }) => (
   <Row style={[styles.root, themeClasses[theme].root]}>
-    {/* <Row style={styles.token}> */}
-    <Image style={[styles.image, themeClasses[theme].image]} source={imageSource} />
+    {
+      symbol == "SCAL" ?
+        <Image style={[styles.image, themeClasses[theme].image]} source={ScaliaPNG} /> :
+        <Image style={[styles.image, themeClasses[theme].image]} source={imageSource} />
+    }
     <View style={styles.token}>
       <Row style={styles.token}>
         <TokenAmount value={balance} style={themeClasses[theme].text as ViewStyleProps} /><Text> </Text>
@@ -51,7 +55,6 @@ export const TokenItem: FC<Props> = ({
         </Text>
       )}
     </View>
-    {/* </Row> */}
 
     <View style={styles.rightSideContainer}>
       {isDefined(children) ? (
