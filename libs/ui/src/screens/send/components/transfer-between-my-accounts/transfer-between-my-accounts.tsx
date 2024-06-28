@@ -16,6 +16,7 @@ import { TextInput } from '../../../../components/text-input/text-input';
 
 import { ScreensEnum } from '../../../../enums/sreens.enum';
 import { useNavigation } from '../../../../hooks/use-navigation.hook';
+import { useToast } from '../../../../hooks/use-toast.hook';
 import {
   useAllAccountsWithoutSelectedSelector,
   useSelectedNetworkTypeSelector
@@ -29,7 +30,9 @@ import { styles } from './transfer-between-my-accounts.styles';
 const MAXIMUM_ADDRESS_LENGTH = 64;
 
 export const TransferBetweenMyAccounts: FC = () => {
+  const { showWarningToast } = useToast();
   const allAccountsWithoutSelected = useAllAccountsWithoutSelectedSelector();
+  const isTransferBetweenAccountsDisabled = allAccountsWithoutSelected.length === 0;
   const networkType = useSelectedNetworkTypeSelector();
   const receiverPublicKeyHashRules = useValidateAddressField(networkType);
   const { navigate } = useNavigation();
@@ -57,6 +60,9 @@ export const TransferBetweenMyAccounts: FC = () => {
   };
 
   const onChangeAccountPress = async () => {
+    if (isTransferBetweenAccountsDisabled) {
+      return showWarningToast({ message: 'Please, add one more account' });
+    }
     const selectedAccount = account ?? allAccountsWithoutSelected[0];
     navigate(ScreensEnum.SendAccountsSelector, { account: selectedAccount as AccountInterface });
   };

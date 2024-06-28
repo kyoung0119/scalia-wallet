@@ -37,9 +37,6 @@ export const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 24
   },
-  container: {
-    position: 'relative'
-  },
   ///
   wordsAmount: {
     justifyContent: 'space-between',
@@ -58,16 +55,6 @@ export const styles = StyleSheet.create({
   amountWords: {
     marginRight: getCustomSize(2),
     ...typography.captionInterSemiBold13
-  },
-  mnemonicContainer: {
-    // position: 'relative',
-    // marginBottom: getCustomSize(3),
-    // paddingHorizontal: getCustomSize(0.75),
-    // paddingTop: getCustomSize(0.75),
-    // borderRadius: getCustomSize(),
-    // backgroundColor: colors.bgGrey4,
-    // borderWidth: getCustomSize(0.125),
-    // borderColor: 'transparent'
   },
   containerError: {
     borderColor: colors.red
@@ -143,8 +130,17 @@ export const styles = StyleSheet.create({
     color: colors.red,
     ...typography.captionInterRegular11
   },
-  buttons: {
-    paddingTop: getCustomSize(2)
+  isImportedError: {
+    overflow: 'hidden',
+    justifyContent: "space-between",
+    backgroundColor: colors.bgTransparentRed,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: colors.red,
+    borderRadius: 8,
+    ...typography.numbersIBMPlexSansMedium13,
+    textAlign: 'center',
+    fontWeight: 400
   },
   inputDerivationPathContainer: {
     marginBottom: getCustomSize(3.5)

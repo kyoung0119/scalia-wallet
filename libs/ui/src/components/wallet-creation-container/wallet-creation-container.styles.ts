@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   content: {
     flex: 1,
     width: '100%',
-    marginTop: getCustomSize(2),
+    marginTop: 32,
     paddingHorizontal: getCustomSize(2)
   },
   stepContainer: {

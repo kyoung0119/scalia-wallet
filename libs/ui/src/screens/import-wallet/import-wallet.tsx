@@ -66,7 +66,7 @@ export const ImportWallet: FC = () => {
       scrollViewRef={scrollViewRef}
       submitButtonTestID={ImportWalletTestIDs.NextButton}
     >
-      <Row style={styles.wordsAmount}>
+      {/* <Row style={styles.wordsAmount}>
         <Text style={styles.amountWordsText}>Mnemonic Length</Text>
 
         <Pressable onPress={navigateToWordsAmountSelector}>
@@ -75,7 +75,7 @@ export const ImportWallet: FC = () => {
             <Icon name={IconNameEnum.Dropdown} size={getCustomSize(2)} />
           </Row>
         </Pressable>
-      </Row>
+      </Row> */}
 
       <Column style={styles.mnemonicContainer}>
         <Row style={styles.wordsWrapper}>

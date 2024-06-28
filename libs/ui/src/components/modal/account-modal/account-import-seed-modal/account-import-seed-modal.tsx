@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useMemo } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import { View, ScrollView, TextInput } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { RouteProp, useRoute } from '@react-navigation/native';
@@ -26,6 +26,7 @@ import { ScreensEnum, ScreensParamList } from '../../../../enums/sreens.enum';
 
 import { styles } from './account-import-seed-modal.styles';
 import { AddBySeedPhraseTestIDs } from './seed-phrase.test-ids';
+import { ViewStyleProps } from 'src/interfaces/style.interface';
 
 interface Props {
   isModalVisible: boolean;
@@ -57,6 +58,7 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
     scrollToOffset,
     handlePasteMnemonicFromClipboard
   } = useImportSeedPhrase(routeParams?.wordsAmount);
+  const [isImported, setIsImported] = useState(false)
 
   const lastAccountIndex = accounts.length + 1;
   const defaultValue = `Account ${lastAccountIndex}`;
@@ -98,7 +100,7 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
       for (const account of accounts) {
         if (account.networksKeys[networkType]?.publicKey === hdAccount.publicKey) {
           scrollToOffset();
-
+          setIsImported(true);
           return setError('derivationPath', { message: 'This account already imported!' }, { shouldFocus: false });
         }
       }
@@ -160,7 +162,7 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
           </Pressable>
         </Row> */}
 
-        <Column style={[styles.mnemonicContainer, containerError && styles.containerError]}>
+        <Column style={[containerError && styles.containerError]}>
           <Row style={styles.wordsWrapper}>
             <Row style={[styles.wordsColumn, styles.marginRight]}>
               {mnemonic.slice(0, wordsAmount).map((word, index) => {
@@ -197,6 +199,8 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
           {isNotEmptyString(error) && <Text style={styles.errorText}>{error}</Text>}
         </Column>
 
+        {isImported && <Text style={styles.isImportedError as ViewStyleProps}>This account already imported!</Text>}
+
         {/* <Controller
           control={control}
           name="derivationPath"
@@ -211,9 +215,9 @@ export const AccountImportSeedModal: FC<Props> = ({ isModalVisible, setModalVisi
               containerStyle={styles.inputDerivationPathContainer}
             />
           )}
-        />
+        /> */}
 
-        <Announcement>
+        {/* <Announcement>
           <Column style={styles.warningList}>
             <Row style={styles.listItem}>
               <Text style={styles.listDote}>●</Text>
