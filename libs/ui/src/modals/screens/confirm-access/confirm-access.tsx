@@ -90,8 +90,7 @@ export const ConfirmAccess: FC = () => {
           render={({ field }) => (
             <PasswordInput
               field={field}
-              label="Password"
-              prompt={routeParams.descriptionText}
+              label={routeParams.descriptionText}
               error={errorMessage || errors.password?.message}
               onKeyPress={onEnterPress}
               onSubmitEditing={onUnlock}

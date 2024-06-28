@@ -62,15 +62,15 @@ export const AccountsList: FC<Props> = ({
         balanceTitle="Total balance"
         balance={<ModalAccountBalance balance={accountsBalanceInUsd[item.accountId]} />}
         onSelectItem={() => onSelectItem(item)}
-        rightBottomComponent={
-          isShowAccountType ? (
-            <AccountType type={item.type} />
-          ) : (
-            <View style={styles.publicKeyHashContainer}>
-              <CopyText text={publicKeyHash} />
-            </View>
-          )
-        }
+        // rightBottomComponent={
+        //   isShowAccountType ? (
+        //     <AccountType type={item.type} />
+        //   ) : (
+        //     <View style={styles.publicKeyHashContainer}>
+        //       <CopyText text={publicKeyHash} />
+        //     </View>
+        //   )
+        // }
         testID={testID}
       />
     );

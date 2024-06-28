@@ -48,13 +48,11 @@ export const Settings: FC = () => {
       descriptionText: 'Enter your password to reveal seed phrase',
       submitButtonText: 'reveal seed phrase'
     });
-  const navigateToSettingsGeneral = () => navigate(ScreensEnum.SettingsGeneral);
   const navigateToSettingsSecurity = () => navigate(ScreensEnum.SettingsSecurity);
   const navigateToSettingsAboutUs = () => navigate(ScreensEnum.SettingsAboutUs);
   const navigateToSettingsResetWalletConfirm = () => navigate(ScreensEnum.SettingsResetWalletConfirm);
   const navigateToAuthorizedDapps = () => navigate(ScreensEnum.AuthorizedDApps);
   const navigateToNetworkSelector = () => navigate(ScreensEnum.NetworksSelector, { isSelector: false });
-
   const goToTelegram = () => Linking.openURL(socialMediaLinks.telegram);
   const goToTwitter = () => Linking.openURL(socialMediaLinks.twitter);
 
@@ -75,14 +73,12 @@ export const Settings: FC = () => {
         <View style={styles.content}>
           <View>
             <ItemContainer>
-              <Item title="Wallet settings" icon={IconNameEnum.Wallet} />
+              <Item title="Wallet settings" icon={IconNameEnum.Wallet} onPress={navigateToAccountsSettings} />
             </ItemContainer>
 
             <Divider size={dividerSize} />
 
             <ItemContainer>
-              {/* <Item title="General" icon={IconNameEnum.Slider} onPress={navigateToSettingsGeneral} />
-              <Separator /> */}
               <Item title="Security" icon={IconNameEnum.Security} onPress={navigateToSettingsSecurity} />
             </ItemContainer>
 

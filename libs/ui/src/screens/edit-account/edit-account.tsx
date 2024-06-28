@@ -9,11 +9,9 @@ import { AccountType } from '../../components/account-type/account-type';
 import { CopyText } from '../../components/copy-text/copy-text';
 import { Icon } from '../../components/icon/icon';
 import { IconNameEnum } from '../../components/icon/icon-name.enum';
-import { NavigationBar } from '../../components/navigation-bar/navigation-bar';
 import { RobotIcon } from '../../components/robot-icon/robot-icon';
 import { Row } from '../../components/row/row';
 import { ScreenTitle } from '../../components/screen-components/header-container/components/screen-title/screen-title';
-import { HeaderContainer } from '../../components/screen-components/header-container/header-container';
 import { ScreenContainer } from '../../components/screen-components/screen-container/screen-container';
 import { Switch } from '../../components/switch/switch';
 import { Text } from '../../components/text/text';
@@ -84,9 +82,7 @@ export const EditAccount: FC = () => {
 
   return (
     <ScreenContainer>
-      <HeaderContainer isSelectors>
-        <ScreenTitle title="Edit Account" onBackButtonPress={goBack} testID={EditAccountTestIDs.EditAccountTitle} />
-      </HeaderContainer>
+      <ScreenTitle title="Edit Account" onBackButtonPress={goBack} testID={EditAccountTestIDs.EditAccountTitle} />
 
       <View style={styles.root}>
         <ModalHeader
@@ -138,7 +134,6 @@ export const EditAccount: FC = () => {
         )}
       </View>
 
-      <NavigationBar />
     </ScreenContainer>
   );
 };

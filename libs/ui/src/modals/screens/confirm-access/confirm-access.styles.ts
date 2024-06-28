@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   input: {
-    flex: 1
+    flex: 1,
+    marginTop: 16,
   },
   iconContainer: {
     backgroundColor: colors.bgGrey4,
