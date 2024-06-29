@@ -11,6 +11,7 @@ import { IconWithBorder } from '../icon-with-border/icon-with-border';
 import { Image } from '../image/image';
 import { Row } from '../row/row';
 import { Text } from '../text/text';
+import ScaliaPNG from '../../components/icon/networks/scalia.png'
 
 import { styles } from './token.styles';
 
@@ -46,7 +47,11 @@ export const Token: FC<Props> = ({
   return (
     <Row style={style}>
       <IconWithBorder type={iconType} style={styles.icon}>
-        <Image uri={uri} isLoadingError={isLoadingError} onError={onError} />
+        {
+          symbol == "SCAL" ?
+            <Image uri={ScaliaPNG} isLoadingError={isLoadingError} onError={onError} /> :
+            <Image uri={uri} isLoadingError={isLoadingError} onError={onError} />
+        }
       </IconWithBorder>
       <Column>
         <Row style={styles.row}>

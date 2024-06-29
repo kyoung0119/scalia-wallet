@@ -16,6 +16,7 @@ import { getCustomSize } from '../../../../styles/format-size';
 import { styles } from './header-side-token.styles';
 
 interface Props {
+  symbol?: string;
   name: string;
   price?: number;
   dynamics?: number;
@@ -24,7 +25,7 @@ interface Props {
   style?: ViewStyleProps;
 }
 
-export const HeaderSideToken: FC<Props> = ({ name, price, dynamics, thumbnailUri, isGasToken = false, style }) => (
+export const HeaderSideToken: FC<Props> = ({ symbol, name, price, dynamics, thumbnailUri, isGasToken = false, style }) => (
   <Column style={[styles.root, style]}>
     {isDefined(price) && (
       <Row style={styles.wrapper}>
@@ -34,7 +35,10 @@ export const HeaderSideToken: FC<Props> = ({ name, price, dynamics, thumbnailUri
     )}
     <Row>
       {isGasToken && <Icon name={IconNameEnum.Gas} size={getCustomSize(2)} />}
-      <Text style={styles.tokenName}>{name}</Text>
+      <Column style={styles.tokenInfo}>
+        <Text style={styles.tokenSymbol}>{symbol}</Text>
+        <Text style={styles.tokenName}>{name}</Text>
+      </Column>
       <IconWithBorder type={IconWithBorderEnum.Secondary} style={styles.imageContainer}>
         <Image uri={thumbnailUri} />
       </IconWithBorder>

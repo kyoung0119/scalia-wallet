@@ -13,5 +13,6 @@ interface Props {
 }
 
 export const EmptySearchIcon: FC<Props> = ({ style, size = getCustomSize(36) }) => (
-  <Icon name={IconNameEnum.EmptySearch} size={size} iconStyle={[styles.root, style]} />
+  <></>
+  // <Icon name={IconNameEnum.EmptySearch} size={size} iconStyle={[styles.root, style]} />
 );

@@ -68,7 +68,7 @@ export enum IconNameEnum {
   Wallet = 'Wallet',
   Error = 'Error',
   QrScanner = 'QrScanner',
-  Chevron = 'Chevron',
+  ChevronDown = 'ChevronDown',
   ChevronUp = 'ChevronUp',
   DropdownSelector = 'DropdownSelector',
   Refresh = 'Refresh',

@@ -61,7 +61,7 @@ export const NavigationBar: FC<Props> = ({ token }) => {
           >
             <Icon name={iconName} color={disabled === true ? colors.bgGrey5 : colors.orange} />
           </Pressable>
-          {id < 4 && <Divider size={getCustomSize(2)} />}
+          {id < 3 && <Divider size={getCustomSize(2)} />}
         </Fragment>
       ))}
     </Row>

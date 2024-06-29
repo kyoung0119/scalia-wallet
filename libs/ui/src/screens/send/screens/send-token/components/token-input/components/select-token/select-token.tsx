@@ -46,7 +46,7 @@ export const SelectToken: FC<Props> = ({ token, navigationKey, isReadOnly = fals
             {...(!isToken && { symbolStyle: styles.selectAsset })}
           />
 
-          {isSelectable && <Icon name={IconNameEnum.Dropdown} size={getCustomSize(2)} />}
+          {isSelectable && <Icon name={IconNameEnum.ChevronDown} size={getCustomSize(2)} />}
         </Row>
       </Pressable>
       {showAvailableBalance && (

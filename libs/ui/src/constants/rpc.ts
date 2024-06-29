@@ -5,10 +5,10 @@ export enum MainnetRpcEnum {
   Ethereum = 'https://gateway.tenderly.co/public/mainnet',
   BinanceSmartChain = 'https://bsc.drpc.org',
   Polygon = 'https://polygon.drpc.org',
-  Arbitrum = 'https://arb1.arbitrum.io/rpc',
-  Avalanche = 'https://api.avax.network/ext/bc/C/rpc',
+  Arbitrum = 'wss://arbitrum-one.publicnode.com',
+  Avalanche = 'https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc',
   Optimism = 'https://mainnet.optimism.io',
-  Fantom = 'https://rpc.ftm.tools',
+  Fantom = 'wss://fantom-rpc.publicnode.com',
   Tezos = 'https://mainnet-node.madfish.solutions'
 }
 

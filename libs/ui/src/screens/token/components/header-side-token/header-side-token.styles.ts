@@ -6,7 +6,7 @@ import { typography } from '../../../../styles/typography';
 
 export const styles = StyleSheet.create({
   root: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   wrapper: {
     marginBottom: getCustomSize(0.5)
@@ -16,8 +16,15 @@ export const styles = StyleSheet.create({
     color: colors.textGrey1,
     ...typography.numbersIBMPlexSansRegular11
   },
+  tokenInfo: {
+    marginHorizontal: 4,
+    alignItems: 'center'
+  },
+  tokenSymbol: {
+    color: colors.textGrey1,
+    ...typography.captionInterSemiBold13
+  },
   tokenName: {
-    marginRight: getCustomSize(0.5),
     color: colors.textGrey1,
     ...typography.captionInterRegular11
   },

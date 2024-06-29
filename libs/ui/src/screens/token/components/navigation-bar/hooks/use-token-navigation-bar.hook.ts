@@ -20,27 +20,27 @@ export const useTokenNavigationBar = (): TokenNavigationBarOption[] => {
     () => [
       {
         id: 1,
+        iconName: IconNameEnum.Send,
+        routeName: ScreensEnum.SendToken
+      },
+      {
+        id: 2,
         iconName: IconNameEnum.Swap,
         routeName: ScreensEnum.Swap,
         disabled: !isSwapSupported,
         disabledMessage: modernCivilizationDidNotReachThisNetwork
       },
       {
-        id: 2,
+        id: 3,
         iconName: IconNameEnum.Receive,
         routeName: ScreensEnum.Receive
       },
-      {
-        id: 3,
-        iconName: IconNameEnum.Send,
-        routeName: ScreensEnum.SendToken
-      },
-      {
-        id: 4,
-        iconName: IconNameEnum.Topup,
-        routeName: ScreensEnum.SendToken,
-        disabled: true
-      }
+      // {
+      //   id: 4,
+      //   iconName: IconNameEnum.Topup,
+      //   routeName: ScreensEnum.SendToken,
+      //   disabled: true
+      // },
     ],
     [isSwapSupported]
   );

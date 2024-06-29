@@ -19,7 +19,7 @@ interface Props extends TestIDProps {
 }
 
 export const ScreenTitle: FC<Props> = ({
-  title = 'Page',
+  title,
   onBackButtonPress,
   numberOfLines = 1,
   titleStyle,
@@ -29,8 +29,10 @@ export const ScreenTitle: FC<Props> = ({
     {isDefined(onBackButtonPress) && (
       <TouchableIcon name={IconNameEnum.ArrowLeft} onPress={onBackButtonPress} style={styles.icon} />
     )}
-    <Text style={[styles.title as ViewStyleProps, titleStyle]} numberOfLines={numberOfLines} testID={testID}>
-      {title}
-    </Text>
+    {title &&
+      <Text style={[styles.title as ViewStyleProps, titleStyle]} numberOfLines={numberOfLines} testID={testID}>
+        {title}
+      </Text>
+    }
   </Column>
 );

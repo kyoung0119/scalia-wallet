@@ -17,7 +17,7 @@ import SelectedSquareCheckboxSmall from './assets/check-ok-small.svg';
 import SelectedSquareCheckbox from './assets/check-ok.svg';
 import ChevronRight from './assets/chevron-right.svg';
 import ChevronUp from './assets/chevron-up.svg';
-import Chevron from './assets/chevron.svg';
+import ChevronDown from './assets/chevron-down.svg';
 import Circle from './assets/circle.svg';
 import Clear from './assets/clear.svg';
 import Close from './assets/close.svg';
@@ -198,8 +198,9 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.WarningYellow]: WarningYellow,
   [IconNameEnum.Wallet]: Wallet,
   [IconNameEnum.QrScanner]: QrScanner,
-  [IconNameEnum.Chevron]: Chevron,
+  [IconNameEnum.ChevronDown]: ChevronDown,
   [IconNameEnum.ChevronUp]: ChevronUp,
+  [IconNameEnum.ChevronRight]: ChevronRight,
   [IconNameEnum.DropdownSelector]: DropdownSelector,
   [IconNameEnum.Refresh]: Refresh,
   [IconNameEnum.Info]: Info,
@@ -211,7 +212,6 @@ export const iconNameMap: Record<IconNameEnum, FC<SvgProps>> = {
   [IconNameEnum.IconDisconnect]: IconDisconnect,
   [IconNameEnum.InfoRed]: InfoRed,
   [IconNameEnum.Maximize]: Maximize,
-  [IconNameEnum.ChevronRight]: ChevronRight,
   [IconNameEnum.Security]: Security,
   [IconNameEnum.DappConnect]: DappConnect,
   [IconNameEnum.Telegram]: Telegram,

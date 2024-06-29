@@ -25,6 +25,7 @@ import { HeaderSideToken } from './components/header-side-token/header-side-toke
 import { NavigationBar } from './components/navigation-bar/navigation-bar';
 import { TokenInfo } from './components/token-info/token-info';
 import { styles } from './token.styles';
+import { Row } from '../../components/row/row';
 
 interface Props {
   style?: ViewStyleProps;
@@ -70,18 +71,22 @@ export const Token: FC<Props> = ({ style }) => {
 
   return (
     <ScreenContainer style={[styles.root, style]}>
-      <HeaderContainer isSelectors>
-        <ScreenTitle title={token.symbol} onBackButtonPress={goBack} />
+      <ScreenTitle onBackButtonPress={goBack} />
+
+      <Row style={styles.tokenInfoRow}>
+        <Balance balance={formattedBalance} fiatBalance={fiatBalanceToDisplay} />
+
         <HeaderSideToken
+          symbol={token.symbol}
           name={token.name}
           dynamics={usdPriceChange24h}
           price={price}
           thumbnailUri={token.thumbnailUri}
           isGasToken={isGasToken}
+          style={styles.tokenInfoRight}
         />
-      </HeaderContainer>
+      </Row>
 
-      <Balance balance={formattedBalance} fiatBalance={fiatBalanceToDisplay} />
       <NavigationBar token={token} />
 
       <Divider style={styles.divider} />

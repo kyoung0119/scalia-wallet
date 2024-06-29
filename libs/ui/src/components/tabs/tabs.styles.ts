@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     ...typography.bodyInterRegular15
   },
   active: {
-    color: colors.orange
+    color: colors.theme
   },
   border: {
     position: 'absolute',
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: getCustomSize(0.5),
     borderTopLeftRadius: getCustomSize(0.5),
     borderTopRightRadius: getCustomSize(0.5),
-    borderColor: colors.orange
+    borderColor: colors.theme
   },
   divider: {
     width: getCustomSize(3.75)

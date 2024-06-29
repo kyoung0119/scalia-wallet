@@ -102,16 +102,16 @@ export const TokensSelector: FC = () => {
             symbolStyle={styles.symbol}
           />
         }
-        leftBottomComponent={
-          <View>
-            <Row style={styles.dollarContainer}>
-              <Text style={styles.dollarAmount}>{amountInDollar}</Text>
-              <Text style={styles.dollarSign}>$</Text>
-            </Row>
+      // leftBottomComponent={
+      //   <View>
+      //     <Row style={styles.dollarContainer}>
+      //       <Text style={styles.dollarAmount}>{amountInDollar}</Text>
+      //       <Text style={styles.dollarSign}>$</Text>
+      //     </Row>
 
-            <Text style={styles.amount}>{balance}</Text>
-          </View>
-        }
+      //     <Text style={styles.amount}>{balance}</Text>
+      //   </View>
+      // }
       />
     );
   };

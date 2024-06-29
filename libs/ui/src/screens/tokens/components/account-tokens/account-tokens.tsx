@@ -87,7 +87,7 @@ export const AccountTokens: FC<Props> = ({ searchValue, newToken, setIsEmptyToke
           showButton={showButton}
           isNewToken={isNewToken}
           theme={TokenItemThemesEnum.Secondary}
-          // onPress={() => handleTokenPress(token, isNewToken)}
+          onPress={() => handleTokenPress(token, isNewToken)}
           onPressSwitch={() => addNewTokenToAccount(token, isNewToken)}
         />
       );
